@@ -1,3 +1,62 @@
 body{
     background-color: #E9E4E4;
+     font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+/* Colores personalizados del diseño */
+.text-custom-green {
+    color: #2e8b57 !important; /* Verde oscuro del diseño */
+}
+.bg-custom-gray {
+    background-color: #e9ecef;
+}
+
+/* Ajustes de bordes redondeados pronunciados */
+.rounded-4-custom {
+    border-radius: 1.25rem !important;
+}
+.rounded-5-custom {
+    border-radius: 1.5rem !important;
+}
+
+/* Elementos específicos */
+.profile-card {
+    background-color: white;
+    border: 1px solid #e0e0e0;
+    padding: 0.5rem 1rem;
+    min-width: 250px;
+}
+
+.date-box {
+    width: 55px;
+    height: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    line-height: 1.2;
+}
+
+.team-logo {
+    width: 45px;
+    height: 45px;
+    object-fit: contain;
+    border-radius: 50%;
+    border: 1px solid #eee;
+    padding: 2px;
+}
+
+.team-logo-small {
+    width: 35px;
+    height: 35px;
+}
+
+/* Tarjetas internas */
+.inner-card {
+    border: 1px solid #dee2e6;
+    transition: transform 0.2s;
+}
+.inner-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
 }
