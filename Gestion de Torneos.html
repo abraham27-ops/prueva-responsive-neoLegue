@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestion de equipos</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body >
+    <div class="container mt-4">
+        <main>
+        <div>
+            <h1>Seleccionar Torneo</h1>
+        </div>
+        <div class="form-check-inline">
+            <input type="radio" name="torneo" id="intramuros">
+            <label for="intramuros">Intramuros</label>
+
+            <input type="radio" name="torneo" id="copa">
+            <label for="copa">Copa</label>
+        </div>
+        <section class="row bg-white rounded-5 shadow-sm p-4 mt-3">
+            <div class="col-6">
+                <label class="form-label">Equipo</label>
+
+                <input type="text" class="form-control rounded-pill shadow-sm" placeholder="Equipo">
+                <table class="table table-hover mt-3">
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Desarrollo de Software</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Arquitectura</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>Diseño</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-6">
+                <div class="mb-3">
+                    <label class="form-label">Nombre de Equipo</label>
+
+                    <input type="text" class="form-control campo" placeholder="Equipo">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Seleccionar Categoria</label>
+                    <select class="form-select rounded-pill shadow-sm">
+                        <option>U-8</option>
+                        <option>U-10</option>
+                        <option>U-12</option>
+                    </select>
+                    <label>Logo de equipo</label>
+
+                    <div class="subir-foto bg-secondary-subtle rounded-5 p-5 text-center">
+                        <h3>📷 </h3>
+                        <h4>Subir Foto</h4>
+                        <p>Arrastra aqui</p>
+                    </div>
+                    <button class="btn btn-success rounded-pill px-5">
+                        Crear Equipo
+                    </button>
+                </div>
+            </div>
+        </section>
+    </main>
+    </div>
+    <!-- JS link bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

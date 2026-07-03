@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Deportes</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+        crossorigin="anonymous">
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <div class="container mt-4">
+
+        <main>
+
+            <div>
+                <h1>Gestión de Deportes</h1>
+            </div>
+
+            <div class="form-check-inline">
+                <input type="radio" name="torneo" id="intramuros">
+                <label for="intramuros">Intramuros</label>
+
+                <input type="radio" name="torneo" id="copa">
+                <label for="copa">Copa</label>
+            </div>
+
+            <section class="row bg-white rounded-5 shadow-sm p-4 mt-3">
+
+                <div class="col-6">
+
+                    <label class="form-label">Deporte</label>
+
+                    <input type="text" class="form-control rounded-pill shadow-sm" placeholder="Buscar deporte">
+
+                    <table class="table table-hover mt-3">
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>Fútbol</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>Basket</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>Voleibol</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                </div>
+
+                <div class="col-6">
+
+                    <div class="mb-3">
+                        <label class="form-label">Nombre del Deporte</label>
+
+                        <input type="text" class="form-control campo" placeholder="Nombre del deporte">
+                    </div>
+
+                    <div class="mb-3">
+
+                        <label>Imagen del deporte</label>
+
+                        <div class="subir-foto bg-secondary-subtle rounded-5 p-5 text-center">
+                            <h3>📷</h3>
+                            <h4>Subir Foto</h4>
+                            <p>Arrastra aquí</p>
+                        </div>
+
+                        <button class="btn btn-success rounded-pill px-5 mt-3">
+                            Crear Deporte
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>
