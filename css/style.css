@@ -148,3 +148,22 @@ body {
     display: inline-block;
     flex-shrink: 0;
 }
+
+.table-custom-header {
+    background-color: #dbdfe3 !important; /* Gris un poco más oscuro para la cabecera */
+    color: #495057;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.table-custom-row td {
+    padding: 1.25rem 0.5rem; /* Espaciado para filas amplias */
+    vertical-align: middle;
+}
+
+/* Estilo para los selects (filtros) redondeados */
+.form-select-custom {
+    border-radius: 1rem;
+    border-color: #adb5bd;
+    min-width: 200px;
+}
