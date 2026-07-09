@@ -60,3 +60,91 @@ body{
     transform: translateY(-2px);
     box-shadow: 0 4px 8px rgba(0,0,0,0.05);
 }
+
+/*Tania*/
+body {
+    background: #e8e4e4;
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.btn-crear:hover {
+    background-color: #5b651b;
+    transform: translateY(-2px);
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    width: 3% !important;
+
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    width: 30px !important;
+    height: 30px !important;
+    padding: 0 !important;
+}
+
+.equipo-img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+}
+
+.resultado-badge {
+    background: #f0f0f0;
+    padding: 8px;
+    border-radius: 20px;
+    font-weight: bold;
+}
+
+.btn-icon {
+    border: none;
+    background: transparent;
+    padding: 5px 10px;
+    transition: all 0.3s;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-icon img {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+}
+
+.btn-icon:hover {
+    transform: scale(1.2);
+}
+
+.form-label {
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 8px;
+}
+
+.form-control,
+.form-select {
+    border-radius: 12px;
+    border: 1px solid #ddd;
+    padding: 10px 15px;
+    transition: all 0.3s;
+}
+
+.form-control:focus,
+.form-select:focus {
+    border-color: #2d6d3d;
+    box-shadow: 0 0 0 0.2rem rgba(45, 109, 61, 0.25);
+}
+
+.btn-icon-space {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+    display: inline-block;
+    flex-shrink: 0;
+}
