@@ -1,0 +1,26 @@
+/*Dimas*/
+
+.team-logo-small {
+    width: 30px; /* Ajusta este número para hacerla más pequeña o más grande */
+    height: auto; /* Mantiene la proporción original de la imagen */
+    object-fit: contain; /* Evita que la imagen se deforme */
+}
+
+.table-custom-header {
+    background-color: #dbdfe3 !important; /* Gris un poco más oscuro para la cabecera */
+    color: #495057;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.table-custom-row td {
+    padding: 1.25rem 0.5rem; /* Espaciado para filas amplias */
+    vertical-align: middle;
+}
+
+/* Estilo para los selects (filtros) redondeados */
+.form-select-custom {
+    border-radius: 1rem;
+    border-color: #adb5bd;
+    min-width: 200px;
+}
