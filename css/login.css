@@ -1,0 +1,92 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgba(255, 255, 255, 0.712);
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.tarjetas{
+    background-color: rgb(255, 255, 255);
+    padding: 50px;
+    border-radius: 30px;
+    width: 420px;
+    text-align: center;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1);
+}
+
+.logoimg{
+   
+    width: 120px;      
+    height: 120px;      
+    border-radius: 50%; 
+    object-fit: cover;  
+    margin: 0 auto 20px auto; 
+    display: block;    
+}
+
+
+
+h3{
+    margin: 0 0 25px 0;
+    color: #000;
+    font-size: 22px;
+}
+
+.enlaceOlvidado{
+    display: block;
+    text-align: right;
+    font-size: 11px;
+    color: #333;
+    text-decoration: none;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+.caja-input{
+    position: relative;
+    margin-bottom: 15px;
+}
+
+.caja-input span{
+    position: absolute;
+    left: 15px;
+    top: 14px;
+    color: #999;
+}
+
+.caja-input input{
+    width: 100%;
+    padding: 15px 15px 15px 40px;
+    border: 1px solid #ccc;
+    border-radius: 25px;
+    box-sizing: border-box;
+    font-size: 14px;
+
+}
+
+.botonPrincipal{
+    background-color: #1a4a1a;
+    color: white;
+    border: none;
+    width: 100%;
+    padding: 15px;
+    border-radius: 25px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0px 8px 15px rgba(26, 74, 56, 0.4);
+
+}
+
+
+.texto-instrucciones {
+    font-size: 15px;     
+    color: #333;           
+    margin-bottom: 25px;   
+    line-height: 1.5;      
+    margin-top: -10px;     
+}

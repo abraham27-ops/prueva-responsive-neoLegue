@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Gestión de categorias</title>
+    <!-- Link de Css -->
+    <link rel="stylesheet" href="../Css/Style.css">
+
+    <!-- Link de Css Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+    <!-- Link de Iconos Bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+    <!-- Link de Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body class="bg-light">
+
+    <!-- NavBar -->
+    <nav class="navbar py-3 ps-4 pe-2 border-bottom bg-dark">
+        <div class="container-fluid d-flex justify-content-between align-items-center">
+            <button class="btn p-0 me-3 text-white" type="button" data-bs-toggle="offcanvas"
+                data-bs-target="#menu_lateral" style="font-size: 1.5rem; text-decoration: none;">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <span class="navbar-brand mb-0 h1 fw-bold uppercase text-white tracking-wider m-0"
+                style="font-size: 1.25rem;">
+                <i class="fa-regular fa-futbol"></i> NeoLeague
+            </span>
+        </div>
+    </nav>  
+
+    <!-- Menú lateral -->
+    <div class="offcanvas offcanvas-start border-end bg-dark border-end border-dark" tabindex="-1" id="menu_lateral">
+
+        <div class="offcanvas-header flex-column align-items-start px-4 pt-4 pb-2 border-bottom border-white-5">
+            <div class="d-flex align-items-center w-100 justify-content-between mb-3">
+                <h5 class="offcanvas-title font-title-md text-white font-bold m-0" id="menu_lateral_label">
+                    <i class="fa-regular fa-user me-2"></i>NOMBRE USUARIO
+                </h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"></button>
+            </div>
+        </div>
+
+        <!-- Opción Inicio -->
+        <div class="offcanvas-body px-0 py-0 flex-grow-1">
+            <div class="d-flex flex-column gap-1 text-white">
+                <a class="item_sidebar d-flex align-items-center text-white gap-3 px-4 py-3 text-decoration-none"
+                    href="#">
+                    <i class="fa-solid fa-house"></i>
+                    <span class="text-uppercase" style="font-size: 1rem;">Inicio</span>
+                </a>
+            </div>
+
+
+            <!-- Opción Especialidades -->
+            <div class="d-flex flex-column gap-1 text-white">
+                <a class="item_sidebar d-flex align-items-center text-white gap-3 px-4 py-3 text-decoration-none"
+                    href="#">
+                    <i class="fa-solid fa-screwdriver-wrench"></i>
+                    <span class="text-uppercase" style="font-size: 1rem;">ESPECIALIDADES</span>
+                </a>
+            </div>
+
+        </div>
+
+        <div class="offcanvas-footer p-4 border-top border-white-5 mt-auto">
+            <a id=""
+                class="btn btn-danger border-2 border-dark w-100 d-flex align-items-center justify-content-center gap-2 py-2 text-decoration-none">
+                <i class="fas fa-sign-out-alt"></i>
+                <span>Cerrar Sesión</span>
+            </a>
+        </div>
+
+    </div>
+
+    <!-- Main -->
+    <main class="container py-5">
+        <section class="align-baseline mb-5">
+            <h1 class="fw-bold">Categorías</h1>
+        </section>
+        <section class="card shadow">
+            <div class="card-body ">
+                <div class="row">
+                    <!-- Tabla -->
+                    <div class="col-lg-8">
+                        <div id="mensaje" class="alert d-none" role="alert"></div>
+
+                        <div class="table-responsive">
+                            <table class="table table-bordered table-hover align-midle">
+                                <thead class="table text-center">
+                                    <tr>
+                                        <th style="width: 15%;">ID</th>
+                                        <th>Nombre</th>
+                                        <th style="width: 20%;">Acciones</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="tablaCategorias">
+                                    <!-- Aquí se cargarán las categorías desde JavaScript -->
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <!-- Formulario -->
+                    <div class="col-lg-4" id="frmCategorias">
+
+                        <!-- ID  de la persona para el momento de actualizar -->
+                        <input type="hidden" id="idSong">
+
+                        <div class="card shadow-sm p-4">
+                            <h4 class="mb-4 text-center"> Nombre de categoría</h4>
+                            <input type="text" id="txtCategoria" class="form-control mb-3" placeholder="Categoría" required>
+
+                            <div class="d-grip gap-2">
+                                <button type="submit" id="btnGuardar" class="btn btn-success w-100 mb-2 rounded-4">Crear
+                                    Categoría <i class="bi bi-plus-circle"></i></button>
+
+                                <button type="button" id="btnCancelar"
+                                    class="btn btn-secondary d-none w-100 mb-2 rounded-4">Cancelar <i class="bi bi-x-circle"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- Link de SweetAlert -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <!--Script de Bootstrap  -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+
+    <!-- Script de JS -->
+    <script src="../JS/controllers/index.controller.Js"></script>
+
+</body>
+
+</html>
