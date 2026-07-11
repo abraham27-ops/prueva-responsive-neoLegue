@@ -83,6 +83,11 @@ h3{
 }
 
 
+.botonPrincipal a{
+    text-decoration: none;
+    color: white;
+}
+
 .texto-instrucciones {
     font-size: 15px;     
     color: #333;           
