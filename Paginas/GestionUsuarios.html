@@ -7,7 +7,7 @@
     <title>Gestión de Usuarios</title>
 
     <!-- Link de Css -->
-    <link rel="stylesheet" href="../css/GestionUsuarios.css">
+    <link rel="stylesheet" href="../Css/GestionUsuarios.css">
 
     <!-- Link de Css Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -59,7 +59,7 @@
             </div>
 
 
-           <!-- Opción Especialidades -->
+            <!-- Opción Especialidades -->
             <div class="d-flex flex-column gap-1 text-white">
                 <a class="item_sidebar d-flex align-items-center text-white gap-3 px-4 py-3 text-decoration-none"
                     href="#">
@@ -143,51 +143,133 @@
 
     </div>
 
-    <!-- Main -->
-    <main class="container py-5">
-        <section class="align-baseline mb-5">
-            <h1 class="fw-bold">Gestión de Usuarios</h1>
-        </section>
+    <!-- Contenido principal -->
+    <main class="container-fluid py-4 px-4 px-lg-5 flex-grow-1">
 
-        <!-- Formulario de búsqueda -->
-        <div class="card-body" id="frmUsuarios">
-
-            <!-- input para llamar el id de el usuario al que se quiere llamar -->
-            <input type="hidden" id="idUsuario">
-
-            <div class="card shadow-sm p-4">
-                <h4 class="mb-4 text-baseline">Buscar <i class="fa-solid fa-search p-2"></i></h4>
-                <input type="text" id="txtNombreUsuario" class="form-control mb-3" placeholder="Nombre de usuario"
-                    required>
+        <div class="nl-page-header">
+            <div>
+                <div class="nl-breadcrumb">Inicio / Gestión de usuarios</div>
+                <h1 class="fw-bold m-0">Gestión de Usuarios</h1>
             </div>
+
+            <button type="button" class="btn btn-nl" id="btnAbrirModalCrear" data-bs-toggle="modal"
+                data-bs-target="#modalCrearUsuario">
+                <i class="bi bi-plus-circle me-2"></i>Crear Usuario
+            </button>
         </div>
 
-        <!-- Tabla de usuarios -->
-        <section class="card shadow mt-4">
-            <div class="card-body">
+        <div id="mensaje" class="alert d-none" role="alert"></div>
 
-                <div id="mensaje" class="alert d-none" role="alert"></div>
+        <!-- Buscador -->
+        <form id="frmUsuarios" class="mb-3">
+            <input type="hidden" id="idUsuario">
+            <label class="nl-buscador">
+                <i class="bi bi-search"></i>
+                <input type="text" id="txtNombreUsuario" placeholder="Buscar por nombre, DUI o rol">
+            </label>
+        </form>
 
-                <h4 class="mb-4 text-baseline">Usuarios</h4>
-                <div class="table-responsive">
-                    <table class="table table-striped table-hover">
-                        <thead>
-                            <tr>
-                                <th scope="col">ID</th>
-                                <th scope="col">Nombre</th>
-                                <th scope="col">Correo</th>
-                                <th scope="col">Rol</th>
-                                <th scope="col">Acciones</th>
-                            </tr>
-                        </thead>
-                        <tbody id="tablaUsuarios">
-                            <!-- Aquí se llenará la tabla con los datos de los usuarios -->
-                        </tbody>
-                    </table>
+        <!-- filtros -->
+        <div class="d-flex align-items-center gap-2 flex-wrap mb-4" id="filtrosRol">
+            <span class="nl-chip active" data-rol="">Todos</span>
+            <span class="nl-chip" data-rol="Administrador">Administrador</span>
+            <span class="nl-chip" data-rol="Entrenador">Entrenador</span>
+            <span class="nl-chip" data-rol="Estudiante">Estudiante</span>
+            <span class="nl-contador ms-auto" id="contadorUsuarios"></span>
+        </div>
+
+        <!-- Lista de usuarios (card) -->
+        <div class="d-flex flex-column gap-2" id="tablaUsuarios">
+            <!-- Aquí se llenará la lista con los datos de los usuarios -->
+        </div>
+
+    </main>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade modal-nl" id="modalCrearUsuario" tabindex="-1" aria-labelledby="modalCrearUsuarioLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title" id="modalCrearUsuarioLabel">Crear Usuario</h3>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="frmCrearUsuario">
+
+                        <input type="hidden" id="idUsuarioModal">
+
+                        <div class="row g-4">
+                            <!-- Foto de usuario -->
+                            <div class="col-md-4 text-center">
+                                <label class="form-label d-block">Foto del Usuario</label>
+                                <div class="foto-dropzone" id="fotoDropzone">
+                                    <img class="preview d-none" id="fotoPreview" alt="Vista previa">
+                                    <i class="bi bi-camera-fill" id="fotoIcono"></i>
+                                    <span id="fotoTexto">Arrastra aquí<br>o haz clic</span>
+                                </div>
+                                <input type="file" id="inputFoto" accept="image/*" class="d-none">
+                            </div>
+
+                            <!-- Datos personales -->
+                            <div class="col-md-8">
+                                <div class="row g-3">
+                                    <div class="col-md-6">
+                                        <label for="txtNombres" class="form-label">Nombres</label>
+                                        <input type="text" id="txtNombres" class="form-control" placeholder="Nombre"
+                                            required>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="txtCorreo" class="form-label">Correo</label>
+                                        <input type="email" id="txtCorreo" class="form-control" placeholder="Correo"
+                                            required>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <label for="txtApellidos" class="form-label">Apellidos</label>
+                                        <input type="text" id="txtApellidos" class="form-control" placeholder="Apellido"
+                                            required>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="selectRol" class="form-label">Rol</label>
+                                        <select id="selectRol" class="form-select" required>
+                                            <option value="" selected disabled>Seleccionar rol</option>
+                                            <option value="Administrador">Administrador</option>
+                                            <option value="Entrenador">Entrenador</option>
+                                            <option value="Estudiante">Estudiante</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <label for="selectTipoUsuario" class="form-label">Tipo de usuario</label>
+                                        <select id="selectTipoUsuario" class="form-select" required>
+                                            <option value="" selected disabled>Seleccionar tipo</option>
+                                            <option value="Interno">Interno</option>
+                                            <option value="Externo">Externo</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="txtDui" class="form-label">DUI / ID Estudiante</label>
+                                        <input type="text" id="txtDui" class="form-control"
+                                            placeholder="DUI / ID Estudiante" required>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="d-flex justify-content-end gap-3 mt-4">
+                            <button type="button" class="btn btn-secondary rounded-pill px-4"
+                                data-bs-dismiss="modal">Cancelar</button>
+                            <button type="submit" id="btnGuardarUsuario" class="btn btn-nl px-4">
+                                AGREGAR
+                            </button>
+                        </div>
+                    </form>
                 </div>
             </div>
-        </section>
-    </main>
+        </div>
+    </div>
 
     <!-- Link de SweetAlert -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
@@ -198,7 +280,7 @@
         crossorigin="anonymous"></script>
 
     <!-- Script de JS -->
-    <script src="../JS/controllers/index.controller.Js"></script>
+    <script type="module" src="../Js/controllers/GestionUsuario.controller.js"></script>
 
 </body>
 
