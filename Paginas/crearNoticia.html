@@ -15,9 +15,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 
-<body >
+<body>
 
-<!-- NavBar -->
+    <!-- NavBar -->
     <nav class="navbar py-3 ps-4 pe-2 border-bottom bg-dark">
         <div class="container-fluid d-flex justify-content-between align-items-center">
             <button class="btn p-0 me-3 text-white" type="button" data-bs-toggle="offcanvas"
@@ -48,16 +48,26 @@
         <div class="offcanvas-body px-0 py-0 flex-grow-1">
             <div class="d-flex flex-column gap-1 text-white">
                 <a class="item_sidebar d-flex align-items-center text-white gap-3 px-4 py-3 text-decoration-none"
-                    href="#">
+                    href="inicio.html">
                     <i class="fa-solid fa-house"></i>
                     <span class="text-uppercase" style="font-size: 1rem;">Inicio</span>
                 </a>
             </div>
 
-<!-- Opción Especialidades -->
+            <!-- Opción Estudiantes -->
             <div class="d-flex flex-column gap-1 text-white">
                 <a class="item_sidebar d-flex align-items-center text-white gap-3 px-4 py-3 text-decoration-none"
-                    href="#">
+                    href="gestionDeEstudiantes.html">
+                    <i class="fa-solid fa-screwdriver-wrench"></i>
+                    <span class="text-uppercase" style="font-size: 1rem;">Gestion de Estudiantes</span>
+                </a>
+            </div>
+
+
+            <!-- Opción Especialidades -->
+            <div class="d-flex flex-column gap-1 text-white">
+                <a class="item_sidebar d-flex align-items-center text-white gap-3 px-4 py-3 text-decoration-none"
+                    href="GestionEspecialidades.html">
                     <i class="fa-solid fa-screwdriver-wrench"></i>
                     <span class="text-uppercase" style="font-size: 1rem;">Especialidades</span>
                 </a>
@@ -66,7 +76,7 @@
             <!-- Opción Equipos -->
             <div class="d-flex flex-column gap-1 text-white">
                 <a class="item_sidebar d-flex align-items-center text-white gap-3 px-4 py-3 text-decoration-none"
-                    href="#">
+                    href="gestionDeEquipos.html">
                     <i class="fa-solid fa-screwdriver-wrench"></i>
                     <span class="text-uppercase" style="font-size: 1rem;">Gestion de Equipos</span>
                 </a>
@@ -75,7 +85,7 @@
             <!-- Opción Deportes -->
             <div class="d-flex flex-column gap-1 text-white">
                 <a class="item_sidebar d-flex align-items-center text-white gap-3 px-4 py-3 text-decoration-none"
-                    href="#">
+                    href="Gestion de deportes.html">
                     <i class="fa-solid fa-screwdriver-wrench"></i>
                     <span class="text-uppercase" style="font-size: 1rem;">Gestion de Deportes</span>
                 </a>
@@ -84,7 +94,7 @@
             <!-- Opción Partidos -->
             <div class="d-flex flex-column gap-1 text-white">
                 <a class="item_sidebar d-flex align-items-center text-white gap-3 px-4 py-3 text-decoration-none"
-                    href="#">
+                    href="gestionPartidos.html">
                     <i class="fa-solid fa-screwdriver-wrench"></i>
                     <span class="text-uppercase" style="font-size: 1rem;">Gestion de Partidos</span>
                 </a>
@@ -93,7 +103,7 @@
             <!-- Opción Calendario -->
             <div class="d-flex flex-column gap-1 text-white">
                 <a class="item_sidebar d-flex align-items-center text-white gap-3 px-4 py-3 text-decoration-none"
-                    href="#">
+                    href="calendario.html">
                     <i class="fa-solid fa-screwdriver-wrench"></i>
                     <span class="text-uppercase" style="font-size: 1rem;">Calendarizacion</span>
                 </a>
@@ -102,7 +112,7 @@
             <!-- Opción Usuario -->
             <div class="d-flex flex-column gap-1 text-white">
                 <a class="item_sidebar d-flex align-items-center text-white gap-3 px-4 py-3 text-decoration-none"
-                    href="#">
+                    href="GestionUsuarios.html">
                     <i class="fa-solid fa-screwdriver-wrench"></i>
                     <span class="text-uppercase" style="font-size: 1rem;">Gestion de Usuario</span>
                 </a>
@@ -111,7 +121,7 @@
             <!-- Opción Categoria -->
             <div class="d-flex flex-column gap-1 text-white">
                 <a class="item_sidebar d-flex align-items-center text-white gap-3 px-4 py-3 text-decoration-none"
-                    href="#">
+                    href="gestionCategorias.html">
                     <i class="fa-solid fa-screwdriver-wrench"></i>
                     <span class="text-uppercase" style="font-size: 1rem;">Gestion de Categoria</span>
                 </a>
@@ -120,12 +130,12 @@
             <!-- Opción Noticias -->
             <div class="d-flex flex-column gap-1 text-white">
                 <a class="item_sidebar d-flex align-items-center text-white gap-3 px-4 py-3 text-decoration-none"
-                    href="#">
+                    href="crearNoticia.html">
                     <i class="fa-solid fa-screwdriver-wrench"></i>
                     <span class="text-uppercase" style="font-size: 1rem;">Gestion de Noticias</span>
                 </a>
             </div>
-            
+
         </div>
 
         <div class="offcanvas-footer p-4 border-top border-white-5 mt-auto">
@@ -135,23 +145,26 @@
                 <span>Cerrar Sesión</span>
             </a>
         </div>
+
     </div>
+
     <div class="container mt-4">
         <h1>Crear Noticia</h1>
         <section class="row bg-white rounded-5 shadow-sm p-4 mt-3">
-        <div>
-            
-                
+            <div>
+
+
                 <div>
                     <label for="" class="">Titulo</label>
                     <input type="text" class="form-control rounded-pill shadow-sm" placeholder="Equipo">
                     <label for="" class="">Descripcion</label>
-                    <textarea class="form-control rounded-pill" id="exampleFormControlTextarea1" rows="3" placeholder="   Descripcion"></textarea>
+                    <textarea class="form-control rounded-pill" id="exampleFormControlTextarea1" rows="3"
+                        placeholder="   Descripcion"></textarea>
                 </div>
-            
-            
-        <div>
-             <label>Agregar foto</label>
+
+
+                <div>
+                    <label>Agregar foto</label>
                     <div class="subir-foto bg-secondary-subtle rounded-5 p-5 mg-4 text-center">
                         <h3>📷 </h3>
                         <h4>Subir Foto</h4>
@@ -160,12 +173,12 @@
                     <button class="btn btn-success rounded-pill px-5">
                         Crear noticia
                     </button>
-        </div>
+                </div>
         </section>
     </div>
     </main>
     </div>
-<!-- Link de SweetAlert -->
+    <!-- Link de SweetAlert -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     <!-- JS link bootstrap -->
