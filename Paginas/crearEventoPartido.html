@@ -1,138 +1,270 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>NeoLeague - Agregar evento</title>
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../css/style.css">
 </head>
 
 <body>
-    <main class="p-4 bg-light min-vh-100">
-            <div class="bg-white rounded-4 p-4 mb-4 shadow-sm">
+    <main id="contenido-crear-evento" class="p-4 bg-light min-vh-100">
 
-                <div class="mb-4">
-                    <div class="d-flex align-items-center">
-                        <button type="button" class="btn btn-link text-success p-0 fs-3" onclick="window.location.href='./gestionPartidos.html'"
-                            aria-label="Volver">
-                            ←
-                        </button>
-                        <div class="ms-3">
-                            <h1 class="h2 fw-bold mb-1">
-                                Agregar evento de partido
-                            </h1>
-                            <p class="text-muted mb-0">Fútbol Masculino</p>
-                        </div>
+        <section class="bg-white rounded-4 p-4 mb-4 shadow-sm" aria-labelledby="titulo-evento-partido">
+
+            <header class="mb-4">
+                <div class="d-flex align-items-center">
+
+                    <button id="btn-volver-partidos" type="button" class="btn btn-link text-success p-0 fs-3"
+                        onclick="window.location.href='./gestionPartidos.html'"
+                        aria-label="Volver a gestión de partidos">
+                        ←
+                    </button>
+
+                    <div class="ms-3">
+
+                        <h1 id="titulo-evento-partido" class="h2 fw-bold mb-1">
+                            Agregar evento de partido
+                        </h1>
+
+                        <p id="nombre-deporte-partido" class="text-muted mb-0">
+                            Fútbol Masculino
+                        </p>
+
                     </div>
                 </div>
+            </header>
+
+            <form id="form-evento-partido">
 
                 <div class="row mb-4">
+
                     <div class="col-md-6">
-                        <label class="form-label">Minuto</label>
-                        <input type="number" class="form-control form-control-lg rounded-pill" placeholder="Minuto">
+
+                        <label for="input-minuto" class="form-label">
+                            Minuto
+                        </label>
+
+                        <input id="input-minuto" name="minuto" type="number"
+                            class="form-control form-control-lg rounded-pill" placeholder="Minuto" min="0">
+
                     </div>
 
                     <div class="col-md-6">
-                        <label class="form-label">Tipo de evento</label>
-                        <select class="form-select form-select-lg rounded-pill">
-                            <option>Tipo de evento</option>
-                            <option>Gol</option>
-                            <option>Tarjeta amarilla</option>
-                            <option>Tarjeta roja</option>
-                            <option>Cambio</option>
+
+                        <label for="select-tipo-evento" class="form-label">
+                            Tipo de evento
+                        </label>
+
+                        <select id="select-tipo-evento" name="tipoEvento"
+                            class="form-select form-select-lg rounded-pill">
+
+                            <option value="" selected>
+                                Tipo de evento
+                            </option>
+
+                            <option value="gol">
+                                Gol
+                            </option>
+
+                            <option value="tarjeta-amarilla">
+                                Tarjeta amarilla
+                            </option>
+
+                            <option value="tarjeta-roja">
+                                Tarjeta roja
+                            </option>
+
+                            <option value="cambio">
+                                Cambio
+                            </option>
+
                         </select>
+
                     </div>
+
                 </div>
 
                 <div class="mb-4">
-                    <label class="form-label">Jugador</label>
-                    <select class="form-select form-select-lg rounded-pill">
-                        <option>Seleccionar jugador</option>
+
+                    <label for="select-jugador" class="form-label">
+                        Jugador
+                    </label>
+
+                    <select id="select-jugador" name="jugador" class="form-select form-select-lg rounded-pill">
+
+                        <option value="" selected>
+                            Seleccionar jugador
+                        </option>
+
                     </select>
+
                 </div>
 
                 <div class="mb-4">
-                    <label class="form-label">Detalle</label>
-                    <input type="text" class="form-control form-control-lg rounded-pill" placeholder="Detalle">
+
+                    <label for="input-detalle" class="form-label">
+                        Detalle
+                    </label>
+
+                    <input id="input-detalle" name="detalle" type="text"
+                        class="form-control form-control-lg rounded-pill" placeholder="Detalle">
+
                 </div>
 
                 <div class="text-end mb-5">
-                    <button type="button" class="btn btn-success rounded-pill px-4 py-2">
-                        <img src="../img/plus.png" alt="Agregar" width="24" height="24" class="btn-icon-space">
+
+                    <button id="btn-agregar-evento" type="button" class="btn btn-success rounded-pill px-4 py-2">
+
+                        <img src="../img/Plus.png" alt="" width="24" height="24" class="btn-icon-space">
+
                         Agregar otro evento
+
                     </button>
-                    <button type="button" class="btn btn-success rounded-pill px-4 py-2">
-                        <img src="../img/Vector.png" alt="Guardar" width="24" height="24" class="btn-icon-space">
+
+                    <button id="btn-guardar-evento" type="button" class="btn btn-success rounded-pill px-4 py-2">
+
+                        <img src="../img/Vector.png" alt="" width="24" height="24" class="btn-icon-space">
+
                         Guardar evento
+
                     </button>
-                    <button type="button" class="btn btn-danger rounded-pill px-4 py-2">
-                        <img src="../img/trashGray.png" alt="Eliminar" width="20" height="20" class="btn-icon-space">
+
+                    <button id="btn-eliminar-evento" type="button" class="btn btn-danger rounded-pill px-4 py-2">
+
+                        <img src="../img/trashGray.png" alt="" width="20" height="20" class="btn-icon-space">
+
                         Eliminar
+
                     </button>
+
                 </div>
 
+            </form>
+
+            <section id="seccion-eventos-partido" aria-labelledby="titulo-lista-eventos">
+
+                <h2 id="titulo-lista-eventos" class="visually-hidden">
+                    Eventos registrados del partido
+                </h2>
+
                 <div class="table-responsive rounded-3 shadow-sm">
-                    <table class="table table-hover align-middle mb-0">
+
+                    <table id="tabla-eventos-partido" class="table table-hover align-middle mb-0">
+
                         <thead>
                             <tr>
-                                <th>Min</th>
-                                <th>Tipo</th>
-                                <th>Jugador</th>
-                                <th>Detalle</th>
-                                <th>Acciones</th>
+                                <th scope="col">Min</th>
+                                <th scope="col">Tipo</th>
+                                <th scope="col">Jugador</th>
+                                <th scope="col">Detalle</th>
+                                <th scope="col">Acciones</th>
                             </tr>
                         </thead>
-                        <tbody>
-                            <tr>
+
+                        <tbody id="lista-eventos-partido">
+
+                            <tr data-evento-id="1">
+
                                 <td>46</td>
                                 <td>Gol</td>
                                 <td>Dimas Samuel</td>
                                 <td>-</td>
+
                                 <td>
-                                    <button type="button" class="btn btn-link p-0">
-                                        <img src="../img/Tools.png" alt="Editar" width="22" height="22">
+
+                                    <button type="button" class="btn btn-link p-0 btn-editar-evento" data-evento-id="1"
+                                        aria-label="Editar evento del minuto 46">
+
+                                        <img src="../img/Tools.png" alt="" width="22" height="22">
+
                                     </button>
-                                    <button type="button" class="btn btn-link p-0">
-                                        <img src="../img/trashRed.png" alt="Eliminar" width="22" height="22">
+
+                                    <button type="button" class="btn btn-link p-0 btn-eliminar-evento-lista"
+                                        data-evento-id="1" aria-label="Eliminar evento del minuto 46">
+
+                                        <img src="../img/trashRed.png" alt="" width="22" height="22">
+
                                     </button>
+
                                 </td>
+
                             </tr>
-                            <tr>
+
+                            <tr data-evento-id="2">
+
                                 <td>50</td>
                                 <td>Tarjeta amarilla</td>
                                 <td>Fernando Guillen</td>
                                 <td>-</td>
+
                                 <td>
-                                    <button type="button" class="btn btn-link p-0">
-                                        <img src="../img/Tools.png" alt="Editar" width="22" height="22">
+
+                                    <button type="button" class="btn btn-link p-0 btn-editar-evento" data-evento-id="2"
+                                        aria-label="Editar evento del minuto 50">
+
+                                        <img src="../img/Tools.png" alt="" width="22" height="22">
+
                                     </button>
-                                    <button type="button" class="btn btn-link p-0">
-                                        <img src="../img/trashRed.png" alt="Eliminar" width="22" height="22">
+
+                                    <button type="button" class="btn btn-link p-0 btn-eliminar-evento-lista"
+                                        data-evento-id="2" aria-label="Eliminar evento del minuto 50">
+
+                                        <img src="../img/trashRed.png" alt="" width="22" height="22">
+
                                     </button>
+
                                 </td>
+
                             </tr>
-                            <tr>
+
+                            <tr data-evento-id="3">
+
                                 <td>70</td>
                                 <td>Cambio</td>
                                 <td>Andre Lopez</td>
-                                <td>Sale Dimas Samuel<br>Entra Andre Lopez</td>
+
                                 <td>
-                                    <button type="button" class="btn btn-link p-0">
-                                        <img src="../img/Tools.png" alt="Editar" width="22" height="22">
-                                    </button>
-                                    <button type="button" class="btn btn-link p-0">
-                                        <img src="../img/trashRed.png" alt="Eliminar" width="22" height="22">
-                                    </button>
+                                    Sale Dimas Samuel
+                                    <br>
+                                    Entra Andre Lopez
                                 </td>
+
+                                <td>
+
+                                    <button type="button" class="btn btn-link p-0 btn-editar-evento" data-evento-id="3"
+                                        aria-label="Editar evento del minuto 70">
+
+                                        <img src="../img/Tools.png" alt="" width="22" height="22">
+
+                                    </button>
+
+                                    <button type="button" class="btn btn-link p-0 btn-eliminar-evento-lista"
+                                        data-evento-id="3" aria-label="Eliminar evento del minuto 70">
+
+                                        <img src="../img/trashRed.png" alt="" width="22" height="22">
+
+                                    </button>
+
+                                </td>
+
                             </tr>
+
                         </tbody>
+
                     </table>
+
                 </div>
 
-            </div>
-        </main>
+            </section>
+
+        </section>
+
+    </main>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 </body>
