@@ -1,0 +1,208 @@
+/* =============================================
+   TABLAPOSICIONES.CSS – Estilos premium
+   ============================================= */
+
+/* ─── Página ─── */
+.tabla-page {
+    background-color: #f4f6f8;
+    min-height: 100vh;
+}
+
+/* ─── Encabezado de página ─── */
+.tabla-header h1 {
+    font-size: 1.9rem;
+    font-weight: 800;
+    color: #111;
+    letter-spacing: -0.5px;
+}
+
+/* ─── Filtros Premium ─── */
+.filters-wrapper {
+    background: #fff;
+    padding: 1rem 1.5rem;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+    border: 1px solid #eaeaea;
+}
+
+.filter-group {
+    display: flex;
+    align-items: center;
+    background: #f8f9fa;
+    border-radius: 12px;
+    padding: 0.25rem;
+    border: 1.5px solid #e9ecef;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.filter-group:hover, .filter-group:focus-within {
+    border-color: #2e8b57;
+    background: #fff;
+    box-shadow: 0 0 0 4px rgba(46, 139, 87, 0.1);
+}
+
+.filter-icon {
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #2e8b57;
+    font-size: 1.1rem;
+    background: rgba(46, 139, 87, 0.1);
+    border-radius: 10px;
+    margin-right: 0.5rem;
+}
+
+.form-select-custom {
+    border: none;
+    background-color: transparent;
+    padding: 0.4rem 2rem 0.4rem 0.5rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #444;
+    min-width: 170px;
+    box-shadow: none !important;
+    cursor: pointer;
+}
+
+.form-select-custom:focus {
+    outline: none;
+}
+
+/* ─── Tarjeta contenedora de la tabla ─── */
+.tabla-card {
+    background: #fff !important;
+    border-radius: 18px !important;
+    box-shadow: 0 4px 30px rgba(0,0,0,0.07) !important;
+    overflow: hidden !important;
+    border: 1px solid #eaeaea !important;
+}
+
+/* ─── Encabezado de tabla ─── */
+.table-custom-header {
+    background: linear-gradient(90deg, #0f2d0f 0%, #1a4a1a 60%, #2e8b57 100%) !important;
+}
+
+.table-custom-header th {
+    color: rgba(255,255,255,0.9) !important;
+    font-size: 0.72rem !important;
+    font-weight: 700 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.9px !important;
+    border: none !important;
+    padding: 1.1rem 0.5rem !important;
+    background: transparent !important;
+}
+
+.table-custom-header th:first-child { padding-left: 1.5rem !important; }
+.table-custom-header th:last-child  { padding-right: 1.5rem !important; }
+
+/* ─── Animaciones ─── */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ─── Filas de la tabla ─── */
+.table-custom-row {
+    transition: background-color 0.15s, transform 0.2s;
+    animation: fadeInUp 0.5s ease forwards;
+    opacity: 0;
+}
+
+/* Retrasos escalonados para la animación de las filas */
+.table-custom-row:nth-child(1) { animation-delay: 0.1s; }
+.table-custom-row:nth-child(2) { animation-delay: 0.2s; }
+.table-custom-row:nth-child(3) { animation-delay: 0.3s; }
+.table-custom-row:nth-child(4) { animation-delay: 0.4s; }
+.table-custom-row:nth-child(5) { animation-delay: 0.5s; }
+.table-custom-row:nth-child(6) { animation-delay: 0.6s; }
+
+.table-custom-row td {
+    padding: 1.05rem 0.5rem;
+    vertical-align: middle;
+    border-bottom: 1px solid #f0f0f0;
+    color: #444;
+    font-size: 0.93rem;
+    font-weight: 500;
+}
+
+.table-custom-row td:first-child { padding-left: 1.5rem; }
+.table-custom-row td:last-child  { padding-right: 1.5rem; }
+
+.table-custom-row:last-child td { border-bottom: none; }
+
+.table-custom-row:hover {
+    background-color: #f0fbf4; /* Verde todavía más claro y vibrante en hover */
+}
+
+/* Efectos interactivos al hacer hover sobre la fila entera */
+.table-custom-row:hover .team-logo-small {
+    transform: scale(1.15) rotate(5deg);
+    box-shadow: 0 4px 12px rgba(46, 139, 87, 0.25);
+    border-color: #2e8b57;
+}
+
+.table-custom-row:hover .pos-badge {
+    transform: scale(1.15) translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.table-custom-row:hover .pts-cell {
+    color: #2e8b57;
+    text-shadow: 0 2px 10px rgba(46, 139, 87, 0.4);
+    transform: scale(1.15);
+}
+
+/* ─── Número de posición ─── */
+.pos-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    font-size: 0.9rem;
+    font-weight: 800;
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s ease;
+}
+
+.pos-1 { background-color: #FFF3CD; color: #a0720b; }
+.pos-2 { background-color: #e9ecef; color: #555; }
+.pos-3 { background-color: #fde8db; color: #b5541e; }
+.pos-other { background-color: rgba(46,139,87,0.1); color: #2e8b57; }
+
+/* ─── Logo del equipo ─── */
+.team-logo-small {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    object-fit: contain;
+    background: #f8f9fa;
+    border: 2px solid #e9ecef;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+/* ─── Columna PTS (puntos) ─── */
+.pts-cell {
+    font-size: 1.05rem;
+    font-weight: 800;
+    color: #1a4a1a;
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+/* ─── Columna valores cero ─── */
+.td-zero { color: #bbb !important; }
+
+/* ─── DG positivo / negativo ─── */
+.dg-pos { color: #2e8b57; font-weight: 700; }
+.dg-neg { color: #dc3545; font-weight: 700; }

@@ -1,0 +1,66 @@
+/* ==========================================================================
+   ESTILOS DE GESTIÓN DE CATEGORÍAS – NeoLeague (Rediseño Limpio)
+   ========================================================================== */
+
+:root {
+    --nl-green-primary: #226137;
+    --nl-green-light: #4cd17c;
+    --nl-green-dark: #163f24;
+    --nl-gold: #ffd700;
+}
+
+body {
+    background-color: #f8f9fa;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* ---- TABLA INSTITUCIONAL (Badges) ---- */
+.badge-id {
+    background-color: rgba(34, 97, 55, 0.1);
+    color: var(--nl-green-primary);
+    font-weight: 700;
+    padding: 6px 12px;
+    border-radius: 8px;
+    font-size: 0.85rem;
+}
+
+.badge-edad {
+    background-color: #f1f5f9;
+    color: #334155;
+    font-weight: 600;
+    padding: 6px 14px;
+    border-radius: 12px;
+    font-size: 0.85rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    border: 1px solid #e2e8f0;
+}
+
+.badge-edad i {
+    color: var(--nl-green-primary);
+}
+
+.badge-rango-total {
+    background: linear-gradient(135deg, rgba(34, 97, 55, 0.1) 0%, rgba(76, 209, 124, 0.15) 100%);
+    color: var(--nl-green-dark);
+    font-weight: 700;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    border: 1px solid rgba(34, 97, 55, 0.2);
+    display: inline-block;
+    white-space: nowrap;
+}
+
+/* ---- BOTONES DE ACCIÓN ---- */
+.btn-action-cat {
+    width: 34px;
+    height: 34px;
+    padding: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50% !important;
+    transition: all 0.2s ease;
+}

@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalles de Competición - Natación NeoLeague</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/inicio.css">
+    <link rel="stylesheet" href="../css/detalles_partido.css">
+    <link rel="stylesheet" href="../css/detalles_partido_natacion.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Favicon -->
+    <link rel="icon" href="../img/descarga.png">
+</head>
+<body class="bg-light">
+    <div id="nav-placeholder"></div>
+
+    <!-- Contenido Principal -->
+    <div class="container-fluid px-4 py-4" style="max-width: 1200px; margin: 0 auto;">
+        
+        <div class="d-flex justify-content-between align-items-center mb-3">
+            <a href="gestion_partidos.html" class="text-decoration-none text-muted fw-semibold">
+                <i class="bi bi-arrow-left"></i> Volver a Partidos
+            </a>
+            <button class="btn btn-success rounded-pill px-4 shadow-sm fw-bold" data-bs-toggle="modal" data-bs-target="#modalRegistrarTiempo" style="background-color: #226137; border: none;">
+                <i class="bi bi-stopwatch-fill me-2"></i> Registrar Tiempo / Carril
+            </button>
+        </div>
+
+        <!-- Swimming Header (NeoLeague Green Banner) -->
+        <div class="swimming-header shadow mb-4">
+            <div class="text-center mb-3">
+                <span class="badge bg-white text-dark fw-bold px-3 py-2 rounded-pill shadow-sm"><i class="bi bi-trophy-fill text-warning me-1"></i> Copa Neo 2026 - Natación</span>
+            </div>
+            <div class="text-center mb-4">
+                <h2 class="fw-bold m-0 mb-2 display-6">100m Estilo Mariposa - Final A (Masculino)</h2>
+                <p class="mb-0 opacity-75 fs-6"><i class="bi bi-water me-1"></i> Piscina Olímpica del Complejo NeoLeague &nbsp;|&nbsp; <i class="bi bi-calendar3 ms-2 me-1"></i> Sáb 25 Jul 2026, 9:00 AM</p>
+            </div>
+
+            <!-- Centro: Status & Stat Pills -->
+            <div class="d-flex flex-wrap justify-content-center align-items-center gap-3 mt-3">
+                <div class="dropdown">
+                    <button class="btn btn-sm btn-light rounded-pill dropdown-toggle px-3 fw-bold text-success shadow-sm" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="bi bi-record-circle-fill text-success me-1"></i> En Competición
+                    </button>
+                    <ul class="dropdown-menu shadow">
+                        <li><a class="dropdown-item" href="#"><i class="bi bi-calendar-event text-secondary me-2"></i> Programado</a></li>
+                        <li><a class="dropdown-item fw-bold" href="#"><i class="bi bi-record-circle-fill text-success me-2"></i> En Competición</a></li>
+                        <li><a class="dropdown-item" href="#"><i class="bi bi-check-circle-fill text-primary me-2"></i> Finalizado Oficial</a></li>
+                    </ul>
+                </div>
+
+                <span class="stat-pill"><i class="bi bi-flag-fill text-warning me-1"></i> Récord del Torneo: <strong>51.20s</strong> (2025)</span>
+                <span class="stat-pill"><i class="bi bi-person-lines-fill text-info me-1"></i> Carriles Activos: <strong>8</strong></span>
+                <span class="stat-pill"><i class="bi bi-award-fill text-success me-1"></i> Clasificación: <strong>Medallero Oficial</strong></span>
+            </div>
+        </div>
+
+        <!-- Navegación por pestañas -->
+        <div class="d-flex justify-content-between align-items-center mb-4 border-bottom">
+            <ul class="nav nav-tabs border-0 mb-0" id="swimmingTabs" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active px-4 py-3 border-0 border-bottom border-3" id="carriles-tab" data-bs-toggle="tab" data-bs-target="#carriles-pane" type="button" role="tab">Resultados por Carril</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link px-4 py-3 border-0" id="series-tab" data-bs-toggle="tab" data-bs-target="#series-pane" type="button" role="tab">Series Eliminatorias (Heats)</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link px-4 py-3 border-0" id="reglamento-tab" data-bs-toggle="tab" data-bs-target="#reglamento-pane" type="button" role="tab">Jueces y Reglamento</button>
+                </li>
+            </ul>
+            <a href="tabla_posiciones.html" class="btn btn-sm btn-outline-dark rounded-pill px-3 shadow-sm me-2">
+                <i class="fa-solid fa-medal me-1"></i> Medallero General
+            </a>
+        </div>
+
+        <!-- Contenido de las pestañas -->
+        <div class="tab-content" id="swimmingTabsContent">
+            
+            <!-- Pestaña 1: Resultados por Carril -->
+            <div class="tab-pane fade show active" id="carriles-pane" role="tabpanel" tabindex="0">
+                <div class="table-responsive">
+                    <table class="table table-swimming align-middle w-100 mb-4">
+                        <thead>
+                            <tr class="text-muted small text-uppercase">
+                                <th class="text-center" style="width: 80px;">Carril</th>
+                                <th>Nadador</th>
+                                <th>Colegio / Institución</th>
+                                <th class="text-center">Tiempo Oficial</th>
+                                <th class="text-center">Diferencia</th>
+                                <th class="text-center">Posición / Medalla</th>
+                                <th class="text-end pe-4">Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody id="swimmingTableBody">
+                            <!-- Carril 4 (1ro - Oro) -->
+                            <tr>
+                                <td class="text-center"><span class="lane-badge lane-badge-gold">4</span></td>
+                                <td>
+                                    <div class="d-flex align-items-center">
+                                        <img src="../img/donBosco.jpg" class="swimmer-avatar me-3" alt="Nadador">
+                                        <div>
+                                            <h6 class="mb-0 fw-bold text-dark">Dimas Samuel</h6>
+                                            <span class="badge bg-success bg-opacity-10 text-success small">Récord Personal 🌟</span>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="d-flex align-items-center">
+                                        <img src="../img/itr.jpg" class="team-icon-small me-2" alt="ITR">
+                                        <span class="fw-semibold text-dark">Ricaldone (ITR)</span>
+                                    </div>
+                                </td>
+                                <td class="text-center"><span class="time-display time-display-gold">52.45s</span></td>
+                                <td class="text-center text-muted fw-bold">-</td>
+                                <td class="text-center"><span class="badge bg-warning text-dark fw-bold px-3 py-2 rounded-pill shadow-sm"><i class="fa-solid fa-medal me-1"></i> 🥇 1er Lugar (Oro)</span></td>
+                                <td class="text-end pe-4">
+                                    <button class="btn btn-sm btn-light rounded-circle text-primary me-1" title="Editar tiempo"><i class="bi bi-pencil-square"></i></button>
+                                    <button class="btn btn-sm btn-light rounded-circle text-danger" title="Eliminar registro"><i class="bi bi-trash"></i></button>
+                                </td>
+                            </tr>
+
+                            <!-- Carril 5 (2do - Plata) -->
+                            <tr>
+                                <td class="text-center"><span class="lane-badge lane-badge-silver">5</span></td>
+                                <td>
+                                    <div class="d-flex align-items-center">
+                                        <img src="../img/donBosco.jpg" class="swimmer-avatar me-3" alt="Nadador">
+                                        <div>
+                                            <h6 class="mb-0 fw-bold text-dark">Fernando Guillén</h6>
+                                            <span class="text-muted small">Especialista Mariposa</span>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="d-flex align-items-center">
+                                        <img src="../img/donBosco.jpg" class="team-icon-small me-2" alt="Don Bosco">
+                                        <span class="fw-semibold text-dark">Don Bosco</span>
+                                    </div>
+                                </td>
+                                <td class="text-center"><span class="time-display">53.10s</span></td>
+                                <td class="text-center text-danger fw-semibold">+0.65s</td>
+                                <td class="text-center"><span class="badge bg-secondary text-white fw-bold px-3 py-2 rounded-pill shadow-sm"><i class="fa-solid fa-medal me-1"></i> 🥈 2do Lugar (Plata)</span></td>
+                                <td class="text-end pe-4">
+                                    <button class="btn btn-sm btn-light rounded-circle text-primary me-1" title="Editar tiempo"><i class="bi bi-pencil-square"></i></button>
+                                    <button class="btn btn-sm btn-light rounded-circle text-danger" title="Eliminar registro"><i class="bi bi-trash"></i></button>
+                                </td>
+                            </tr>
+
+                            <!-- Carril 3 (3ro - Bronce) -->
+                            <tr>
+                                <td class="text-center"><span class="lane-badge lane-badge-bronze">3</span></td>
+                                <td>
+                                    <div class="d-flex align-items-center">
+                                        <img src="../img/itr.jpg" class="swimmer-avatar me-3" alt="Nadador">
+                                        <div>
+                                            <h6 class="mb-0 fw-bold text-dark">Mario Ayala</h6>
+                                            <span class="text-muted small">Capitán de Equipo</span>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="d-flex align-items-center">
+                                        <img src="../img/itr.jpg" class="team-icon-small me-2" alt="ITR">
+                                        <span class="fw-semibold text-dark">Ricaldone (ITR)</span>
+                                    </div>
+                                </td>
+                                <td class="text-center"><span class="time-display">54.22s</span></td>
+                                <td class="text-center text-danger fw-semibold">+1.77s</td>
+                                <td class="text-center"><span class="badge bg-dark bg-opacity-75 text-white fw-bold px-3 py-2 rounded-pill shadow-sm" style="background-color: #cd7f32 !important;"><i class="fa-solid fa-medal me-1"></i> 🥉 3er Lugar (Bronce)</span></td>
+                                <td class="text-end pe-4">
+                                    <button class="btn btn-sm btn-light rounded-circle text-primary me-1" title="Editar tiempo"><i class="bi bi-pencil-square"></i></button>
+                                    <button class="btn btn-sm btn-light rounded-circle text-danger" title="Eliminar registro"><i class="bi bi-trash"></i></button>
+                                </td>
+                            </tr>
+
+                            <!-- Carril 6 (4to) -->
+                            <tr>
+                                <td class="text-center"><span class="lane-badge">6</span></td>
+                                <td>
+                                    <div class="d-flex align-items-center">
+                                        <img src="../img/jose.png" class="swimmer-avatar me-3" alt="Nadador">
+                                        <div>
+                                            <h6 class="mb-0 fw-bold text-dark">Carlos Mendoza</h6>
+                                            <span class="text-muted small">Clasificado Heat 2</span>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="d-flex align-items-center">
+                                        <img src="../img/jose.png" class="team-icon-small me-2" alt="San José">
+                                        <span class="fw-semibold text-dark">San José</span>
+                                    </div>
+                                </td>
+                                <td class="text-center"><span class="time-display">55.08s</span></td>
+                                <td class="text-center text-muted fw-semibold">+2.63s</td>
+                                <td class="text-center"><span class="badge bg-light text-dark border fw-semibold px-3 py-1 rounded-pill">4to Lugar</span></td>
+                                <td class="text-end pe-4">
+                                    <button class="btn btn-sm btn-light rounded-circle text-primary me-1" title="Editar tiempo"><i class="bi bi-pencil-square"></i></button>
+                                    <button class="btn btn-sm btn-light rounded-circle text-danger" title="Eliminar registro"><i class="bi bi-trash"></i></button>
+                                </td>
+                            </tr>
+
+                            <!-- Carril 2 (5to) -->
+                            <tr>
+                                <td class="text-center"><span class="lane-badge">2</span></td>
+                                <td>
+                                    <div class="d-flex align-items-center">
+                                        <img src="../img/cecilia.png" class="swimmer-avatar me-3" alt="Nadador">
+                                        <div>
+                                            <h6 class="mb-0 fw-bold text-dark">André López</h6>
+                                            <span class="text-muted small">Clasificado Heat 1</span>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="d-flex align-items-center">
+                                        <img src="../img/cecilia.png" class="team-icon-small me-2" alt="Santa Cecilia">
+                                        <span class="fw-semibold text-dark">Santa Cecilia</span>
+                                    </div>
+                                </td>
+                                <td class="text-center"><span class="time-display">56.15s</span></td>
+                                <td class="text-center text-muted fw-semibold">+3.70s</td>
+                                <td class="text-center"><span class="badge bg-light text-dark border fw-semibold px-3 py-1 rounded-pill">5to Lugar</span></td>
+                                <td class="text-end pe-4">
+                                    <button class="btn btn-sm btn-light rounded-circle text-primary me-1" title="Editar tiempo"><i class="bi bi-pencil-square"></i></button>
+                                    <button class="btn btn-sm btn-light rounded-circle text-danger" title="Eliminar registro"><i class="bi bi-trash"></i></button>
+                                </td>
+                            </tr>
+
+                            <!-- Carril 7 (6to) -->
+                            <tr>
+                                <td class="text-center"><span class="lane-badge">7</span></td>
+                                <td>
+                                    <div class="d-flex align-items-center">
+                                        <img src="../img/maria.png" class="swimmer-avatar me-3" alt="Nadador">
+                                        <div>
+                                            <h6 class="mb-0 fw-bold text-dark">Juan Pérez</h6>
+                                            <span class="text-muted small">Juvenil A</span>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="d-flex align-items-center">
+                                        <img src="../img/maria.png" class="team-icon-small me-2" alt="María Auxiliar">
+                                        <span class="fw-semibold text-dark">María Auxiliar</span>
+                                    </div>
+                                </td>
+                                <td class="text-center"><span class="time-display">57.90s</span></td>
+                                <td class="text-center text-muted fw-semibold">+5.45s</td>
+                                <td class="text-center"><span class="badge bg-light text-dark border fw-semibold px-3 py-1 rounded-pill">6to Lugar</span></td>
+                                <td class="text-end pe-4">
+                                    <button class="btn btn-sm btn-light rounded-circle text-primary me-1" title="Editar tiempo"><i class="bi bi-pencil-square"></i></button>
+                                    <button class="btn btn-sm btn-light rounded-circle text-danger" title="Eliminar registro"><i class="bi bi-trash"></i></button>
+                                </td>
+                            </tr>
+
+                            <!-- Carril 1 (7mo) -->
+                            <tr>
+                                <td class="text-center"><span class="lane-badge">1</span></td>
+                                <td>
+                                    <div class="d-flex align-items-center">
+                                        <img src="../img/itr.jpg" class="swimmer-avatar me-3" alt="Nadador">
+                                        <div>
+                                            <h6 class="mb-0 fw-bold text-dark">Lucas Torres</h6>
+                                            <span class="text-muted small">Clasificado Heat 2</span>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="d-flex align-items-center">
+                                        <img src="../img/itr.jpg" class="team-icon-small me-2" alt="ITR">
+                                        <span class="fw-semibold text-dark">Ricaldone (ITR)</span>
+                                    </div>
+                                </td>
+                                <td class="text-center"><span class="time-display">58.30s</span></td>
+                                <td class="text-center text-muted fw-semibold">+5.85s</td>
+                                <td class="text-center"><span class="badge bg-light text-dark border fw-semibold px-3 py-1 rounded-pill">7mo Lugar</span></td>
+                                <td class="text-end pe-4">
+                                    <button class="btn btn-sm btn-light rounded-circle text-primary me-1" title="Editar tiempo"><i class="bi bi-pencil-square"></i></button>
+                                    <button class="btn btn-sm btn-light rounded-circle text-danger" title="Eliminar registro"><i class="bi bi-trash"></i></button>
+                                </td>
+                            </tr>
+
+                            <!-- Carril 8 (8vo) -->
+                            <tr>
+                                <td class="text-center"><span class="lane-badge">8</span></td>
+                                <td>
+                                    <div class="d-flex align-items-center">
+                                        <img src="../img/donBosco.jpg" class="swimmer-avatar me-3" alt="Nadador">
+                                        <div>
+                                            <h6 class="mb-0 fw-bold text-dark">Mateo Silva</h6>
+                                            <span class="text-muted small">Novato del Año</span>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="d-flex align-items-center">
+                                        <img src="../img/donBosco.jpg" class="team-icon-small me-2" alt="Don Bosco">
+                                        <span class="fw-semibold text-dark">Don Bosco</span>
+                                    </div>
+                                </td>
+                                <td class="text-center"><span class="time-display">59.12s</span></td>
+                                <td class="text-center text-muted fw-semibold">+6.67s</td>
+                                <td class="text-center"><span class="badge bg-light text-dark border fw-semibold px-3 py-1 rounded-pill">8vo Lugar</span></td>
+                                <td class="text-end pe-4">
+                                    <button class="btn btn-sm btn-light rounded-circle text-primary me-1" title="Editar tiempo"><i class="bi bi-pencil-square"></i></button>
+                                    <button class="btn btn-sm btn-light rounded-circle text-danger" title="Eliminar registro"><i class="bi bi-trash"></i></button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Pestaña 2: Series Eliminatorias (Heats) -->
+            <div class="tab-pane fade" id="series-pane" role="tabpanel" tabindex="0">
+                <div class="row g-4">
+                    <div class="col-md-6">
+                        <div class="card border-0 shadow-sm rounded-4 p-4 h-100">
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <h5 class="fw-bold m-0"><i class="bi bi-stopwatch text-success me-2"></i> Heat Eliminatorio #1</h5>
+                                <span class="badge bg-success rounded-pill">4 Clasificados</span>
+                            </div>
+                            <p class="text-muted small mb-3">Disputado a las 8:00 AM - Los 4 mejores tiempos pasaron a la Final A.</p>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item px-0 d-flex justify-content-between align-items-center">
+                                    <div><strong>1. Dimas Samuel (ITR)</strong></div> <span class="badge bg-light text-dark fw-bold">52.80s</span>
+                                </li>
+                                <li class="list-group-item px-0 d-flex justify-content-between align-items-center">
+                                    <div><strong>2. Mario Ayala (ITR)</strong></div> <span class="badge bg-light text-dark fw-bold">54.50s</span>
+                                </li>
+                                <li class="list-group-item px-0 d-flex justify-content-between align-items-center">
+                                    <div><strong>3. André López (St. Cecilia)</strong></div> <span class="badge bg-light text-dark fw-bold">56.02s</span>
+                                </li>
+                                <li class="list-group-item px-0 d-flex justify-content-between align-items-center">
+                                    <div><strong>4. Juan Pérez (María Aux)</strong></div> <span class="badge bg-light text-dark fw-bold">57.45s</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card border-0 shadow-sm rounded-4 p-4 h-100">
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <h5 class="fw-bold m-0"><i class="bi bi-stopwatch text-success me-2"></i> Heat Eliminatorio #2</h5>
+                                <span class="badge bg-success rounded-pill">4 Clasificados</span>
+                            </div>
+                            <p class="text-muted small mb-3">Disputado a las 8:20 AM - Los 4 mejores tiempos pasaron a la Final A.</p>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item px-0 d-flex justify-content-between align-items-center">
+                                    <div><strong>1. Fernando Guillén (Don Bosco)</strong></div> <span class="badge bg-light text-dark fw-bold">53.40s</span>
+                                </li>
+                                <li class="list-group-item px-0 d-flex justify-content-between align-items-center">
+                                    <div><strong>2. Carlos Mendoza (San José)</strong></div> <span class="badge bg-light text-dark fw-bold">55.12s</span>
+                                </li>
+                                <li class="list-group-item px-0 d-flex justify-content-between align-items-center">
+                                    <div><strong>3. Lucas Torres (ITR)</strong></div> <span class="badge bg-light text-dark fw-bold">58.10s</span>
+                                </li>
+                                <li class="list-group-item px-0 d-flex justify-content-between align-items-center">
+                                    <div><strong>4. Mateo Silva (Don Bosco)</strong></div> <span class="badge bg-light text-dark fw-bold">59.00s</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pestaña 3: Jueces y Reglamento -->
+            <div class="tab-pane fade" id="reglamento-pane" role="tabpanel" tabindex="0">
+                <div class="card border-0 shadow-sm rounded-4 p-4">
+                    <h5 class="fw-bold mb-3"><i class="bi bi-shield-check text-success me-2"></i> Panel Técnico y Arbitral</h5>
+                    <div class="row g-3 mb-4">
+                        <div class="col-md-4">
+                            <div class="p-3 bg-light rounded-3">
+                                <small class="text-muted d-block text-uppercase fw-bold">Juez Árbitro Principal</small>
+                                <strong class="text-dark">Lic. Roberto Gómez</strong>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="p-3 bg-light rounded-3">
+                                <small class="text-muted d-block text-uppercase fw-bold">Juez de Salida (Starter)</small>
+                                <strong class="text-dark">Ing. Mónica Castro</strong>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="p-3 bg-light rounded-3">
+                                <small class="text-muted d-block text-uppercase fw-bold">Cronometraje Electrónico</small>
+                                <strong class="text-dark">Omega NeoTiming Sys</strong>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <h6 class="fw-bold text-dark mb-2">Normativa de Estilo Mariposa (FINA / NeoLeague)</h6>
+                    <ul class="text-muted small mb-0">
+                        <li class="mb-2">Ambos brazos deben ser impulsados simultáneamente hacia adelante por encima del agua y traídos hacia atrás simultáneamente en todo el recorrido.</li>
+                        <li class="mb-2">En los virajes y en la llegada, el toque deberá hacerse con ambas manos simultáneamente, ya sea sobre, bajo o a nivel de la superficie del agua.</li>
+                        <li>Cualquier salida en falso (salida antes de la señal del Starter) resultará en la descalificación inmediata del nadador en el carril infractor.</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Modal Registrar / Editar Tiempo -->
+    <div class="modal fade" id="modalRegistrarTiempo" tabindex="-1" aria-labelledby="modalRegistrarTiempoLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content border-0 shadow-lg rounded-4">
+                <div class="modal-header text-white rounded-top-4 p-4" style="background-color: #226137;">
+                    <h5 class="modal-title fw-bold" id="modalRegistrarTiempoLabel"><i class="bi bi-stopwatch-fill me-2"></i> Registrar Tiempo por Carril</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-4">
+                    <form id="formRegistrarTiempo">
+                        <div class="row g-3 mb-3">
+                            <div class="col-6">
+                                <label class="form-label fw-bold small text-muted">Número de Carril</label>
+                                <select class="form-select rounded-3" id="selectCarril" required>
+                                    <option value="">Seleccionar...</option>
+                                    <option value="1">Carril 1</option>
+                                    <option value="2">Carril 2</option>
+                                    <option value="3">Carril 3</option>
+                                    <option value="4">Carril 4 (Centro)</option>
+                                    <option value="5">Carril 5 (Centro)</option>
+                                    <option value="6">Carril 6</option>
+                                    <option value="7">Carril 7</option>
+                                    <option value="8">Carril 8</option>
+                                </select>
+                            </div>
+                            <div class="col-6">
+                                <label class="form-label fw-bold small text-muted">Posición Oficial</label>
+                                <select class="form-select rounded-3" id="selectPosicion" required>
+                                    <option value="1">🥇 1er Lugar (Oro)</option>
+                                    <option value="2">🥈 2do Lugar (Plata)</option>
+                                    <option value="3">🥉 3er Lugar (Bronce)</option>
+                                    <option value="4">4to Lugar</option>
+                                    <option value="5">5to Lugar</option>
+                                    <option value="6">6to Lugar</option>
+                                    <option value="7">7mo Lugar</option>
+                                    <option value="8">8vo Lugar</option>
+                                    <option value="DSQ">Descalificado (DSQ)</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label fw-bold small text-muted">Nombre del Nadador</label>
+                            <input type="text" class="form-control rounded-3" id="inputNadador" placeholder="Ej: Dimas Samuel" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label fw-bold small text-muted">Colegio / Equipo</label>
+                            <select class="form-select rounded-3" id="selectColegio" required>
+                                <option value="Ricaldone (ITR)">Ricaldone (ITR)</option>
+                                <option value="Don Bosco">Don Bosco</option>
+                                <option value="San José">San José</option>
+                                <option value="Santa Cecilia">Santa Cecilia</option>
+                                <option value="María Auxiliar">María Auxiliar</option>
+                            </select>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label fw-bold small text-muted">Tiempo Oficial (segundos / centésimas)</label>
+                            <div class="input-group">
+                                <span class="input-group-text bg-light text-muted fw-bold"><i class="bi bi-clock-history"></i></span>
+                                <input type="text" class="form-control rounded-end-3" id="inputTiempo" placeholder="Ej: 52.45s" required>
+                            </div>
+                            <small class="text-muted" style="font-size: 0.75rem;">Formato estándar FINA: segundos.centésimas (ej. 52.45s)</small>
+                        </div>
+
+                        <div class="d-flex justify-content-end gap-2 mt-4">
+                            <button type="button" class="btn btn-light rounded-pill px-4 fw-semibold" data-bs-dismiss="modal">Cancelar</button>
+                            <button type="submit" class="btn btn-success rounded-pill px-4 fw-bold shadow-sm" style="background-color: #226137; border: none;">Guardar Registro</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="../js/global.js"></script>
+    <script src="../js/detalles_partido_natacion.js"></script>
+</body>
+</html>

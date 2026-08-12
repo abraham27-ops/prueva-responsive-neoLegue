@@ -1,0 +1,40 @@
+/* ==========================================================================
+   ESTILOS DE GESTIÓN DE DEPORTES – NeoLeague
+   Diseño sobrio, estandarizado y responsivo
+   ========================================================================== */
+
+/* Botones de acción en tabla */
+.btn-action-deporte {
+    width: 32px;
+    height: 32px;
+    padding: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50% !important;
+    transition: all 0.2s ease;
+}
+
+/* Campos de formulario */
+.form-control-custom {
+    border-radius: 8px;
+    border: 1px solid #ced4da;
+    padding: 0.6rem 1rem;
+    font-size: 0.95rem;
+    transition: all 0.2s ease;
+}
+
+.form-control-custom:focus {
+    border-color: var(--primary-color, #226137);
+    box-shadow: 0 0 0 0.25rem rgba(34, 97, 55, 0.15);
+}
+
+/* Filas de la tabla interactiva */
+#tablaEstructura tbody tr {
+    transition: all 0.2s ease;
+}
+
+#tablaEstructura tbody tr:hover {
+    background-color: #f8f9fa;
+    cursor: default;
+}

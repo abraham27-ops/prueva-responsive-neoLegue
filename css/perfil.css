@@ -1,0 +1,256 @@
+/* =============================================
+   PERFIL.CSS – Estilos para perfil.html
+   ============================================= */
+
+/* ─── Página general ─── */
+.perfil-page {
+    background-color: #f4f6f8;
+    min-height: 100vh;
+}
+
+/* ─── Tarjeta contenedor principal ─── */
+.perfil-card {
+    background: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.07);
+    overflow: hidden;
+    padding: 2.5rem;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* ─── Columna de foto de perfil ─── */
+.perfil-foto-col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-right: 1px solid #eaeaea;
+    padding-right: 2rem;
+}
+
+/* ─── Foto de perfil (avatar) ─── */
+.perfil-avatar-wrapper {
+    position: relative;
+    width: 160px;
+    height: 160px;
+    margin-bottom: 1rem;
+}
+
+.perfil-avatar {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #1a4a1a 0%, #2e8b57 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 4rem;
+    color: rgba(255, 255, 255, 0.85);
+    box-shadow: 0 8px 25px rgba(46, 139, 87, 0.35);
+    border: 4px solid #fff;
+    outline: 3px solid #2e8b57;
+}
+
+.perfil-avatar-edit {
+    position: absolute;
+    bottom: 4px;
+    right: 4px;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background-color: #2e8b57;
+    border: 2px solid #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.2s;
+    color: #fff;
+    font-size: 0.9rem;
+}
+
+.perfil-avatar-edit:hover {
+    background-color: #1a4a1a;
+    transform: scale(1.1);
+}
+
+.perfil-name {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 0.15rem;
+}
+
+.perfil-role-badge {
+    display: inline-block;
+    background-color: rgba(46, 139, 87, 0.12);
+    color: #2e8b57;
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding: 0.3rem 1rem;
+    border-radius: 999px;
+    margin-bottom: 1.5rem;
+}
+
+/* ─── Formulario ─── */
+.perfil-form .form-label {
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    font-weight: 700;
+    color: #888;
+    margin-bottom: 0.35rem;
+}
+
+.perfil-form .form-control {
+    background-color: #f8f9fa;
+    border: 1.5px solid #e4e6ea;
+    border-radius: 10px;
+    color: #2d2d2d;
+    font-size: 0.97rem;
+    padding: 0.7rem 1rem;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.perfil-form .form-control:focus {
+    background-color: #fff;
+    border-color: #2e8b57;
+    box-shadow: 0 0 0 0.2rem rgba(46, 139, 87, 0.2);
+}
+
+.perfil-form .form-control[readonly] {
+    color: #6c757d;
+    background-color: #f1f3f5;
+    cursor: not-allowed;
+}
+
+/* ─── Botones principales del perfil ─── */
+.btn-perfil-primary {
+    background-color: #2e8b57;
+    color: #fff;
+    border: none;
+    border-radius: 12px;
+    padding: 0.75rem 2rem;
+    font-weight: 700;
+    font-size: 1rem;
+    letter-spacing: 0.3px;
+    transition: background-color 0.2s, transform 0.15s, box-shadow 0.2s;
+    box-shadow: 0 4px 15px rgba(46, 139, 87, 0.35);
+    width: 100%;
+}
+
+.btn-perfil-primary:hover {
+    background-color: #22714a;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(46, 139, 87, 0.45);
+    color: #fff;
+}
+
+.btn-perfil-danger {
+    background-color: transparent;
+    color: #dc3545;
+    border: 2px solid #dc3545;
+    border-radius: 12px;
+    padding: 0.73rem 2rem;
+    font-weight: 700;
+    font-size: 1rem;
+    letter-spacing: 0.3px;
+    transition: background-color 0.2s, color 0.2s, transform 0.15s, box-shadow 0.2s;
+    width: 100%;
+}
+
+.btn-perfil-danger:hover {
+    background-color: #dc3545;
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(220, 53, 69, 0.3);
+}
+
+/* ─── Sección de Favoritos ─── */
+.favoritos-section {
+    padding-top: 2.5rem;
+    margin-top: 2.5rem;
+    border-top: 1px solid #eaeaea;
+}
+
+.favoritos-section h3 {
+    font-size: 1.3rem;
+    font-weight: 700;
+}
+
+/* Botones de filtros de favoritos */
+.btn-filtro {
+    border: 1.5px solid #dee2e6;
+    background: #fff;
+    color: #555;
+    border-radius: 999px;
+    padding: 0.35rem 1rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    transition: all 0.2s;
+}
+
+.btn-filtro:hover {
+    border-color: #2e8b57;
+    color: #2e8b57;
+}
+
+.btn-filtro.active {
+    background-color: #1a4a1a;
+    border-color: #1a4a1a;
+    color: #fff;
+}
+
+/* ─── Tarjetas de Favoritos ─── */
+.fav-card {
+    background: #fff;
+    border: 1.5px solid #eaeaea;
+    border-radius: 16px;
+    padding: 1.25rem;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.fav-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 28px rgba(46, 139, 87, 0.12);
+    border-color: #a8d5b5;
+}
+
+.fav-card-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* ─── Animación de corazón ─── */
+@keyframes heartBeatPop {
+    0%   { transform: scale(1); }
+    25%  { transform: scale(1.45); }
+    50%  { transform: scale(0.92); }
+    75%  { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+
+.heart-btn {
+    background: none;
+    border: none;
+    padding: 0;
+    line-height: 1;
+    font-size: 1.4rem;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.heart-btn i {
+    color: #dee2e6;
+    transition: color 0.2s;
+}
+
+.heart-btn.active i {
+    color: #e63950;
+    animation: heartBeatPop 0.5s ease-in-out forwards;
+}

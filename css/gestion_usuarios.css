@@ -1,0 +1,304 @@
+/* ==========================================================
+   NeoLeague — Sistema visual compartido
+   Sidebar agrupado + header + buscador + chips + row-cards
+   ========================================================== */
+
+:root {
+    --nl-verde: #215d35;
+    --nl-verde-hover: #1a4a2a;
+    --nl-rojo: #de4537;
+    --nl-sidebar: #212121;
+    --nl-sidebar-hover: rgba(255, 255, 255, 0.06);
+}
+
+body {
+    background-color: #f4f5f2;
+}
+
+
+
+/* ---------- Header de página ---------- */
+.nl-breadcrumb {
+    font-size: .8rem;
+    color: #8a8a86;
+    margin-bottom: .15rem;
+}
+
+.nl-page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+/* ---------- Botones "pill" ---------- */
+.btn-nl {
+    background-color: var(--nl-verde);
+    border: none;
+    border-radius: 30px;
+    color: #fff;
+    font-weight: 600;
+    padding: .6rem 1.25rem;
+}
+
+.btn-nl:hover {
+    background-color: var(--nl-verde-hover);
+    color: #fff;
+}
+
+.btn-nl-outline {
+    background-color: #fff;
+    border: 1px solid rgba(0, 0, 0, .1);
+    border-radius: 30px;
+    color: #333;
+    font-weight: 500;
+}
+
+/* ---------- Filtros Premium (Sleek Bar) ---------- */
+.filters-wrapper {
+    background: #fff;
+    padding: 0.75rem 1.25rem;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+    border: 1px solid #eaeaea;
+}
+
+.search-group {
+    display: flex;
+    align-items: center;
+    background: #f8f9fa;
+    border-radius: 12px;
+    padding: 0.25rem;
+    border: 1.5px solid #e9ecef;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.search-group:hover, .search-group:focus-within {
+    border-color: #226137;
+    background: #fff;
+    box-shadow: 0 0 0 4px rgba(34, 97, 55, 0.1);
+}
+
+.search-icon {
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #226137;
+    font-size: 1.1rem;
+    background: rgba(34, 97, 55, 0.1);
+    border-radius: 10px;
+    margin-right: 0.5rem;
+    flex-shrink: 0;
+}
+
+.form-control-custom {
+    border: none;
+    background-color: transparent;
+    padding: 0.4rem 0.5rem;
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: #444;
+    box-shadow: none !important;
+}
+
+.form-control-custom:focus {
+    outline: none;
+}
+
+/* Botones de filtros */
+.btn-filtro {
+    border: 1.5px solid #dee2e6;
+    background: #fff;
+    color: #555;
+    border-radius: 999px;
+    padding: 0.35rem 1rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    transition: all 0.2s;
+}
+
+.btn-filtro:hover {
+    border-color: #226137;
+    color: #226137;
+}
+
+.btn-filtro.active {
+    background-color: #226137;
+    border-color: #226137;
+    color: #fff;
+    box-shadow: 0 4px 12px rgba(34, 97, 55, 0.3);
+}
+
+/* ---------- Row cards ---------- */
+.nl-row-card {
+    background-color: #fff;
+    border: 1px solid rgba(0, 0, 0, .07);
+    border-radius: 20px;
+    padding: .75rem 1.1rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, .04);
+}
+
+.nl-avatar {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-weight: 600;
+    font-size: .85rem;
+    flex-shrink: 0;
+    background-color: var(--nl-verde);
+}
+
+.nl-row-title {
+    font-weight: 600;
+    font-size: .95rem;
+    margin: 0;
+}
+
+.nl-row-subtitle {
+    font-size: .8rem;
+    color: #9a9a96;
+    margin: 0;
+}
+
+.nl-badge {
+    font-size: .78rem;
+    padding: .3rem .7rem;
+    border-radius: 12px;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.nl-badge-admin {
+    background-color: #e6f1fb;
+    color: #0c447c;
+}
+
+.nl-badge-entrenador {
+    background-color: #faeeda;
+    color: #854f0b;
+}
+
+.nl-badge-estudiante {
+    background-color: #eaf3de;
+    color: #27500a;
+}
+
+.nl-badge-default {
+    background-color: #f1efe8;
+    color: #444441;
+}
+
+.nl-row-actions button {
+    border: none;
+    background: transparent;
+    font-size: 1.05rem;
+    padding: .25rem .4rem;
+}
+
+.nl-row-actions .editar {
+    color: #555;
+}
+
+.nl-row-actions .eliminar {
+    color: var(--nl-rojo);
+}
+
+.nl-empty {
+    text-align: center;
+    padding: 3rem 1rem;
+    color: #9a9a96;
+}
+
+/* ---------- Modal ---------- */
+.modal-nl .modal-content {
+    border-radius: 2rem;
+    border: none;
+}
+
+.modal-nl .modal-header {
+    border-bottom: none;
+    padding: 1.75rem 2rem .5rem;
+}
+
+.modal-nl .modal-title {
+    font-weight: 700;
+}
+
+.modal-nl .modal-body {
+    padding: .5rem 2rem 2rem;
+}
+
+.modal-nl .form-label {
+    font-weight: 500;
+    color: #000;
+    opacity: .7;
+}
+
+.modal-nl .form-control,
+.modal-nl .form-select {
+    border-radius: 30px;
+    border: 1px solid rgba(0, 0, 0, .07);
+    box-shadow: 0 4px 4px rgba(0, 0, 0, .1);
+    padding: .75rem 1.25rem;
+}
+
+.modal-nl .foto-dropzone {
+    background-color: #d9d9d9;
+    border-radius: 2rem;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    max-width: 220px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    cursor: pointer;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+}
+
+.modal-nl .foto-dropzone img.preview {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    inset: 0;
+}
+
+.modal-nl .foto-dropzone i {
+    font-size: 2.5rem;
+    color: rgba(0, 0, 0, .55);
+}
+
+.modal-nl .foto-dropzone span {
+    font-size: .9rem;
+    color: rgba(0, 0, 0, .5);
+    margin-top: .25rem;
+}
+
+/* Animaciones Hover (Tarjetas de Usuario) */
+.transition-all {
+    transition: all 0.3s ease !important;
+}
+
+.hover-lift {
+    cursor: pointer;
+}
+
+.hover-lift:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1) !important;
+}

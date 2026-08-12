@@ -1,0 +1,526 @@
+/* ==========================================================================
+   PANTALLA DE CARGA INSTITUCIONAL DEPORTIVA – NeoLeague
+   Enfoque: Gestión de Deportes (Fútbol, Baloncesto, Natación, Voleibol, etc.)
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body.loading-body {
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* Fondo verde estadio profundo con iluminación de césped y torneos */
+    background: radial-gradient(circle at 50% 30%, #1a4d2c 0%, #0d2818 55%, #06120b 100%);
+    overflow: hidden;
+    position: relative;
+    font-family: 'Poppins', sans-serif;
+    color: #ffffff;
+}
+
+/* ==========================================================
+   CAPA 1: REFLECTORES DE ESTADIO (STADIUM LIGHTS)
+   ========================================================== */
+.stadium-lights {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.stadium-glow {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.35;
+    animation: lightFloat 14s ease-in-out infinite alternate;
+}
+
+.stadium-glow.light-1 {
+    width: 550px; height: 550px;
+    background: radial-gradient(circle, #2e8b57 0%, transparent 70%);
+    top: -15%; left: 10%;
+}
+
+.stadium-glow.light-2 {
+    width: 600px; height: 600px;
+    background: radial-gradient(circle, #226137 0%, transparent 70%);
+    bottom: -20%; right: 5%;
+    animation-delay: -4s;
+}
+
+.stadium-glow.light-3 {
+    width: 450px; height: 450px;
+    background: radial-gradient(circle, #ffd700 0%, transparent 80%); /* Toque de trofeo dorado */
+    top: 40%; left: 55%;
+    opacity: 0.12;
+    animation-delay: -8s;
+}
+
+@keyframes lightFloat {
+    0%   { transform: translate(0, 0) scale(1); }
+    50%  { transform: translate(40px, -30px) scale(1.15); }
+    100% { transform: translate(-25px, 25px) scale(0.95); }
+}
+
+/* ==========================================================
+   CAPA 2: GEOMETRÍA DE CANCHAS Y PISTAS DEPORTIVAS
+   ========================================================== */
+.field-lines {
+    position: fixed;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0.1;
+}
+
+.field-circle-big {
+    position: absolute;
+    width: 750px;
+    height: 750px;
+    border: 2px solid #ffffff;
+    border-radius: 50%;
+}
+
+.field-circle-mid {
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    border: 1px dashed #4cd17c;
+    border-radius: 50%;
+    animation: rotateSlow 40s linear infinite;
+}
+
+.field-line-center {
+    position: absolute;
+    width: 1200px;
+    height: 2px;
+    background: #ffffff;
+    transform: rotate(25deg);
+}
+
+@keyframes rotateSlow {
+    0%   { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* ==========================================================
+   CAPA 3: ICONOS DEPORTIVOS FLOTANTES (FÚTBOL, BASQUET, NATACIÓN, ETC)
+   ========================================================== */
+.sports-particles {
+    position: fixed;
+    inset: 0;
+    z-index: 2;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.sport-icon-particle {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(255, 255, 255, 0.18);
+    font-size: 2rem;
+    animation: floatSportIcon linear infinite;
+    filter: drop-shadow(0 0 8px rgba(46, 139, 87, 0.4));
+}
+
+.sport-icon-particle.accent-gold {
+    color: rgba(255, 215, 0, 0.22);
+    filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.3));
+}
+
+.sport-icon-particle.accent-green {
+    color: rgba(76, 209, 124, 0.25);
+    filter: drop-shadow(0 0 10px rgba(76, 209, 124, 0.5));
+}
+
+@keyframes floatSportIcon {
+    0%   { transform: translateY(105vh) rotate(0deg) scale(0.8); opacity: 0; }
+    10%  { opacity: 1; }
+    90%  { opacity: 0.8; }
+    100% { transform: translateY(-15vh) rotate(360deg) scale(1.2); opacity: 0; }
+}
+
+/* ==========================================================
+   CONTENIDO CENTRAL INSTITUCIONAL DEPORTIVO
+   ========================================================== */
+.loading-center {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1.5rem;
+    max-width: 550px;
+    width: 95%;
+}
+
+/* ---- PEDESTAL CON INSIGNIAS DEPORTIVAS ORBITANDO ---- */
+.logo-pedestal {
+    position: relative;
+    width: 240px;
+    height: 240px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 30px auto;
+}
+
+/* Resplandor del escudo */
+.logo-glow-backdrop {
+    position: absolute;
+    width: 170px;
+    height: 170px;
+    border-radius: 50%;
+    background: radial-gradient(circle, #2e8b57 0%, transparent 70%);
+    filter: blur(18px);
+    animation: pulseBackdrop 2.5s ease-in-out infinite alternate;
+}
+
+@keyframes pulseBackdrop {
+    0%   { transform: scale(0.9); opacity: 0.6; }
+    100% { transform: scale(1.3); opacity: 1; }
+}
+
+/* Anillos giratorios de centro de cancha */
+.stadium-ring-outer {
+    position: absolute;
+    inset: 6px;
+    border-radius: 50%;
+    border: 2px dashed rgba(76, 209, 124, 0.35);
+    animation: spinRingSlow 20s linear infinite;
+}
+
+.stadium-ring-active {
+    position: absolute;
+    inset: 16px;
+    border-radius: 50%;
+    border: 3px solid transparent;
+    border-top-color: #4cd17c;
+    border-right-color: #ffd700; /* Toque dorado de trofeo */
+    border-left-color: rgba(34, 97, 55, 0.35);
+    border-bottom-color: rgba(34, 97, 55, 0.35);
+    animation: spinRingFast 3s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+    box-shadow: 0 0 20px rgba(76, 209, 124, 0.3);
+}
+
+@keyframes spinRingSlow {
+    0%   { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@keyframes spinRingFast {
+    0%   { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Escudo NeoLeague (Compensación óptica para centrar el jersey del PNG) */
+.loading-logo {
+    width: 155px;
+    height: 155px;
+    border-radius: 50%;
+    object-fit: contain;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -68px; /* Desplazado +9px a la derecha para centrar el jersey dorado que está cargado a la izquierda en el archivo PNG */
+    margin-top: -74px;  /* Desplazado +3px abajo para compensar verticalmente */
+    z-index: 5;
+    background: transparent;
+    padding: 0;
+    border: none;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.7);
+    animation: logoFloat 3s ease-in-out infinite;
+    display: block;
+}
+
+@keyframes logoFloat {
+    0%, 100% { transform: translateY(0) scale(1); }
+    50%      { transform: translateY(-5px) scale(1.03); }
+}
+
+/* ---- INSIGNIAS DEPORTIVAS ORBITALES (FÚTBOL, BASQUET, NATACIÓN, VOLEIBOL) ---- */
+.orbit-track {
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 6;
+}
+
+.orbit-track-1 { animation: orbitSpin 12s linear infinite; }
+.orbit-track-2 { animation: orbitSpin 16s linear infinite reverse; }
+
+.sport-orbit-badge {
+    position: absolute;
+    width: 42px;
+    height: 42px;
+    background: #11331e;
+    border: 2px solid #4cd17c;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    font-size: 1.1rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5), 0 0 12px rgba(76, 209, 124, 0.4);
+}
+
+.badge-futbol { top: -5px; left: 50%; transform: translateX(-50%); }
+.badge-basquet { bottom: -5px; left: 50%; transform: translateX(-50%); border-color: #ffa500; color: #ffa500; }
+.badge-natacion { top: 50%; left: -5px; transform: translateY(-50%); border-color: #00d2ff; color: #00d2ff; }
+.badge-trofeo { top: 50%; right: -5px; transform: translateY(-50%); border-color: #ffd700; color: #ffd700; }
+
+@keyframes orbitSpin {
+    0%   { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Al girar la órbita, contra-girar el icono para que siempre esté de pie */
+.orbit-track-1 .sport-orbit-badge { animation: counterRotate 12s linear infinite; }
+.orbit-track-2 .sport-orbit-badge { animation: counterRotateRev 16s linear infinite; }
+
+@keyframes counterRotate {
+    0%   { transform: translateX(-50%) rotate(0deg); }
+    100% { transform: translateX(-50%) rotate(-360deg); }
+}
+@keyframes counterRotateRev {
+    0%   { transform: translateY(-50%) rotate(0deg); }
+    100% { transform: translateY(-50%) rotate(360deg); }
+}
+
+/* ---- TÍTULO Y ETIQUETA INSTITUCIONAL ---- */
+.brand-container {
+    text-align: center;
+    margin-bottom: 22px;
+    opacity: 0;
+    animation: fadeUp 0.8s ease forwards 0.2s;
+}
+
+.brand-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    color: #ffffff;
+    margin: 0;
+    line-height: 1.1;
+    text-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+.brand-title span {
+    color: #4cd17c;
+}
+
+.brand-tagline {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #d8e8de;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-top: 6px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(34, 97, 55, 0.45);
+    padding: 5px 16px;
+    border-radius: 25px;
+    border: 1px solid rgba(76, 209, 124, 0.4);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.brand-tagline i {
+    color: #ffd700;
+}
+
+/* ---- PÍLDORAS DE DISCIPLINAS DEPORTIVAS (Fútbol, Baloncesto, Natación) ---- */
+.sports-pills-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 25px;
+    opacity: 0;
+    animation: fadeUp 0.8s ease forwards 0.4s;
+}
+
+.sport-pill {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.6);
+    transition: all 0.3s ease;
+}
+
+.sport-pill i {
+    font-size: 0.9rem;
+    transition: transform 0.3s ease;
+}
+
+/* Estado Activo (Se ilumina al avanzar el progreso) */
+.sport-pill.active {
+    background: rgba(76, 209, 124, 0.2);
+    border-color: #4cd17c;
+    color: #ffffff;
+    box-shadow: 0 0 15px rgba(76, 209, 124, 0.3);
+    transform: translateY(-2px);
+}
+
+.sport-pill.active i {
+    color: #4cd17c;
+    transform: scale(1.2);
+}
+
+.sport-pill.completed {
+    background: rgba(34, 97, 55, 0.6);
+    border-color: #2e8b57;
+    color: #a8e6cf;
+}
+
+.sport-pill.completed i {
+    color: #ffd700; /* Check / Trofeo completado */
+}
+
+/* ---- BARRA DE PROGRESO DEPORTIVA ---- */
+.progress-section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    opacity: 0;
+    animation: fadeUp 0.8s ease forwards 0.6s;
+}
+
+.progress-header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 4px;
+}
+
+.progress-label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #d8e8de;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.progress-percentage {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #4cd17c;
+    font-variant-numeric: tabular-nums;
+}
+
+.progress-track {
+    width: 100%;
+    height: 10px;
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 20px;
+    overflow: hidden;
+    padding: 2px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.progress-bar-fill {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, #1a4a2a 0%, #2e8b57 40%, #4cd17c 80%, #ffd700 100%);
+    border-radius: 20px;
+    transition: width 0.1s linear;
+    position: relative;
+    box-shadow: 0 0 12px rgba(76, 209, 124, 0.6);
+}
+
+/* ---- TARJETA DE ESTADO EN VIVO ---- */
+.status-indicator {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 16px;
+    background: rgba(0, 0, 0, 0.35);
+    padding: 8px 20px;
+    border-radius: 30px;
+    border: 1px solid rgba(76, 209, 124, 0.25);
+    backdrop-filter: blur(10px);
+    opacity: 0;
+    animation: fadeUp 0.8s ease forwards 0.8s;
+}
+
+.status-icon {
+    color: #ffd700;
+    font-size: 0.95rem;
+    animation: bounceIcon 1.5s infinite;
+}
+
+@keyframes bounceIcon {
+    0%, 100% { transform: translateY(0); }
+    50%      { transform: translateY(-3px); }
+}
+
+.status-text {
+    font-size: 0.82rem;
+    font-weight: 400;
+    color: #e0ece4;
+    letter-spacing: 0.5px;
+}
+
+/* ---- PIE DE PÁGINA ---- */
+.loading-footer {
+    position: absolute;
+    bottom: 20px;
+    font-size: 0.72rem;
+    color: rgba(255, 255, 255, 0.45);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    z-index: 5;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+/* ---- ANIMACIONES ---- */
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(15px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+.loading-body.fade-out {
+    animation: pageFadeOut 0.6s ease forwards;
+}
+
+@keyframes pageFadeOut {
+    0%   { opacity: 1; transform: scale(1); }
+    100% { opacity: 0; transform: scale(1.04); }
+}
+
+/* ---- RESPONSIVE ---- */
+@media (max-width: 480px) {
+    .logo-pedestal { width: 180px; height: 180px; margin-bottom: 20px; }
+    .loading-logo  { width: 110px; height: 110px; }
+    .sport-orbit-badge { width: 35px; height: 35px; font-size: 0.9rem; }
+    .brand-title   { font-size: 2rem; }
+    .brand-tagline { font-size: 0.72rem; letter-spacing: 1.5px; }
+    .sports-pills-row { gap: 6px; }
+    .sport-pill    { padding: 5px 10px; font-size: 0.7rem; }
+    .field-circle-big { width: 450px; height: 450px; }
+    .field-circle-mid { width: 320px; height: 320px; }
+}

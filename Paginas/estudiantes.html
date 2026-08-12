@@ -1,0 +1,290 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Estudiantes - NeoLeague</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/inicio.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Favicon -->
+    <link rel="icon" href="../img/descarga.png">
+</head>
+<body>
+    <div id="nav-placeholder"></div>
+    <!-- Contenido Principal -->
+    <div class="container-fluid px-4 py-4 max-w-1200" style="max-width: 1400px; margin: 0 auto;">
+        
+        <header class="d-flex flex-wrap justify-content-between align-items-center mb-5">
+            <div>
+                <h1 class="fw-bold mb-1">Directorio de Estudiantes</h1>
+                <p class="text-muted">Administra a los alumnos y su información deportiva</p>
+            </div>
+            <div class="d-flex gap-3">
+                <select class="form-select rounded-pill shadow-sm" style="width: auto;">
+                    <option value="">Estado: Activos</option>
+                    <option value="retirados">Estado: Retirados</option>
+                </select>
+                <select class="form-select rounded-pill shadow-sm" style="width: auto;">
+                    <option value="">Todos los torneos</option>
+                    <option value="intramuros">Intramuros</option>
+                    <option value="copa">Copa Salesiana</option>
+                </select>
+                <button class="btn btn-success rounded-pill px-4 shadow-sm" data-bs-toggle="modal" data-bs-target="#modalCrearEstudiante">
+                    <i class="bi bi-person-plus-fill me-2"></i> Registrar Estudiante
+                </button>
+            </div>
+        </header>
+
+        <!-- Tabla de Estudiantes -->
+        <div class="card rounded-4-custom border-0 shadow-sm">
+            <div class="card-body p-0">
+                <div class="table-responsive">
+                    <table class="table table-hover align-middle mb-0">
+                        <thead class="table-light">
+                            <tr>
+                                <th scope="col" class="ps-4 py-3">Estudiante</th>
+                                <th scope="col" class="py-3">Edad</th>
+                                <th scope="col" class="py-3">Especialidad</th>
+                                <th scope="col" class="py-3">Equipo Actual</th>
+                                <th scope="col" class="py-3">Deporte</th>
+                                <th scope="col" class="text-end pe-4 py-3">Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="ps-4 py-3">
+                                    <div class="d-flex align-items-center">
+                                        <div class="bg-primary text-white rounded-circle d-flex justify-content-center align-items-center me-3" style="width: 40px; height: 40px;">
+                                            CM
+                                        </div>
+                                        <div>
+                                            <div class="fw-bold">Carlos Mendoza</div>
+                                            <div class="text-muted small">Cod: 2024001</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>17 años</td>
+                                <td>Desarrollo de Software</td>
+                                <td><span class="badge bg-success bg-opacity-10 text-success border border-success fw-semibold">Ricaldone FC Sub-19</span></td>
+                                <td>Fútbol Masculino <span class="badge bg-warning text-dark ms-1 shadow-sm"><i class="bi bi-star-fill"></i> Selección</span></td>
+                                <td class="text-end pe-4">
+                                    <button class="btn btn-sm btn-outline-info rounded-pill me-1" title="Ver deportes" data-bs-toggle="modal" data-bs-target="#modalVerDeportes"><i class="bi bi-eye"></i></button>
+                                    <button class="btn btn-sm btn-outline-secondary rounded-pill me-1"><i class="bi bi-pencil"></i></button>
+                                    <button class="btn btn-sm btn-outline-danger rounded-pill"><i class="bi bi-trash"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="ps-4 py-3">
+                                    <div class="d-flex align-items-center">
+                                        <div class="bg-warning text-white rounded-circle d-flex justify-content-center align-items-center me-3" style="width: 40px; height: 40px;">
+                                            AG
+                                        </div>
+                                        <div>
+                                            <div class="fw-bold">Andrea Gómez</div>
+                                            <div class="text-muted small">Cod: 2024089</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>16 años</td>
+                                <td>Diseño Gráfico</td>
+                                <td><span class="badge bg-primary bg-opacity-10 text-primary border border-primary fw-semibold">Lady Boscos Sub-19</span></td>
+                                <td>Baloncesto Femenino <span class="badge bg-warning text-dark ms-1 shadow-sm"><i class="bi bi-star-fill"></i> Selección</span></td>
+                                <td class="text-end pe-4">
+                                    <button class="btn btn-sm btn-outline-info rounded-pill me-1" title="Ver deportes" data-bs-toggle="modal" data-bs-target="#modalVerDeportes"><i class="bi bi-eye"></i></button>
+                                    <button class="btn btn-sm btn-outline-secondary rounded-pill me-1"><i class="bi bi-pencil"></i></button>
+                                    <button class="btn btn-sm btn-outline-danger rounded-pill"><i class="bi bi-trash"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="ps-4 py-3">
+                                    <div class="d-flex align-items-center">
+                                        <div class="bg-secondary text-white rounded-circle d-flex justify-content-center align-items-center me-3" style="width: 40px; height: 40px;">
+                                            LP
+                                        </div>
+                                        <div>
+                                            <div class="fw-bold">Luis Pérez</div>
+                                            <div class="text-muted small">Cod: 2024102</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>18 años</td>
+                                <td>Arquitectura</td>
+                                <td><span class="badge bg-secondary text-white fw-semibold">Sin Equipo</span></td>
+                                <td>N/A</td>
+                                <td class="text-end pe-4">
+                                    <button class="btn btn-sm btn-outline-info rounded-pill me-1" title="Ver deportes" data-bs-toggle="modal" data-bs-target="#modalVerDeportes"><i class="bi bi-eye"></i></button>
+                                    <button class="btn btn-sm btn-outline-secondary rounded-pill me-1"><i class="bi bi-pencil"></i></button>
+                                    <button class="btn btn-sm btn-outline-danger rounded-pill"><i class="bi bi-trash"></i></button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Modal: Crear Estudiante (Formulario de gestion_de_estudiantes.html adaptado) -->
+    <div class="modal fade" id="modalCrearEstudiante" tabindex="-1" aria-labelledby="modalCrearEstudianteLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content rounded-4-custom border-0 shadow">
+                <div class="modal-header border-0 pb-0">
+                    <h5 class="modal-title fw-bold" id="modalCrearEstudianteLabel">Registrar Nuevo Estudiante</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body p-4">
+                    <div class="row g-4">
+                        <!-- Columna de Foto -->
+                        <div class="col-md-4 text-center border-end">
+                            <label class="form-label fw-semibold mb-3">Foto del Estudiante</label>
+                            <div class="subir-foto bg-light rounded-4 p-4 d-flex flex-column justify-content-center align-items-center border-secondary border-dashed" style="border: 2px dashed #ccc; cursor: pointer; min-height: 200px;">
+                                <h2 class="text-muted mb-2"><i class="bi bi-camera"></i></h2>
+                                <h6 class="text-dark">Subir Foto</h6>
+                                <p class="text-muted small mb-0">Haz clic aquí</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Columna de Datos Personales -->
+                        <div class="col-md-4">
+                            <h6 class="fw-bold mb-3 text-success">Datos Personales</h6>
+                            <div class="mb-2">
+                                <label class="form-label small text-muted mb-1">Código estudiante</label>
+                                <input type="text" class="form-control rounded-pill shadow-sm py-2 px-3" placeholder="Ej. 2024001">
+                            </div>
+                            <div class="mb-2">
+                                <label class="form-label small text-muted mb-1">Nombre</label>
+                                <input type="text" class="form-control rounded-pill shadow-sm py-2 px-3" placeholder="Nombres">
+                            </div>
+                            <div class="mb-2">
+                                <label class="form-label small text-muted mb-1">Apellido</label>
+                                <input type="text" class="form-control rounded-pill shadow-sm py-2 px-3" placeholder="Apellidos">
+                            </div>
+                            <div class="mb-2">
+                                <label class="form-label small text-muted mb-1">Fecha de nacimiento</label>
+                                <input type="date" class="form-control rounded-pill shadow-sm py-2 px-3">
+                            </div>
+                        </div>
+
+                        <!-- Columna de Datos Académicos y Deportivos -->
+                        <div class="col-md-4">
+                            <h6 class="fw-bold mb-3 text-success">Datos Académicos</h6>
+                            <div class="mb-2">
+                                <label class="form-label small text-muted mb-1">Especialidad</label>
+                                <select class="form-select rounded-pill shadow-sm py-2 px-3">
+                                    <option>Desarrollo de Software</option>
+                                    <option>Diseño Gráfico</option>
+                                    <option>Arquitectura</option>
+                                </select>
+                            </div>
+                            <div class="row g-2 mb-2">
+                                <div class="col-6">
+                                    <label class="form-label small text-muted mb-1">Grado</label>
+                                    <input type="text" class="form-control rounded-pill shadow-sm py-2 px-3" placeholder="Ej. 2do">
+                                </div>
+                                <div class="col-6">
+                                    <label class="form-label small text-muted mb-1">Sección</label>
+                                    <input type="text" class="form-control rounded-pill shadow-sm py-2 px-3" placeholder="Ej. A">
+                                </div>
+                            </div>
+                            <h6 class="fw-bold mt-4 mb-2 text-success">Deportes</h6>
+                            <div class="mb-2">
+                                <label class="form-label small text-muted mb-1">Deporte</label>
+                                <select class="form-select rounded-pill shadow-sm py-2 px-3">
+                                    <option value="">Seleccione deporte...</option>
+                                    <option>Fútbol Masculino</option>
+                                    <option>Fútbol Femenino</option>
+                                    <option>Baloncesto Masculino</option>
+                                    <option>Baloncesto Femenino</option>
+                                    <option>Voleibol Masculino</option>
+                                    <option>Voleibol Femenino</option>
+                                    <option>Natación</option>
+                                    <option>Atletismo</option>
+                                </select>
+                            </div>
+                            <div class="mb-2">
+                                <label class="form-label small text-muted mb-1">Tipo de Torneo</label>
+                                <select class="form-select rounded-pill shadow-sm py-2 px-3">
+                                    <option value="">Seleccione torneo...</option>
+                                    <option value="intramuros">Intramuros</option>
+                                    <option value="copa">Copa Salesiana</option>
+                                </select>
+                            </div>
+                            <div class="mb-2">
+                                <label class="form-label small text-muted mb-1">Asignar Equipo (Opcional)</label>
+                                <select class="form-select rounded-pill shadow-sm py-2 px-3">
+                                    <option value="">Ninguno</option>
+                                    <option>Ricaldone FC Sub-19</option>
+                                    <option>Lady Boscos Sub-19</option>
+                                    <option>Chaleco</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer border-0 p-4 pt-0">
+                    <button type="button" class="btn btn-light rounded-pill px-4 fw-semibold" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-success rounded-pill px-5 fw-bold shadow-sm">Guardar Estudiante</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal: Ver Deportes del Estudiante -->
+    <div class="modal fade" id="modalVerDeportes" tabindex="-1" aria-labelledby="modalVerDeportesLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content rounded-4-custom border-0 shadow">
+                <div class="modal-header border-0 pb-0">
+                    <h5 class="modal-title fw-bold" id="modalVerDeportesLabel">Deportes Inscritos</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body p-4">
+                    <div class="d-flex align-items-center mb-4">
+                        <div class="bg-primary text-white rounded-circle d-flex justify-content-center align-items-center me-3" style="width: 50px; height: 50px; font-size: 1.2rem;">
+                            CM
+                        </div>
+                        <div>
+                            <h5 class="fw-bold mb-0">Carlos Mendoza</h5>
+                            <p class="text-muted small mb-0">Cod: 2024001</p>
+                        </div>
+                    </div>
+                    <ul class="list-group list-group-flush rounded-3 border">
+                        <li class="list-group-item p-3 d-flex justify-content-between align-items-center bg-light">
+                            <div>
+                                <h6 class="fw-bold mb-1">Fútbol Masculino</h6>
+                                <span class="badge bg-success bg-opacity-10 text-success border border-success fw-semibold">Ricaldone FC Sub-19</span>
+                            </div>
+                            <div class="text-end">
+                                <span class="badge bg-warning text-dark shadow-sm mb-1"><i class="bi bi-star-fill"></i> Selección (Copa)</span>
+                                <br><small class="text-muted">Inscrito: Ene 2026</small>
+                            </div>
+                        </li>
+                        <li class="list-group-item p-3 d-flex justify-content-between align-items-center">
+                            <div>
+                                <h6 class="fw-bold mb-1">Natación</h6>
+                                <span class="badge bg-secondary text-white fw-semibold">Sin Equipo</span>
+                            </div>
+                            <div class="text-end">
+                                <span class="badge bg-info text-dark shadow-sm mb-1">Intramuros</span>
+                                <br><small class="text-muted">Inscrito: Mar 2026</small>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="modal-footer border-0 p-4 pt-0">
+                    <button type="button" class="btn btn-secondary rounded-pill px-4 fw-semibold w-100" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="../js/global.js"></script>
+
+</body>
+</html>
+

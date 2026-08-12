@@ -1,0 +1,236 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Noticias - NeoLeague</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/inicio.css">
+    <link rel="stylesheet" href="../css/noticias.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Favicon -->
+    <link rel="icon" href="../img/descarga.png">
+</head>
+<body>
+    <div id="nav-placeholder"></div>
+
+    <!-- Contenido Principal -->
+    <div class="container-fluid px-4 py-4 max-w-1200" style="max-width: 1400px; margin: 0 auto; background-color: #F4F4F4;">
+        
+        <header class="d-flex flex-wrap justify-content-between align-items-center mb-5">
+            <div>
+                <h1 class="fw-bold mb-1" style="color: #111827;">Noticias Deportivas</h1>
+                <p class="text-muted">Mantente al tanto de las últimas novedades</p>
+            </div>
+            <div class="d-flex gap-3 align-items-center">
+                <!-- Buscador -->
+                <div class="position-relative">
+                    <i class="bi bi-search position-absolute top-50 translate-middle-y ms-3 text-muted"></i>
+                    <input type="text" class="form-control rounded-pill ps-5 shadow-sm border-0" placeholder="Buscar noticias..." style="width: 250px; background-color: #FFFFFF;">
+                </div>
+                <button class="btn btn-success rounded-pill px-4 shadow-sm fw-bold" style="background-color: #226137; border-color: #226137;" data-bs-toggle="modal" data-bs-target="#modalCrearNoticia">
+                    <i class="bi bi-plus-circle me-2"></i> Crear Noticia
+                </button>
+            </div>
+        </header>
+
+        <!-- Torneo: Intramuros -->
+        <section class="mb-5">
+            <h4 class="fw-bold mb-4 d-flex align-items-center" style="color: #111827;">
+                <i class="fa-solid fa-trophy me-2" style="color: #FF101F;"></i> Torneo Intramuros
+            </h4>
+            
+            <div class="row g-4">
+                <!-- Noticia Destacada -->
+                <div class="col-lg-7">
+                    <div class="card shadow-sm border-0 rounded-4-custom overflow-hidden h-100 text-dark" style="cursor: pointer;" data-bs-toggle="modal" data-bs-target="#modalLeerNoticia">
+                        <img src="../img/news_placeholder.jpg" class="card-img-top w-100" alt="Noticia" style="height: 350px; object-fit: cover;">
+                        <div class="card-body p-4 text-white" style="background-color: #111827;">
+                            <span class="badge mb-2" style="background-color: #FF101F;">Fútbol Masculino</span>
+                            <h3 class="card-title fw-bold mb-2">Gran final intercolegial: Ricaldone vs Don Bosco</h3>
+                            <p class="card-text text-white-50">El equipo del Ricaldone se enfrenta a Don Bosco en la final este fin de semana en un partido que promete muchas emociones y rivalidad histórica.</p>
+                            <small class="text-white-50"><i class="bi bi-clock me-1"></i> NeoLeague • hace 2 horas</small>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Lista de Noticias Secundarias -->
+                <div class="col-lg-5">
+                    <div class="d-flex flex-column gap-3 h-100 justify-content-start">
+                        <!-- Secundaria 1 -->
+                        <div class="d-flex align-items-center bg-white p-3 rounded-4 shadow-sm border-0" style="cursor: pointer;" data-bs-toggle="modal" data-bs-target="#modalLeerNoticia">
+                            <img src="../img/news_placeholder2.jpg" alt="Noticia" class="rounded-3 me-3" style="width: 100px; height: 80px; object-fit: cover;">
+                            <div>
+                                <h6 class="fw-bold mb-1" style="color: #111827;">Nuevos uniformes entregados</h6>
+                                <span class="badge mb-1" style="background-color: #226137;">Baloncesto</span>
+                                <div class="text-muted small">NeoLeague • hace 5 horas</div>
+                            </div>
+                        </div>
+                        <!-- Secundaria 2 -->
+                        <div class="d-flex align-items-center bg-white p-3 rounded-4 shadow-sm border-0" style="cursor: pointer;" data-bs-toggle="modal" data-bs-target="#modalLeerNoticia">
+                            <img src="../img/news_placeholder3.jpg" alt="Noticia" class="rounded-3 me-3" style="width: 100px; height: 80px; object-fit: cover;">
+                            <div>
+                                <h6 class="fw-bold mb-1" style="color: #111827;">Clasificación a Semifinales</h6>
+                                <span class="badge mb-1" style="background-color: #226137;">Voleibol Femenino</span>
+                                <div class="text-muted small">NeoLeague • hace 8 horas</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Torneo: Copa Salesiana -->
+        <section class="mb-5">
+            <h4 class="fw-bold mb-4 d-flex align-items-center" style="color: #111827;">
+                <i class="fa-solid fa-medal me-2" style="color: #FF101F;"></i> Copa Salesiana
+            </h4>
+            
+            <div class="row g-4">
+                <div class="col-lg-7">
+                    <div class="card shadow-sm border-0 rounded-4-custom overflow-hidden h-100 text-dark" style="cursor: pointer;" data-bs-toggle="modal" data-bs-target="#modalLeerNoticia">
+                        <img src="../img/news_placeholder3.jpg" class="card-img-top w-100" alt="Noticia" style="height: 350px; object-fit: cover;">
+                        <div class="card-body p-4 text-white" style="background-color: #111827;">
+                            <span class="badge mb-2" style="background-color: #FF101F;">Natación</span>
+                            <h3 class="card-title fw-bold mb-2">Nuevo récord nacional en estilo libre</h3>
+                            <p class="card-text text-white-50">El atleta destaca en su última participación batiendo todas las marcas anteriores en la Copa Salesiana, dejando un nuevo legado.</p>
+                            <small class="text-white-50"><i class="bi bi-clock me-1"></i> NeoLeague • hace 12 horas</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-5">
+                    <div class="d-flex flex-column gap-3 h-100 justify-content-start">
+                        <!-- Secundaria 3 -->
+                        <div class="d-flex align-items-center bg-white p-3 rounded-4 shadow-sm border-0" style="cursor: pointer;" data-bs-toggle="modal" data-bs-target="#modalLeerNoticia">
+                            <img src="../img/news_placeholder.jpg" alt="Noticia" class="rounded-3 me-3" style="width: 100px; height: 80px; object-fit: cover;">
+                            <div>
+                                <h6 class="fw-bold mb-1" style="color: #111827;">Victoria aplastante de Lady Boscos</h6>
+                                <span class="badge mb-1" style="background-color: #226137;">Fútbol Femenino</span>
+                                <div class="text-muted small">NeoLeague • hace 1 día</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- Modal: Leer Noticia (Vista Completa) -->
+    <div class="modal fade" id="modalLeerNoticia" tabindex="-1" aria-labelledby="modalLeerNoticiaLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content rounded-4-custom border-0 shadow overflow-hidden">
+                <button type="button" class="btn position-absolute top-0 end-0 m-3 z-3 shadow-sm rounded-circle d-flex align-items-center justify-content-center" data-bs-dismiss="modal" aria-label="Cerrar" style="width: 40px; height: 40px; background-color: rgba(0,0,0,0.5); backdrop-filter: blur(4px); color: white; border: 1px solid rgba(255,255,255,0.2);">
+                    <i class="bi bi-x-lg fs-5"></i>
+                </button>
+                <div class="modal-body p-0 position-relative">
+                    <img src="../img/news_placeholder.jpg" class="img-fluid w-100 modal-img-animated" alt="Noticia" style="height: 350px; object-fit: cover;">
+                    <div class="p-4 p-md-5">
+                        <span class="badge mb-3 px-3 py-2" style="background-color: #FF101F; font-size: 0.9rem;">Fútbol Masculino</span>
+                        <h2 class="fw-bold mb-3" style="color: #111827;">Gran final intercolegial: Ricaldone vs Don Bosco</h2>
+                        <div class="d-flex align-items-center mb-4 pb-3 border-bottom">
+                            <div class="bg-light rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 45px; height: 45px;">
+                                <i class="bi bi-person-circle fs-3 text-secondary"></i>
+                            </div>
+                            <div>
+                                <h6 class="fw-bold mb-0">Redacción NeoLeague</h6>
+                                <small class="text-muted"><i class="bi bi-clock me-1"></i> Publicado hace 2 horas</small>
+                            </div>
+                        </div>
+                        
+                        <div class="news-content text-muted fs-5 mb-5" style="line-height: 1.8;">
+                            <p>El ambiente está cargado de emoción mientras nos acercamos al fin de semana más esperado del año. El equipo del Ricaldone FC se enfrentará a su histórico rival, el Don Bosco, en una final que promete dejar a todos sin aliento.</p>
+                            <p>Ambos equipos han demostrado un rendimiento excepcional durante toda la temporada regular, superando obstáculos y demostrando un nivel de juego que dignifica la competencia de Intramuros. La afición ya está preparando sus cánticos y banderas para llenar las gradas.</p>
+                            <p>Invitamos a todos los estudiantes, padres y ex-alumnos a sumarse a esta gran fiesta deportiva que exalta los valores del deporte salesiano.</p>
+                        </div>
+                        
+                        <!-- Reacciones -->
+                        <div class="bg-light p-3 rounded-4 d-flex align-items-center justify-content-between">
+                            <h6 class="fw-bold mb-0 text-muted">¿Qué opinas de esta noticia?</h6>
+                            <div class="d-flex gap-2">
+                                <button class="btn btn-outline-primary rounded-pill d-flex align-items-center px-3 reaction-btn" onclick="this.classList.toggle('active')">
+                                    <i class="bi bi-hand-thumbs-up me-2 fs-5"></i> 24
+                                </button>
+                                <button class="btn btn-outline-danger rounded-pill d-flex align-items-center px-3 reaction-btn" onclick="this.classList.toggle('active')">
+                                    <i class="bi bi-heart me-2 fs-5"></i> 12
+                                </button>
+                                <button class="btn btn-outline-warning rounded-pill d-flex align-items-center px-3 text-dark reaction-btn" onclick="this.classList.toggle('active')">
+                                    <i class="bi bi-emoji-sunglasses me-2 fs-5"></i> 5
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal: Crear Noticia -->
+    <div class="modal fade" id="modalCrearNoticia" tabindex="-1" aria-labelledby="modalCrearNoticiaLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content rounded-4-custom border-0 shadow">
+                <div class="modal-header border-0 pb-0">
+                    <h5 class="modal-title fw-bold" id="modalCrearNoticiaLabel">Crear Nueva Noticia</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body p-4">
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <label for="tituloNoticia" class="form-label fw-semibold">Título</label>
+                            <input type="text" id="tituloNoticia" class="form-control rounded-pill shadow-sm px-3" placeholder="Ej. Nuevo récord del equipo">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="subtituloNoticia" class="form-label fw-semibold">Subtítulo</label>
+                            <input type="text" id="subtituloNoticia" class="form-control rounded-pill shadow-sm px-3" placeholder="Ej. Una victoria aplastante">
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <label for="deporteNoticia" class="form-label fw-semibold">Deporte</label>
+                            <select id="deporteNoticia" class="form-select rounded-pill shadow-sm px-3">
+                                <option value="" selected>Seleccione el deporte...</option>
+                                <option>Fútbol Masculino</option>
+                                <option>Fútbol Femenino</option>
+                                <option>Baloncesto Masculino</option>
+                                <option>Baloncesto Femenino</option>
+                                <option>Voleibol Masculino</option>
+                                <option>Voleibol Femenino</option>
+                                <option>Natación</option>
+                                <option>Atletismo</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="fechaNoticia" class="form-label fw-semibold">Fecha de Publicación</label>
+                            <input type="text" id="fechaNoticia" class="form-control rounded-pill shadow-sm px-3 bg-light text-muted" value="22/07/2026" readonly>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="descNoticia" class="form-label fw-semibold">Descripción</label>
+                        <textarea class="form-control rounded-4 shadow-sm p-3" id="descNoticia" rows="4" placeholder="Escribe el cuerpo de la noticia aquí..."></textarea>
+                    </div>
+                    <div class="mb-4">
+                        <label class="form-label fw-semibold">Imagen Principal</label>
+                        <div class="subir-foto bg-light rounded-4 p-4 text-center border-secondary border-dashed" style="border: 2px dashed #ccc; cursor: pointer; transition: background-color 0.3s;">
+                            <h3 class="mb-2 text-muted"><i class="bi bi-cloud-arrow-up"></i></h3>
+                            <h6 class="mb-1 text-dark">Subir Foto</h6>
+                            <p class="text-muted small mb-0">Arrastra tu imagen aquí o haz clic para buscar</p>
+                        </div>
+                    </div>
+                    <div class="d-flex gap-2">
+                        <button type="button" class="btn btn-light rounded-pill w-50 py-2 fw-semibold" data-bs-dismiss="modal">Cancelar</button>
+                        <button type="button" class="btn btn-success rounded-pill w-50 py-2 fw-bold shadow-sm">Guardar Noticia</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="../js/global.js"></script>
+
+</body>
+</html>
+

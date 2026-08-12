@@ -1,0 +1,49 @@
+/* Estilos específicos para la página Detalles de Partido */
+
+.match-header {
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    color: white;
+    border-radius: 1rem;
+    padding: 2rem;
+    position: relative;
+}
+.team-logo-large {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    background: white;
+    border-radius: 50%;
+    padding: 5px;
+}
+.score-display {
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 1;
+}
+.nav-tabs .nav-link {
+    color: #6c757d;
+    font-weight: 600;
+    border: none;
+    border-bottom: 3px solid transparent;
+}
+.nav-tabs .nav-link.active {
+    color: var(--primary-color);
+    background-color: transparent;
+    border-bottom: 3px solid var(--primary-color);
+}
+.timeline-event {
+    position: relative;
+    padding-left: 2rem;
+    margin-bottom: 1.5rem;
+    border-left: 2px solid #dee2e6;
+}
+.timeline-event::before {
+    content: '';
+    position: absolute;
+    left: -8px;
+    top: 0;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background-color: var(--primary-color);
+}

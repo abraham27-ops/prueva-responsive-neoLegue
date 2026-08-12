@@ -1,14 +1,19 @@
-/*Dimas*/
+/* =============================================
+   INICIO.CSS – Estilos NeoLeague (Misión 11 - FotMob Style)
+   ============================================= */
 
 /* Variables y ajustes generales */
 body {
-    background-color: #f8f9fa; /* Fondo gris claro */
+    background-color: #f4f6f8; /* Fondo gris claro moderno */
     font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
 }
 
 /* Colores personalizados del diseño */
 .text-custom-green {
-    color: #2e8b57 !important; /* Verde oscuro del diseño */
+    color: #226137 !important; /* Verde bosque institucional NeoLeague */
+}
+.bg-custom-green {
+    background-color: #226137 !important;
 }
 .bg-custom-gray {
     background-color: #e9ecef;
@@ -22,12 +27,17 @@ body {
     border-radius: 1.5rem !important;
 }
 
-/* Elementos específicos */
+/* Elementos específicos del header */
 .profile-card {
     background-color: white;
     border: 1px solid #e0e0e0;
-    padding: 0.5rem 1rem;
+    padding: 0.5rem 1.2rem;
     min-width: 250px;
+    transition: all 0.3s ease;
+}
+.profile-card:hover {
+    box-shadow: 0 6px 15px rgba(34, 97, 55, 0.15) !important;
+    border-color: #226137;
 }
 
 .date-box {
@@ -38,6 +48,8 @@ body {
     justify-content: center;
     align-items: center;
     line-height: 1.2;
+    background: #f1f5f2;
+    border: 1px solid #e2e8e4;
 }
 
 .team-logo {
@@ -47,24 +59,115 @@ body {
     border-radius: 50%;
     border: 1px solid #eee;
     padding: 2px;
+    background: white;
 }
 
 .team-logo-small {
     width: 35px;
     height: 35px;
+    object-fit: contain;
+    border-radius: 50%;
+    background: white;
+    border: 1px solid #eee;
 }
 
-/* Tarjetas internas */
+/* Tarjetas internas (Partidos) */
 .inner-card {
     border: 1px solid #dee2e6;
-    transition: transform 0.2s;
-}
-.inner-card:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    background: white;
 }
 
-a{
+/* ─── EFECTOS DE ZOOM (REQUERIDO POR MISIÓN 11) ─── */
+.hover-zoom-card {
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s ease, border-color 0.3s ease !important;
+}
+.hover-zoom-card:hover {
+    transform: scale(1.025) translateY(-3px) !important;
+    box-shadow: 0 14px 28px rgba(34, 97, 55, 0.12) !important;
+    border-color: #226137 !important;
+    z-index: 2;
+}
+
+.hover-zoom-item {
+    transition: transform 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275), background-color 0.25s ease, box-shadow 0.25s ease !important;
+    cursor: pointer;
+}
+.hover-zoom-item:hover {
+    transform: scale(1.04) !important;
+    background-color: #f0fbf4 !important;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08) !important;
+    border-color: #226137 !important;
+    z-index: 5;
+}
+
+/* ─── ANIMACIÓN DE CORAZÓN / LIKE ─── */
+@keyframes heartBeat {
+    0% { transform: scale(1); }
+    15% { transform: scale(1.4); }
+    30% { transform: scale(1); }
+    45% { transform: scale(1.4); }
+    70% { transform: scale(1); }
+}
+
+.like-heart {
+    cursor: pointer;
+    transition: transform 0.2s ease, color 0.2s ease;
+    font-size: 1.15rem;
+    color: #dc3545;
+    padding: 4px;
+}
+.like-heart:hover, .like-heart.active-pulse {
+    animation: heartBeat 0.7s ease;
+    color: #ff0015;
+    filter: drop-shadow(0 2px 6px rgba(220, 53, 69, 0.5));
+}
+.like-heart.unliked {
+    color: #adb5bd;
+}
+
+/* ─── BARRA DE FILTROS SUPERIOR ─── */
+.filter-bar-custom {
+    background: white;
+    border: 1.5px solid #eaeaea;
+    border-radius: 1.25rem;
+    padding: 0.8rem 1.2rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+}
+.filter-bar-custom .form-select {
+    border-radius: 50rem;
+    border: 1px solid #dee2e6;
+    font-weight: 600;
+    color: #333;
+    transition: all 0.2s ease;
+}
+.filter-bar-custom .form-select:hover, .filter-bar-custom .form-select:focus {
+    border-color: #226137;
+    box-shadow: 0 0 0 3px rgba(34, 97, 55, 0.15);
+}
+
+/* ─── TARJETAS DE NOTICIAS (COLUMNA DERECHA) ─── */
+.news-mini-card {
+    border: 1px solid #eaeaea;
+    border-radius: 1rem;
+    overflow: hidden;
+    background: white;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.news-mini-card:hover {
+    transform: scale(1.03) translateY(-3px);
+    box-shadow: 0 10px 22px rgba(0, 0, 0, 0.1);
+    border-color: #226137;
+}
+.news-img-thumb {
+    width: 75px;
+    height: 75px;
+    object-fit: cover;
+    border-radius: 0.75rem;
+}
+
+/* Solo links dentro del contenido principal */
+.container a,
+.container-fluid a {
     text-decoration: none;
-    color: white;
 }

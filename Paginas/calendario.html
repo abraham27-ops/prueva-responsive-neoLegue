@@ -1,293 +1,91 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NeoLeague - Calendarización</title>
+    <title>NeoLeague - Cronograma</title>
+    
+    <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <link rel="stylesheet" href="../css/style.css">
-    <!-- Link de Font Awesome -->
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/calendario.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="../img/descarga.png">
 </head>
+<body class="bg-light">
 
-<body>
+    <!-- NavBar Dinámico -->
+    <div id="nav-placeholder"></div>
 
-    <!-- NavBar -->
-    <nav class="navbar py-3 ps-4 pe-2 border-bottom bg-dark">
-        <div class="container-fluid d-flex justify-content-between align-items-center">
-            <button class="btn p-0 me-3 text-white" type="button" data-bs-toggle="offcanvas"
-                data-bs-target="#menu_lateral" style="font-size: 1.5rem; text-decoration: none;">
-                <i class="fas fa-bars"></i>
-            </button>
-
-            <span class="navbar-brand mb-0 h1 fw-bold uppercase text-white tracking-wider m-0"
-                style="font-size: 1.25rem;">
-                <i class="fa-regular fa-futbol"></i> NeoLeague
-            </span>
-        </div>
-    </nav>
-
-    <!-- Menú lateral -->
-    <div class="offcanvas offcanvas-start border-end bg-dark border-end border-dark" tabindex="-1" id="menu_lateral">
-
-        <div class="offcanvas-header flex-column align-items-start px-4 pt-4 pb-2 border-bottom border-white-5">
-            <div class="d-flex align-items-center w-100 justify-content-between mb-3">
-                <h5 class="offcanvas-title font-title-md text-white font-bold m-0" id="menu_lateral_label">
-                    <i class="fa-regular fa-user me-2"></i>NOMBRE USUARIO
-                </h5>
-                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"></button>
+    <main class="container py-4">
+        
+        <!-- Encabezado Estilo Institucional -->
+        <div class="d-flex flex-wrap justify-content-between align-items-end mb-4 gap-3">
+            <div>
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb mb-1">
+                        <li class="breadcrumb-item"><a href="inicio.html" class="text-decoration-none text-muted">Inicio</a></li>
+                        <li class="breadcrumb-item active fw-semibold" aria-current="page">Cronograma</li>
+                    </ol>
+                </nav>
+                <h1 class="fw-bold m-0 text-dark d-flex align-items-center gap-2">
+                    <i class="fas fa-calendar-alt text-success" style="font-size: 1.8rem;"></i> Cronograma Oficial
+                </h1>
+                <p class="text-muted small mt-1 mb-0">Visualiza la programación cronológica de torneos y partidos generada automáticamente.</p>
             </div>
-        </div>
+            
+            <div class="d-flex flex-column align-items-end gap-3">
+                <!-- Toggle de Vista (Agenda vs Tarjetas vs Mensual) -->
+                <div class="btn-group shadow-sm" role="group" aria-label="Vista del Cronograma">
+                    <input type="radio" class="btn-check" name="btnVista" id="btnVistaAgenda" autocomplete="off" checked>
+                    <label class="btn btn-outline-success fw-semibold px-3" for="btnVistaAgenda"><i class="bi bi-list-ul me-1"></i> Agenda</label>
 
-        <!-- Opción Inicio -->
-        <div class="offcanvas-body px-0 py-0 flex-grow-1">
-            <div class="d-flex flex-column gap-1 text-white">
-                <a class="item_sidebar d-flex align-items-center text-white gap-3 px-4 py-3 text-decoration-none"
-                    href="inicio.html">
-                    <i class="fa-solid fa-house"></i>
-                    <span class="text-uppercase" style="font-size: 1rem;">Inicio</span>
-                </a>
+                    <input type="radio" class="btn-check" name="btnVista" id="btnVistaTarjetas" autocomplete="off">
+                    <label class="btn btn-outline-success fw-semibold px-3" for="btnVistaTarjetas"><i class="bi bi-grid-fill me-1"></i> Tarjetas</label>
+
+                    <input type="radio" class="btn-check" name="btnVista" id="btnVistaMensual" autocomplete="off">
+                    <label class="btn btn-outline-success fw-semibold px-3" for="btnVistaMensual"><i class="bi bi-calendar3 me-1"></i> Mensual</label>
+                </div>
+
+                <!-- Filtros Rápidos (Botones Pill) -->
+                <div class="d-flex gap-2">
+                    <button class="btn btn-filter-crono active" data-filter="todos">
+                        <i class="bi bi-funnel-fill me-1"></i> Todo
+                    </button>
+                    <button class="btn btn-filter-crono" data-filter="torneo">
+                        <i class="fas fa-trophy me-1 text-warning"></i> Torneos
+                    </button>
+                    <button class="btn btn-filter-crono" data-filter="partido">
+                        <i class="far fa-futbol me-1 text-primary"></i> Partidos
+                    </button>
+                </div>
             </div>
-
-            <!-- Opción Estudiantes -->
-            <div class="d-flex flex-column gap-1 text-white">
-                <a class="item_sidebar d-flex align-items-center text-white gap-3 px-4 py-3 text-decoration-none"
-                    href="gestionDeEstudiantes.html">
-                    <i class="fa-solid fa-screwdriver-wrench"></i>
-                    <span class="text-uppercase" style="font-size: 1rem;">Gestion de Estudiantes</span>
-                </a>
-            </div>
-
-
-            <!-- Opción Especialidades -->
-            <div class="d-flex flex-column gap-1 text-white">
-                <a class="item_sidebar d-flex align-items-center text-white gap-3 px-4 py-3 text-decoration-none"
-                    href="GestionEspecialidades.html">
-                    <i class="fa-solid fa-screwdriver-wrench"></i>
-                    <span class="text-uppercase" style="font-size: 1rem;">Especialidades</span>
-                </a>
-            </div>
-
-            <!-- Opción Equipos -->
-            <div class="d-flex flex-column gap-1 text-white">
-                <a class="item_sidebar d-flex align-items-center text-white gap-3 px-4 py-3 text-decoration-none"
-                    href="gestionDeEquipos.html">
-                    <i class="fa-solid fa-screwdriver-wrench"></i>
-                    <span class="text-uppercase" style="font-size: 1rem;">Gestion de Equipos</span>
-                </a>
-            </div>
-
-            <!-- Opción Deportes -->
-            <div class="d-flex flex-column gap-1 text-white">
-                <a class="item_sidebar d-flex align-items-center text-white gap-3 px-4 py-3 text-decoration-none"
-                    href="Gestiondedeportes.html">
-                    <i class="fa-solid fa-screwdriver-wrench"></i>
-                    <span class="text-uppercase" style="font-size: 1rem;">Gestion de Deportes</span>
-                </a>
-            </div>
-
-            <!-- Opción Partidos -->
-            <div class="d-flex flex-column gap-1 text-white">
-                <a class="item_sidebar d-flex align-items-center text-white gap-3 px-4 py-3 text-decoration-none"
-                    href="gestionPartidos.html">
-                    <i class="fa-solid fa-screwdriver-wrench"></i>
-                    <span class="text-uppercase" style="font-size: 1rem;">Gestion de Partidos</span>
-                </a>
-            </div>
-
-            <!-- Opción Calendario -->
-            <div class="d-flex flex-column gap-1 text-white">
-                <a class="item_sidebar d-flex align-items-center text-white gap-3 px-4 py-3 text-decoration-none"
-                    href="calendario.html">
-                    <i class="fa-solid fa-screwdriver-wrench"></i>
-                    <span class="text-uppercase" style="font-size: 1rem;">Calendarizacion</span>
-                </a>
-            </div>
-
-            <!-- Opción Usuario -->
-            <div class="d-flex flex-column gap-1 text-white">
-                <a class="item_sidebar d-flex align-items-center text-white gap-3 px-4 py-3 text-decoration-none"
-                    href="GestionUsuarios.html">
-                    <i class="fa-solid fa-screwdriver-wrench"></i>
-                    <span class="text-uppercase" style="font-size: 1rem;">Gestion de Usuario</span>
-                </a>
-            </div>
-
-            <!-- Opción Categoria -->
-            <div class="d-flex flex-column gap-1 text-white">
-                <a class="item_sidebar d-flex align-items-center text-white gap-3 px-4 py-3 text-decoration-none"
-                    href="gestionCategorias.html">
-                    <i class="fa-solid fa-screwdriver-wrench"></i>
-                    <span class="text-uppercase" style="font-size: 1rem;">Gestion de Categoria</span>
-                </a>
-            </div>
-
-            <!-- Opción Noticias -->
-            <div class="d-flex flex-column gap-1 text-white">
-                <a class="item_sidebar d-flex align-items-center text-white gap-3 px-4 py-3 text-decoration-none"
-                    href="crearNoticia.html">
-                    <i class="fa-solid fa-screwdriver-wrench"></i>
-                    <span class="text-uppercase" style="font-size: 1rem;">Gestion de Noticias</span>
-                </a>
-            </div>
-
         </div>
 
-        <div class="offcanvas-footer p-4 border-top border-white-5 mt-auto">
-            <a id=""
-                class="btn btn-danger border-2 border-dark w-100 d-flex align-items-center justify-content-center gap-2 py-2 text-decoration-none">
-                <i class="fas fa-sign-out-alt"></i>
-                <span>Cerrar Sesión</span>
-            </a>
-        </div>
-
-    </div>
-
-    <main class="p-4 bg-light min-vh-100">
-            <div class="bg-white rounded-4 p-4 shadow-sm">
-
-                <h1 class="h2 fw-bold mb-4">Calendarización</h1>
-
-                <div class="d-flex gap-3 mb-4 flex-wrap">
-                    <div class="dropdown">
-                        <button class="btn btn-dark dropdown-toggle px-4" type="button" data-bs-toggle="dropdown">
-                            Gestión de partidos
-                        </button>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="./gestionPartidos.html">Gestión de partidos</a></li>
-                            <li><a class="dropdown-item" href="./crearPartidos.html">Crear nuevo partido</a></li>
-                            <li><a class="dropdown-item" href="./calendario.html">Calendarización</a></li>
-                        </ul>
-                    </div>
-
-                    <div class="dropdown">
-                        <button class="btn btn-dark dropdown-toggle px-4" type="button" data-bs-toggle="dropdown">
-                            Torneo
-                        </button>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Intramuros</a></li>
-                            <li><a class="dropdown-item" href="#">Intercolegial</a></li>
-                        </ul>
-                    </div>
-
-                    <div class="dropdown">
-                        <button class="btn btn-dark dropdown-toggle px-4" type="button" data-bs-toggle="dropdown">
-                            Deporte
-                        </button>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Fútbol</a></li>
-                            <li><a class="dropdown-item" href="#">Baloncesto</a></li>
-                            <li><a class="dropdown-item" href="#">Voleibol</a></li>
-                        </ul>
-                    </div>
+        <!-- Contenedor Principal del Cronograma (Renderizado por JS) -->
+        <section class="row">
+            <div class="col-12 col-lg-10 mx-auto">
+                <div id="cronogramaContainer" class="pb-5">
+                    <!-- Aquí se inyectarán los bloques de fecha y timeline desde JS -->
                 </div>
-
-                <div class="mb-3">
-                    <span class="h6 fw-semibold text-dark">Miércoles, 5 de junio</span>
-                </div>
-
-                <div class="list-group mb-4">
-                    <div class="list-group-item list-group-item-action rounded-4 shadow-sm p-3 d-flex align-items-center gap-3">
-                        <div class="badge bg-secondary text-white rounded-pill py-2 px-3">7:10</div>
-                        <div class="flex-grow-1 d-flex flex-column gap-1">
-                            <span class="fw-semibold mb-1">Ricaldone vs Don Bosco</span>
-                            <span class="small text-muted">Liga salesiana</span>
-                            <span class="small text-muted">Cancha Ricaldone</span>
-                            <span class="badge bg-danger text-white">No programada</span>
-                        </div>
-                        <div class="d-flex gap-2 ms-2">
-                            <a href="./crearEventoPartido.html" class="btn-icon">
-                                <img src="../img/Tools.png" alt="Editar" width="22" height="22">
-                            </a>
-                            <button type="button" class="btn-icon">
-                                <img src="../img/trashRed.png" alt="Eliminar" width="22" height="22">
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="mb-3">
-                    <span class="h6 fw-semibold text-dark">Lunes, 10 de octubre</span>
-                </div>
-
-                <div class="list-group mb-4">
-                    <div class="list-group-item list-group-item-action rounded-4 shadow-sm p-3 d-flex align-items-center gap-3">
-                        <div class="badge bg-secondary text-white rounded-pill py-2 px-3">7:10</div>
-                        <div class="flex-grow-1 d-flex flex-column gap-1">
-                            <span class="fw-semibold mb-1">Ricaldone vs Don Bosco</span>
-                            <span class="small text-muted">Liga salesiana</span>
-                            <span class="small text-muted">Cancha Ricaldone</span>
-                            <span class="badge bg-success text-white">Programado</span>
-                        </div>
-                        <div class="d-flex gap-2 ms-2">
-                            <a href="./crearEventoPartido.html" class="btn-icon">
-                                <img src="../img/Tools.png" alt="Editar" width="22" height="22">
-                            </a>
-                            <button type="button" class="btn-icon">
-                                <img src="../img/trashRed.png" alt="Eliminar" width="22" height="22">
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="mb-3">
-                    <span class="h6 fw-semibold text-dark">Viernes, 8 de agosto</span>
-                </div>
-
-                <div class="list-group mb-4">
-                    <div class="list-group-item list-group-item-action rounded-4 shadow-sm p-3 d-flex align-items-center gap-3">
-                        <div class="badge bg-secondary text-white rounded-pill py-2 px-3">7:10</div>
-                        <div class="flex-grow-1 d-flex flex-column gap-1">
-                            <span class="fw-semibold mb-1">Ricaldone vs Don Bosco</span>
-                            <span class="small text-muted">Liga salesiana</span>
-                            <span class="small text-muted">Cancha Ricaldone</span>
-                            <span class="badge bg-success text-white">Programado</span>
-                        </div>
-                        <div class="d-flex gap-2 ms-2">
-                            <a href="./crearEventoPartido.html" class="btn-icon">
-                                <img src="../img/Tools.png" alt="Editar" width="22" height="22">
-                            </a>
-                            <button type="button" class="btn-icon">
-                                <img src="../img/trashRed.png" alt="Eliminar" width="22" height="22">
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="mb-3">
-                    <span class="h6 fw-semibold text-dark">Jueves, 9 de marzo</span>
-                </div>
-
-                <div class="list-group mb-4">
-                    <div class="list-group-item list-group-item-action rounded-4 shadow-sm p-3 d-flex align-items-center gap-3">
-                        <div class="badge bg-secondary text-white rounded-pill py-2 px-3">7:10</div>
-                        <div class="flex-grow-1 d-flex flex-column gap-1">
-                            <span class="fw-semibold mb-1">Ricaldone vs Don Bosco</span>
-                            <span class="small text-muted">Liga salesiana</span>
-                            <span class="small text-muted">Cancha Ricaldone</span>
-                            <span class="badge bg-success text-white">Programado</span>
-                        </div>
-                        <div class="d-flex gap-2 ms-2">
-                            <a href="./crearEventoPartido.html" class="btn-icon">
-                                <img src="../img/Tools.png" alt="Editar" width="22" height="22">
-                            </a>
-                            <button type="button" class="btn-icon">
-                                <img src="../img/trashRed.png" alt="Eliminar" width="22" height="22">
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
             </div>
-        </main>
+        </section>
 
+    </main>
+
+    <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 
-    <!-- Link de SweetAlert -->
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!-- Scripts Institucionales -->
+    <script src="../js/global.js"></script>
+    <script src="../js/controllers/calendario.controllers.js?v=1.1"></script>
+
 </body>
-
 </html>
-

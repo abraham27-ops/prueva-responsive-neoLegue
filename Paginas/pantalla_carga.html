@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cargando Deportes - NeoLeague</title>
+    <meta name="description" content="Pantalla de carga deportiva del sistema NeoLeague">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/pantalla_carga.css">
+    <link rel="icon" href="../img/descarga.png">
+</head>
+<body class="loading-body">
+
+    <!-- Capa 1: Reflectores de Estadio -->
+    <div class="stadium-lights">
+        <div class="stadium-glow light-1"></div>
+        <div class="stadium-glow light-2"></div>
+        <div class="stadium-glow light-3"></div>
+    </div>
+
+    <!-- Capa 2: Geometría de Canchas -->
+    <div class="field-lines">
+        <div class="field-circle-big"></div>
+        <div class="field-circle-mid"></div>
+        <div class="field-line-center"></div>
+    </div>
+
+    <!-- Capa 3: Partículas con Iconos Deportivos Flotantes -->
+    <div class="sports-particles" id="sportsParticles"></div>
+
+    <!-- Contenido Central Deportivo -->
+    <div class="loading-center">
+
+        <!-- Pedestal con Escudo e Insignias Deportivas Orbitando -->
+        <div class="logo-pedestal">
+            <div class="logo-glow-backdrop"></div>
+            <div class="stadium-ring-outer"></div>
+            <div class="stadium-ring-active"></div>
+            
+            <!-- Órbita 1: Fútbol y Baloncesto -->
+            <div class="orbit-track orbit-track-1">
+                <div class="sport-orbit-badge badge-futbol" title="Fútbol">
+                    <i class="fas fa-futbol"></i>
+                </div>
+                <div class="sport-orbit-badge badge-basquet" title="Baloncesto">
+                    <i class="fas fa-basketball-ball"></i>
+                </div>
+            </div>
+
+            <!-- Órbita 2: Natación y Trofeo General -->
+            <div class="orbit-track orbit-track-2">
+                <div class="sport-orbit-badge badge-natacion" title="Natación">
+                    <i class="fas fa-swimmer"></i>
+                </div>
+                <div class="sport-orbit-badge badge-trofeo" title="Torneos y Copas">
+                    <i class="fas fa-trophy"></i>
+                </div>
+            </div>
+
+            <img src="../img/descarga.png" alt="Escudo NeoLeague" class="loading-logo">
+        </div>
+
+        <!-- Título e Identidad Deportiva -->
+        <div class="brand-container">
+            <h1 class="brand-title">Neo<span>League</span></h1>
+            <div class="brand-tagline">
+                <i class="fas fa-medal"></i> Sistema de Gestión Deportiva
+            </div>
+        </div>
+
+        <!-- Píldoras Interactivas de Disciplinas Deportivas -->
+        <div class="sports-pills-row">
+            <div class="sport-pill" id="pillFutbol">
+                <i class="fas fa-futbol"></i> Fútbol
+            </div>
+            <div class="sport-pill" id="pillBasquet">
+                <i class="fas fa-basketball-ball"></i> Baloncesto
+            </div>
+            <div class="sport-pill" id="pillNatacion">
+                <i class="fas fa-swimmer"></i> Natación
+            </div>
+            <div class="sport-pill" id="pillVoleibol">
+                <i class="fas fa-volleyball-ball"></i> Voleibol
+            </div>
+        </div>
+
+        <!-- Sección de Progreso -->
+        <div class="progress-section">
+            <div class="progress-header">
+                <span class="progress-label" id="progressLabel">Sincronizando disciplinas...</span>
+                <span class="progress-percentage" id="loadingPercent">0%</span>
+            </div>
+            <div class="progress-track">
+                <div class="progress-bar-fill" id="loadingBar"></div>
+            </div>
+        </div>
+
+        <!-- Indicador de Estado Deportivo en Vivo -->
+        <div class="status-indicator">
+            <i class="fas fa-flag status-icon" id="statusIcon"></i>
+            <span class="status-text" id="statusText">Preparando el campo de juego...</span>
+        </div>
+
+    </div>
+
+    <!-- Pie de Página -->
+    <div class="loading-footer">
+        <i class="fas fa-running"></i> &copy; 2026 NeoLeague &bull; Plataforma Oficial de Torneos
+    </div>
+
+    <script src="../js/pantalla_carga.js"></script>
+</body>
+</html>

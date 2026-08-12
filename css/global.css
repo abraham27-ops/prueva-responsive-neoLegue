@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+:root {
+    --primary-color: #226137;
+    --primary-hover: #1a4a2a;
+    --background-color: #F4F4F4;
+    --card-background: #FFFFFF;
+    --text-color: #111827;
+    --text-muted: #555555;
+    --text-placeholder: #999999;
+    --border-color: #cccccc;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+    --shadow-button: rgba(34, 97, 55, 0.4);
+    --danger-color: #FF101F;
+    
+    --font-family: 'Poppins', Arial, sans-serif;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-family);
+    margin: 0;
+}
+
+.max-w-1200 {
+    max-width: 1200px;
+}
+
+/* Fix para el Navbar dinámico */
+#nav-placeholder {
+    position: sticky;
+    top: 0;
+    z-index: 1030;
+}
+
+/* ---------- Sidebar Menu Estilos Cloude ---------- */
+.nl-grupo-label {
+    color: rgba(255, 255, 255, 0.45);
+    font-size: .75rem;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    padding: 1rem 1.5rem .35rem;
+    font-weight: 600;
+}
+
+.nl-link {
+    display: flex;
+    align-items: center;
+    gap: .75rem;
+    padding: .65rem 1.5rem;
+    color: #d8d8d4;
+    text-decoration: none;
+    font-size: .95rem;
+    border-radius: 0 30px 30px 0;
+    margin-right: 1rem;
+    transition: background-color .15s ease, color .15s ease;
+}
+
+.nl-link i {
+    width: 20px;
+    text-align: center;
+    font-size: 1.1rem;
+}
+
+.nl-link:hover {
+    background-color: rgba(255, 255, 255, 0.08);
+    color: #fff;
+}
+
+.nl-link.active {
+    background-color: var(--primary-color);
+    color: #fff;
+    font-weight: 600;
+}
+
+/* Ajustes globales del Offcanvas (Sidebar) */
+#menu_lateral {
+    width: 270px; /* Más delgado */
+}
+
+/* Scrollbar oscuro y elegante para el menú lateral */
+#menu_lateral .offcanvas-body::-webkit-scrollbar {
+    width: 6px;
+}
+#menu_lateral .offcanvas-body::-webkit-scrollbar-track {
+    background: transparent;
+}
+#menu_lateral .offcanvas-body::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+}
+#menu_lateral .offcanvas-body::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+}

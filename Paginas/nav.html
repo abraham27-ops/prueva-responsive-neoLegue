@@ -1,0 +1,61 @@
+<!-- NavBar Fijo -->
+<nav class="navbar py-3 ps-4 pe-4 border-bottom bg-dark sticky-top z-3" style="box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);">
+    <div class="container-fluid d-flex justify-content-between align-items-center">
+        <div class="d-flex align-items-center">
+            <!-- Botón menú lateral -->
+            <button class="btn p-0 me-3 text-white" type="button" data-bs-toggle="offcanvas" data-bs-target="#menu_lateral" style="font-size: 1.5rem; text-decoration: none;">
+                <i class="fas fa-bars"></i>
+            </button>
+            <span class="navbar-brand mb-0 h1 fw-bold uppercase text-white tracking-wider m-0" style="font-size: 1.25rem;">
+                <i class="fa-regular fa-futbol"></i> NeoLeague
+            </span>
+        </div>
+        
+        <!-- Nombre de usuario que lleva a Mi Perfil -->
+        <a href="perfil.html" class="d-flex align-items-center text-white text-decoration-none px-3 py-2 rounded-pill hover-bg-light-alpha transition-all" style="cursor:pointer; background-color: rgba(255,255,255,0.05);">
+            <div class="d-flex align-items-center justify-content-center rounded-circle me-2 text-dark fw-bold" style="width: 32px; height: 32px; background-color: #f1f3f5; font-size: 0.8rem;">
+                JU
+            </div>
+            <span class="d-none d-md-inline fw-semibold" style="font-size: 0.95rem;">Juan Pérez</span>
+        </a>
+    </div>
+</nav>
+
+<!-- Menú lateral (Diseño Cloude) -->
+<div class="offcanvas offcanvas-start border-end bg-dark border-dark" tabindex="-1" id="menu_lateral">
+    <div class="offcanvas-header px-4 pt-4 pb-2 border-bottom border-secondary border-opacity-25">
+        <h5 class="offcanvas-title text-white fw-bold m-0 d-flex align-items-center" id="menu_lateral_label">
+            <i class="fa-regular fa-futbol me-2" style="color: var(--primary-color);"></i> NeoLeague
+        </h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"></button>
+    </div>
+
+    <div class="offcanvas-body px-0 py-0 d-flex flex-column" style="overflow-y: auto;">
+        
+        <div class="nl-grupo-label mt-2">General</div>
+        <a class="nl-link" href="inicio.html"><i class="fa-solid fa-house"></i>Inicio</a>
+
+        <div class="nl-grupo-label">Gestión</div>
+        <a class="nl-link" href="estudiantes.html"><i class="fa-solid fa-user-graduate"></i>Estudiantes</a>
+        <a class="nl-link" href="gestion_usuarios.html"><i class="fa-solid fa-users"></i>Usuarios</a>
+        <a class="nl-link" href="gestion_categorias.html"><i class="fa-solid fa-list-ul"></i>Categorías</a>
+        <a class="nl-link" href="gestion_de_deportes.html"><i class="fa-solid fa-basketball"></i>Deportes</a>
+        <a class="nl-link" href="gestion_especialidades.html"><i class="fa-solid fa-star"></i>Especialidades</a>
+        <a class="nl-link" href="gestion_de_equipos.html"><i class="fas fa-shield-alt"></i>Equipos</a>
+        <a class="nl-link" href="gestion_eventos.html"><i class="fas fa-flag"></i>Eventos</a>
+
+        <div class="nl-grupo-label">Competencia</div>
+        <a class="nl-link" href="gestion_torneos.html"><i class="fas fa-medal"></i>Torneos</a>
+        <a class="nl-link" href="gestion_partidos.html"><i class="fa-regular fa-futbol"></i>Partidos</a>
+        <a class="nl-link" href="tabla_posiciones.html"><i class="fas fa-trophy"></i>Tabla de Posiciones</a>
+        <a class="nl-link" href="calendario.html"><i class="fa-solid fa-calendar-days"></i>Calendarización</a>
+        <a class="nl-link" href="noticias.html"><i class="fa-solid fa-newspaper"></i>Noticias</a>
+
+        <div class="p-4 border-top border-secondary border-opacity-25 mt-auto">
+            <a href="#" id="btnCerrarSesion" class="btn btn-danger border-2 border-dark w-100 d-flex align-items-center justify-content-center gap-2 py-2 text-decoration-none" style="background-color: var(--danger-color); border-color: var(--danger-color);">
+                <i class="fas fa-sign-out-alt"></i>
+                <span>Cerrar Sesión</span>
+            </a>
+        </div>
+    </div>
+</div>

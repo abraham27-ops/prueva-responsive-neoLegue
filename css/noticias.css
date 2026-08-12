@@ -1,0 +1,46 @@
+/* Estilos específicos para la página de Noticias (Misión 6) */
+
+@keyframes popEffect {
+    0% { transform: scale(1); }
+    40% { transform: scale(1.15); }
+    100% { transform: scale(1); }
+}
+
+.reaction-btn {
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.reaction-btn.active {
+    animation: popEffect 0.4s ease forwards;
+}
+
+@keyframes iconPop {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.6) rotate(10deg); }
+    100% { transform: scale(1) rotate(0deg); }
+}
+
+.reaction-btn i {
+    display: inline-block;
+    transition: transform 0.2s;
+}
+
+.reaction-btn.active i {
+    animation: iconPop 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes zoomInFade {
+    0% { transform: scale(1.08); filter: blur(2px); opacity: 0; }
+    100% { transform: scale(1); filter: blur(0); opacity: 1; }
+}
+
+.modal-img-animated {
+    animation: zoomInFade 0.7s cubic-bezier(0.215, 0.61, 0.355, 1) forwards;
+}
+
+.card .card-img-top {
+    transition: transform 0.5s ease;
+}
+.card:hover .card-img-top {
+    transform: scale(1.05);
+}

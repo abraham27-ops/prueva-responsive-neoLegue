@@ -1,50 +1,49 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Sesión - NeoLeague</title>
+    <meta name="description" content="Página de inicio de sesión para el sistema NeoLeague">
+    
+    <!-- Link de Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="css/global.css">
     <link rel="stylesheet" href="css/login.css">
-    <title>Login</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" href="img/descarga.png">
 </head>
 <body>
 
-   
-<!-- primer contenedor -->
-<div class="tarjetas">
+    <main class="tarjetas">
+        <header>
+            <img src="img/descarga.png" alt="Logo de NeoLeague" class="logoimg">
+            <h1>INICIA SESIÓN</h1>
+        </header>
 
-<!-- segundo contenedor -->
-<div>
+        <!-- Agrupación de la información del usuario -->
+        <form action="paginas/pantalla_carga.html?destino=inicio" onsubmit="return true;">
+            <!-- Correo -->
+            <div class="caja-input">
+                <label for="correo" class="visually-hidden">Correo Electrónico</label>
+                <input type="email" id="correo" placeholder="Correo electrónico" required>
+            </div>
 
-<img src="img/descarga.png" alt="logo" class="logoimg">
+            <!-- Contraseña con modo de ojo (👁️ / 👁️‍🗨️) -->
+            <div class="caja-input">
+                <label for="contrasena" class="visually-hidden">Contraseña</label>
+                <input type="password" id="contrasena" placeholder="Contraseña" required>
+                <i class="fa-solid fa-eye-slash toggle-password" id="toggleContrasena" title="Mostrar/Ocultar contraseña"></i>
+            </div>
 
-    <h3>INGRESSA TU USUARIO</h3>
+            <a href="paginas/recuperar.html" class="enlaceOlvidado">¿Olvidaste tu contraseña?</a>
 
-    </div>
+            <button type="submit" class="botonPrincipal">Iniciar Sesión</button>
+        </form>
+    </main>
 
-<!-- Agrupacion de la informacion de el usuario -->
-<form>
-
-    <!-- Correo -->
-<div class="caja-input">
-    <span></span>
-    <input type="Correo" placeholder="Correo Electronico" required>
-</div>
-
-
-<!-- Contrasena -->
-<div class="caja-input">
-<span></span>
-<input type="Contrasena" placeholder="Contrasena" required>
-</div>
-
-<a href="Paginas/recuperar.html" class="enlaceOlvidado">olvidaste tu Contrasena?</a>
-
-<button type="submit" class="botonPrincipal"><a href="Paginas/inicio.html">Iniciar Sesion</a></button>
-
-</form>
-
-</div>
-
+    <script src="js/controllers/index.controllers.js"></script>
 </body>
-
 </html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cambiar Contraseña - NeoLeague</title>
+    
+    <!-- Link de Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/login.css">
+    <!-- Favicon -->
+    <link rel="icon" href="../img/descarga.png">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+
+    <div class="tarjetas">
+        <img src="../img/descarga.png" alt="Logo NeoLeague" class="logoimg">
+
+        <h3>Nueva contraseña</h3>
+
+        <p class="texto-instrucciones">
+            Crea una contraseña segura para tu cuenta<br>
+            institucional en NeoLeague.
+        </p>
+
+        <form onsubmit="validarYCambiar(event);">
+
+            <div class="caja-input">
+                <input type="password" id="pass1" placeholder="Nueva contraseña" required minlength="6">
+                <i class="fa-solid fa-eye-slash toggle-password" id="togglePass1" title="Mostrar/Ocultar contraseña"></i>
+            </div>
+
+            <div class="caja-input">
+                <input type="password" id="pass2" placeholder="Confirmar nueva contraseña" required minlength="6">
+                <i class="fa-solid fa-eye-slash toggle-password" id="togglePass2" title="Mostrar/Ocultar contraseña"></i>
+            </div>
+
+            <button type="submit" class="botonPrincipal" style="margin-top: 15px;">Guardar y entrar</button>
+
+            <a href="../index.html" class="enlaceOlvidado" style="text-align: center; display: block; margin-top: 25px;">Cancelar y volver al inicio de sesión</a>
+        </form>
+
+    </div>
+
+<script src="../js/global.js"></script>
+<script src="../js/controllers/cambiar_contrasena.controllers.js"></script>
+</body>
+</html>

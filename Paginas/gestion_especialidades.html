@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Especialidades - Dashboard</title>
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/inicio.css">
+    <link rel="stylesheet" href="../css/gestion_usuarios.css">
+    
+    <link rel="stylesheet" href="../css/gestion_especialidades.css">
+    <!-- Favicon -->
+    <link rel="icon" href="../img/descarga.png">
+</head>
+<body class="bg-light">
+
+    <!-- NavBar Dinámico -->
+    <div id="nav-placeholder"></div>
+
+    <!-- Contenido principal -->
+    <main class="container-fluid py-4 px-4 px-lg-5 max-w-1200 mx-auto" style="max-width: 1400px;">
+
+        <div class="d-flex flex-wrap justify-content-between align-items-end mb-4 mt-3 gap-3">
+            <div>
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb mb-1">
+                        <li class="breadcrumb-item"><a href="inicio.html" class="text-decoration-none text-muted">Inicio</a></li>
+                        <li class="breadcrumb-item active fw-semibold" aria-current="page">Gestión de especialidades</li>
+                    </ol>
+                </nav>
+                <h1 class="fw-bold m-0 text-dark">Especialidades</h1>
+            </div>
+
+            <div class="d-flex flex-wrap align-items-center gap-3">
+                <!-- Barra de búsqueda integrada arriba -->
+                <div class="search-group bg-white" style="width: 280px;">
+                    <div class="search-icon shadow-sm"><i class="fa-solid fa-search"></i></div>
+                    <input type="text" id="txtBuscarEspecialidad" class="form-control form-control-custom w-100" placeholder="Buscar especialidad...">
+                </div>
+
+                <button type="button" class="btn btn-success px-4 py-2 fw-semibold rounded-pill shadow-sm" data-bs-toggle="modal" data-bs-target="#modalCrearEspecialidad" style="background-color: var(--primary-color); border: none; height: 44px; display: flex; align-items: center;">
+                    <i class="bi bi-plus-circle me-2"></i>Crear Especialidad
+                </button>
+            </div>
+        </div>
+
+        <div id="mensaje" class="alert d-none" role="alert"></div>
+
+        <!-- Contenedor de Tarjetas (Grid) -->
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4" id="listaEspecialidades">
+            
+            <!-- Especialidad 1 -->
+            <div class="col">
+                <div class="card especialidad-card border-0 shadow-sm rounded-4 h-100 p-3">
+                    <div class="card-body d-flex justify-content-between align-items-center p-2">
+                        <div class="d-flex align-items-center gap-3">
+                            <div class="icon-box">
+                                <i class="fa-solid fa-laptop-code"></i>
+                            </div>
+                            <div>
+                                <h5 class="fw-bold text-dark m-0">Desarrollo de Software</h5>
+                                <small class="text-muted">Área Técnica</small>
+                            </div>
+                        </div>
+                        <div class="d-flex flex-column gap-2">
+                            <button class="btn-accion btn-editar text-muted" onclick="editar(1)" title="Editar">
+                                <i class="fas fa-pencil-alt"></i>
+                            </button>
+                            <button class="btn-accion btn-borrar text-muted" onclick="borrar(1)" title="Eliminar">
+                                <i class="fas fa-trash-alt"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Especialidad 2 -->
+            <div class="col">
+                <div class="card especialidad-card border-0 shadow-sm rounded-4 h-100 p-3">
+                    <div class="card-body d-flex justify-content-between align-items-center p-2">
+                        <div class="d-flex align-items-center gap-3">
+                            <div class="icon-box">
+                                <i class="fa-solid fa-bolt"></i>
+                            </div>
+                            <div>
+                                <h5 class="fw-bold text-dark m-0">Electromecánica</h5>
+                                <small class="text-muted">Área Técnica</small>
+                            </div>
+                        </div>
+                        <div class="d-flex flex-column gap-2">
+                            <button class="btn-accion btn-editar text-muted" onclick="editar(2)" title="Editar">
+                                <i class="fas fa-pencil-alt"></i>
+                            </button>
+                            <button class="btn-accion btn-borrar text-muted" onclick="borrar(2)" title="Eliminar">
+                                <i class="fas fa-trash-alt"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Especialidad 3 -->
+            <div class="col">
+                <div class="card especialidad-card border-0 shadow-sm rounded-4 h-100 p-3">
+                    <div class="card-body d-flex justify-content-between align-items-center p-2">
+                        <div class="d-flex align-items-center gap-3">
+                            <div class="icon-box">
+                                <i class="fa-solid fa-pen-nib"></i>
+                            </div>
+                            <div>
+                                <h5 class="fw-bold text-dark m-0">Diseño Gráfico</h5>
+                                <small class="text-muted">Área Técnica</small>
+                            </div>
+                        </div>
+                        <div class="d-flex flex-column gap-2">
+                            <button class="btn-accion btn-editar text-muted" onclick="editar(3)" title="Editar">
+                                <i class="fas fa-pencil-alt"></i>
+                            </button>
+                            <button class="btn-accion btn-borrar text-muted" onclick="borrar(3)" title="Eliminar">
+                                <i class="fas fa-trash-alt"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Especialidad 4 -->
+            <div class="col">
+                <div class="card especialidad-card border-0 shadow-sm rounded-4 h-100 p-3">
+                    <div class="card-body d-flex justify-content-between align-items-center p-2">
+                        <div class="d-flex align-items-center gap-3">
+                            <div class="icon-box">
+                                <i class="fa-solid fa-leaf"></i>
+                            </div>
+                            <div>
+                                <h5 class="fw-bold text-dark m-0">Energías Renovables</h5>
+                                <small class="text-muted">Área Técnica</small>
+                            </div>
+                        </div>
+                        <div class="d-flex flex-column gap-2">
+                            <button class="btn-accion btn-editar text-muted" onclick="editar(4)" title="Editar">
+                                <i class="fas fa-pencil-alt"></i>
+                            </button>
+                            <button class="btn-accion btn-borrar text-muted" onclick="borrar(4)" title="Eliminar">
+                                <i class="fas fa-trash-alt"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Especialidad 5 -->
+            <div class="col">
+                <div class="card especialidad-card border-0 shadow-sm rounded-4 h-100 p-3">
+                    <div class="card-body d-flex justify-content-between align-items-center p-2">
+                        <div class="d-flex align-items-center gap-3">
+                            <div class="icon-box">
+                                <i class="fa-solid fa-microchip"></i>
+                            </div>
+                            <div>
+                                <h5 class="fw-bold text-dark m-0">Electrónica</h5>
+                                <small class="text-muted">Área Técnica</small>
+                            </div>
+                        </div>
+                        <div class="d-flex flex-column gap-2">
+                            <button class="btn-accion btn-editar text-muted" onclick="editar(5)" title="Editar">
+                                <i class="fas fa-pencil-alt"></i>
+                            </button>
+                            <button class="btn-accion btn-borrar text-muted" onclick="borrar(5)" title="Eliminar">
+                                <i class="fas fa-trash-alt"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Especialidad 6 -->
+            <div class="col">
+                <div class="card especialidad-card border-0 shadow-sm rounded-4 h-100 p-3">
+                    <div class="card-body d-flex justify-content-between align-items-center p-2">
+                        <div class="d-flex align-items-center gap-3">
+                            <div class="icon-box">
+                                <i class="fa-solid fa-calculator"></i>
+                            </div>
+                            <div>
+                                <h5 class="fw-bold text-dark m-0">Contabilidad</h5>
+                                <small class="text-muted">Área Administrativa</small>
+                            </div>
+                        </div>
+                        <div class="d-flex flex-column gap-2">
+                            <button class="btn-accion btn-editar text-muted" onclick="editar(6)" title="Editar">
+                                <i class="fas fa-pencil-alt"></i>
+                            </button>
+                            <button class="btn-accion btn-borrar text-muted" onclick="borrar(6)" title="Eliminar">
+                                <i class="fas fa-trash-alt"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </main>
+
+    <!-- Modal para Crear/Editar Especialidad -->
+    <div class="modal fade" id="modalCrearEspecialidad" tabindex="-1" aria-labelledby="modalCrearEspecialidadLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content border-0 rounded-4 shadow-lg">
+                <div class="modal-header border-bottom-0 pb-0 px-4 pt-4">
+                    <h5 class="modal-title fw-bold" id="modalCrearEspecialidadLabel">Nueva Especialidad</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body px-4 pt-3 pb-4">
+                    <form id="formEspecialidad">
+                        <div class="mb-4">
+                            <label class="form-label fw-semibold text-dark">Nombre de la Especialidad <span class="text-danger">*</span></label>
+                            <div class="input-group">
+                                <span class="input-group-text bg-light border-end-0"><i class="fa-solid fa-tag text-muted"></i></span>
+                                <input type="text" class="form-control border-start-0 bg-light" id="nombreEspecialidad" placeholder="Ej. Diseño Gráfico" required>
+                            </div>
+                        </div>
+
+                        <div class="mb-4">
+                            <label class="form-label fw-semibold text-dark">Logo de la Especialidad <span class="text-muted fw-normal">(Opcional)</span></label>
+                            <input class="form-control bg-light" type="file" id="logoEspecialidad" accept="image/*">
+                        </div>
+                        
+                        <div class="d-flex justify-content-end gap-2 mt-4 pt-2">
+                            <button type="button" class="btn btn-light rounded-pill px-4 fw-semibold" data-bs-dismiss="modal">Cancelar</button>
+                            <button type="button" class="btn btn-success rounded-pill px-4 fw-semibold shadow-sm" onclick="crear()" style="background-color: var(--primary-color); border: none;">
+                                Crear Especialidad <i class="fas fa-check ms-1"></i>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SweetAlert -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Script Global -->
+    <script src="../js/global.js"></script>
+
+</body>
+</html>

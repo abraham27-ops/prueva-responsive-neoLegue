@@ -1,352 +1,431 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio - NeoLeague</title>
+    <link rel="stylesheet" href="../css/global.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link rel="stylesheet" href="../css/inicio.css">
     <!-- Link de Iconos Bootstrap -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-
     <!-- Link de Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-</head>
-    <title>Inicio</title>
+    <!-- Favicon -->
+    <link rel="icon" href="../img/descarga.png">
 </head>
 <body>
-
-    <!-- NavBar -->
-    <nav class="navbar py-3 ps-4 pe-2 border-bottom bg-dark">
-        <div class="container-fluid d-flex justify-content-between align-items-center">
-            <button class="btn p-0 me-3 text-white" type="button" data-bs-toggle="offcanvas"
-                data-bs-target="#menu_lateral" style="font-size: 1.5rem; text-decoration: none;">
-                <i class="fas fa-bars"></i>
-            </button>
-
-            <span class="navbar-brand mb-0 h1 fw-bold uppercase text-white tracking-wider m-0"
-                style="font-size: 1.25rem;">
-                <i class="fa-regular fa-futbol"></i> NeoLeague
-            </span>
-        </div>
-    </nav>
-
-    <!-- Menú lateral -->
-    <div class="offcanvas offcanvas-start border-end bg-dark border-end border-dark" tabindex="-1" id="menu_lateral">
-
-        <div class="offcanvas-header flex-column align-items-start px-4 pt-4 pb-2 border-bottom border-white-5">
-            <div class="d-flex align-items-center w-100 justify-content-between mb-3">
-                <h5 class="offcanvas-title font-title-md text-white font-bold m-0" id="menu_lateral_label">
-                    <i class="fa-regular fa-user me-2"></i>NOMBRE USUARIO
-                </h5>
-                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"></button>
-            </div>
-        </div>
-
-        <!-- Opción Inicio -->
-        <div class="offcanvas-body px-0 py-0 flex-grow-1">
-            <div class="d-flex flex-column gap-1 text-white">
-                <a class="item_sidebar d-flex align-items-center text-white gap-3 px-4 py-3 text-decoration-none"
-                    href="inicio.html">
-                    <i class="fa-solid fa-house"></i>
-                    <span class="text-uppercase" style="font-size: 1rem;">Inicio</span>
-                </a>
-            </div>
-
-            <!-- Opción Estudiantes -->
-            <div class="d-flex flex-column gap-1 text-white">
-                <a class="item_sidebar d-flex align-items-center text-white gap-3 px-4 py-3 text-decoration-none"
-                    href="gestionDeEstudiantes.html">
-                    <i class="fa-solid fa-screwdriver-wrench"></i>
-                    <span class="text-uppercase" style="font-size: 1rem;">Gestion de Estudiantes</span>
-                </a>
-            </div>
-
-
-            <!-- Opción Especialidades -->
-            <div class="d-flex flex-column gap-1 text-white">
-                <a class="item_sidebar d-flex align-items-center text-white gap-3 px-4 py-3 text-decoration-none"
-                    href="GestionEspecialidades.html">
-                    <i class="fa-solid fa-screwdriver-wrench"></i>
-                    <span class="text-uppercase" style="font-size: 1rem;">Especialidades</span>
-                </a>
-            </div>
-
-            <!-- Opción Equipos -->
-            <div class="d-flex flex-column gap-1 text-white">
-                <a class="item_sidebar d-flex align-items-center text-white gap-3 px-4 py-3 text-decoration-none"
-                    href="gestionDeEquipos.html">
-                    <i class="fa-solid fa-screwdriver-wrench"></i>
-                    <span class="text-uppercase" style="font-size: 1rem;">Gestion de Equipos</span>
-                </a>
-            </div>
-
-            <!-- Opción Deportes -->
-            <div class="d-flex flex-column gap-1 text-white">
-                <a class="item_sidebar d-flex align-items-center text-white gap-3 px-4 py-3 text-decoration-none"
-                    href="Gestiondedeportes.html">
-                    <i class="fa-solid fa-screwdriver-wrench"></i>
-                    <span class="text-uppercase" style="font-size: 1rem;">Gestion de Deportes</span>
-                </a>
-            </div>
-
-            <!-- Opción Partidos -->
-            <div class="d-flex flex-column gap-1 text-white">
-                <a class="item_sidebar d-flex align-items-center text-white gap-3 px-4 py-3 text-decoration-none"
-                    href="gestionPartidos.html">
-                    <i class="fa-solid fa-screwdriver-wrench"></i>
-                    <span class="text-uppercase" style="font-size: 1rem;">Gestion de Partidos</span>
-                </a>
-            </div>
-
-            <!-- Opción Calendario -->
-            <div class="d-flex flex-column gap-1 text-white">
-                <a class="item_sidebar d-flex align-items-center text-white gap-3 px-4 py-3 text-decoration-none"
-                    href="calendario.html">
-                    <i class="fa-solid fa-screwdriver-wrench"></i>
-                    <span class="text-uppercase" style="font-size: 1rem;">Calendarizacion</span>
-                </a>
-            </div>
-
-            <!-- Opción Usuario -->
-            <div class="d-flex flex-column gap-1 text-white">
-                <a class="item_sidebar d-flex align-items-center text-white gap-3 px-4 py-3 text-decoration-none"
-                    href="GestionUsuarios.html">
-                    <i class="fa-solid fa-screwdriver-wrench"></i>
-                    <span class="text-uppercase" style="font-size: 1rem;">Gestion de Usuario</span>
-                </a>
-            </div>
-
-            <!-- Opción Categoria -->
-            <div class="d-flex flex-column gap-1 text-white">
-                <a class="item_sidebar d-flex align-items-center text-white gap-3 px-4 py-3 text-decoration-none"
-                    href="gestionCategorias.html">
-                    <i class="fa-solid fa-screwdriver-wrench"></i>
-                    <span class="text-uppercase" style="font-size: 1rem;">Gestion de Categoria</span>
-                </a>
-            </div>
-
-            <!-- Opción Noticias -->
-            <div class="d-flex flex-column gap-1 text-white">
-                <a class="item_sidebar d-flex align-items-center text-white gap-3 px-4 py-3 text-decoration-none"
-                    href="crearNoticia.html">
-                    <i class="fa-solid fa-screwdriver-wrench"></i>
-                    <span class="text-uppercase" style="font-size: 1rem;">Gestion de Noticias</span>
-                </a>
-            </div>
-
-        </div>
-
-        <div class="offcanvas-footer p-4 border-top border-white-5 mt-auto">
-            <a id=""
-                class="btn btn-danger border-2 border-dark w-100 d-flex align-items-center justify-content-center gap-2 py-2 text-decoration-none">
-                <i class="fas fa-sign-out-alt"></i>
-                <span>Cerrar Sesión</span>
-            </a>
-        </div>
-
-    </div>
+    <div id="nav-placeholder"></div>
     
-    <div class="container-fluid px-4 py-4 max-w-1200" style="max-width: 1400px; margin: 0 auto;">
+    <div class="container-fluid px-4 py-4" style="max-width: 1450px; margin: 0 auto;">
     
-    <header class="d-flex flex-wrap justify-content-between align-items-center mb-5">
-        <h1 class="fw-bold mb-3 mb-md-0">Inicio</h1>
-        
-        <div class="profile-card rounded-pill d-flex justify-content-between align-items-center shadow-sm">
-            <div class="d-flex align-items-center">
-                <img src="https://ui-avatars.com/api/?name=Juan+Perez&background=e9ecef&color=333&rounded=true" alt="Prof. Juan" class="me-3" width="45" height="45">
-                <div>
-                    <h6 class="mb-0 fw-bold">Prof. Juan Pérez</h6>
-                    <small class="text-custom-green fw-semibold">Profesor</small>
-                </div>
+        <header class="d-flex flex-wrap justify-content-between align-items-center mb-4">
+            <div>
+                <p class="text-muted small mb-0">NeoLeague / Portal Institucional</p>
+                <h1 class="fw-bold mb-0 text-dark">Inicio</h1>
             </div>
-            <i class="bi bi-chevron-down text-muted ms-3"></i>
-        </div>
-    </header>
-
-    <div class="mb-4">
-        <h2 class="fw-normal">¡Bienvenido Prof. Juan!</h2>
-        <p class="text-muted">Aca tienes un resumen de las Actividades deportivas</p>
-    </div>
-
-    <div class="row g-4">
-        
-        <div class="col-lg-6">
-            <div class="card rounded-5-custom border-1 shadow-sm h-100">
-                <div class="card-header bg-white border-0 pt-4 pb-2 px-4 d-flex justify-content-between align-items-center rounded-top-5">
-                    <h5 class="mb-0 fw-bold d-flex align-items-center">
-                        <i class="bi bi-calendar-event text-custom-green me-2 fs-4"></i>
-                        Proximo partidos
-                    </h5>
-                    <a href="tablaPosiciones.html" class="text-custom-green text-decoration-none small">Ver todos <i class="bi bi-arrow-right"></i></a>
+            
+            <div class="profile-card rounded-pill d-flex justify-content-between align-items-center shadow-sm cursor-pointer hover-zoom-item" onclick="window.location.href='perfil.html'">
+                <div class="d-flex align-items-center">
+                    <img src="https://ui-avatars.com/api/?name=Juan+Perez&background=226137&color=fff&rounded=true" alt="Prof. Juan" class="me-3 shadow-sm" width="45" height="45">
+                    <div>
+                        <h6 class="mb-0 fw-bold text-dark">Prof. Juan Pérez</h6>
+                        <small class="text-custom-green fw-semibold"><i class="bi bi-patch-check-fill me-1"></i>Profesor</small>
+                    </div>
                 </div>
+                <i class="bi bi-chevron-right text-muted ms-3"></i>
+            </div>
+        </header>
+
+        <div class="mb-4">
+            <h2 class="fw-normal">¡Bienvenido Prof. Juan! 👋</h2>
+            <p class="text-muted">Acá tienes el resumen interactivo de tus equipos, torneos y actividades deportivas</p>
+        </div>
+
+        <!-- ─── ESTRUCTURA MODULAR TIPO FOTMOB (3 COLUMNAS) ─── -->
+        <div class="row g-4">
+            
+            <!-- 1. COLUMNA IZQUIERDA: EQUIPOS Y TORNEOS LIKEADOS (FAVORITOS) -->
+            <div class="col-lg-3">
                 
-                <div class="card-body px-4">
-                    
-                    <div class="card inner-card rounded-4-custom mb-3">
-                        <div class="card-body p-2 d-flex align-items-center">
-                            <div class="bg-custom-gray rounded-3 date-box me-3">
-                                <span class="fw-bold fs-5">21</span>
-                            </div>
-                            <div class="flex-grow-1">
-                                <div class="d-flex justify-content-between px-3">
-                                    <span class="fw-bold">Ricaldone</span>
-                                    <span class="text-muted small">VS</span>
-                                    <span class="fw-bold">Don bosco</span>
-                                </div>
-                                <div class="d-flex justify-content-between align-items-center px-4 mt-1">
-                                    <img src="../img/itr.jpg" class="team-logo-small" alt="Logo Ricaldone">
-                                    <span class="fw-bold text-dark">Futbol masculino</span>
-                                    <img src="../img/donBosco.jpg" class="team-logo-small" alt="Logo Don Bosco">
-                                </div>
-                                <div class="text-center text-muted mt-1" style="font-size: 0.75rem;">10:00 AM - Cancha 1</div>
-                            </div>
-                        </div>
+                <!-- Equipos Seguidos -->
+                <div class="card rounded-5-custom border-1 shadow-sm p-3 mb-4 bg-white hover-zoom-card">
+                    <div class="d-flex justify-content-between align-items-center mb-3 pb-2 border-bottom">
+                        <h6 class="fw-bold mb-0 text-dark d-flex align-items-center">
+                            <i class="bi bi-heart-fill text-danger me-2 fs-5"></i>
+                            Equipos seguidos
+                        </h6>
+                        <span class="badge bg-danger bg-opacity-10 text-danger rounded-pill">4</span>
                     </div>
 
-                    <div class="card inner-card rounded-4-custom mb-3">
-                        <div class="card-body p-2 d-flex align-items-center">
-                            <div class="bg-custom-gray rounded-3 date-box me-3">
-                                <span class="small text-muted" style="font-size: 0.7rem;">may</span>
-                                <span class="fw-bold fs-5">24</span>
+                    <div class="equipos-list">
+                        <div class="hover-zoom-item rounded-4-custom p-2 mb-2 d-flex align-items-center justify-content-between border bg-white shadow-sm">
+                            <div class="d-flex align-items-center gap-2">
+                                <img src="../img/itr.jpg" class="team-logo-small" alt="Ricaldone">
+                                <span class="fw-bold text-dark small">Ricaldone (ITR)</span>
                             </div>
-                            <div class="flex-grow-1">
-                                <div class="d-flex justify-content-between px-3">
-                                    <span class="fw-bold">Ricaldone</span>
-                                    <span class="text-muted small">VS</span>
-                                    <span class="fw-bold">Don bosco</span>
-                                </div>
-                                <div class="d-flex justify-content-between align-items-center px-4 mt-1">
-                                    <img src="../img/itr.jpg" class="team-logo-small" alt="Logo Ricaldone">
-                                    <span class="fw-bold text-dark">Futbol masculino</span>
-                                    <img src="../img/donBosco.jpg" class="team-logo-small" alt="Logo Don Bosco">
-                                </div>
-                                <div class="text-center text-muted mt-1" style="font-size: 0.75rem;">10:00 AM - Cancha 1</div>
+                            <i class="bi bi-heart-fill like-heart" title="Me gusta"></i>
+                        </div>
+
+                        <div class="hover-zoom-item rounded-4-custom p-2 mb-2 d-flex align-items-center justify-content-between border bg-white shadow-sm">
+                            <div class="d-flex align-items-center gap-2">
+                                <img src="../img/donBosco.jpg" class="team-logo-small" alt="Don Bosco">
+                                <span class="fw-bold text-dark small">Don Bosco</span>
                             </div>
+                            <i class="bi bi-heart-fill like-heart" title="Me gusta"></i>
+                        </div>
+
+                        <div class="hover-zoom-item rounded-4-custom p-2 mb-2 d-flex align-items-center justify-content-between border bg-white shadow-sm">
+                            <div class="d-flex align-items-center gap-2">
+                                <img src="../img/cecilia.png" class="team-logo-small" alt="Santa Cecilia">
+                                <span class="fw-bold text-dark small">Santa Cecilia</span>
+                            </div>
+                            <i class="bi bi-heart-fill like-heart" title="Me gusta"></i>
+                        </div>
+
+                        <div class="hover-zoom-item rounded-4-custom p-2 d-flex align-items-center justify-content-between border bg-white shadow-sm">
+                            <div class="d-flex align-items-center gap-2">
+                                <img src="../img/jose.png" class="team-logo-small" alt="San José">
+                                <span class="fw-bold text-dark small">San José</span>
+                            </div>
+                            <i class="bi bi-heart-fill like-heart" title="Me gusta"></i>
                         </div>
                     </div>
-
-                    <div class="card inner-card rounded-4-custom mb-3">
-                        <div class="card-body p-2 d-flex align-items-center">
-                            <div class="bg-custom-gray rounded-3 date-box me-3">
-                                <span class="small text-muted" style="font-size: 0.7rem;">may</span>
-                                <span class="fw-bold fs-5">25</span>
-                            </div>
-                            <div class="flex-grow-1">
-                                <div class="d-flex justify-content-between px-3">
-                                    <span class="fw-bold">Ricaldone</span>
-                                    <span class="text-muted small">VS</span>
-                                    <span class="fw-bold">Don bosco</span>
-                                </div>
-                                <div class="d-flex justify-content-between align-items-center px-4 mt-1">
-                                    <img src="../img/itr.jpg" class="team-logo-small" alt="Logo Ricaldone">
-                                    <span class="fw-bold text-dark">Futbol masculino</span>
-                                    <img src="../img/donBosco.jpg" class="team-logo-small" alt="Logo Don Bosco">
-                                </div>
-                                <div class="text-center text-muted mt-1" style="font-size: 0.75rem;">10:00 AM - Cancha 1</div>
-                            </div>
-                        </div>
-                    </div>
-
                 </div>
+
+                <!-- Torneos Seguidos -->
+                <div class="card rounded-5-custom border-1 shadow-sm p-3 bg-white hover-zoom-card">
+                    <div class="d-flex justify-content-between align-items-center mb-3 pb-2 border-bottom">
+                        <h6 class="fw-bold mb-0 text-dark d-flex align-items-center">
+                            <i class="bi bi-trophy-fill text-warning me-2 fs-5"></i>
+                            Torneos seguidos
+                        </h6>
+                        <span class="badge bg-warning bg-opacity-10 text-dark rounded-pill">3</span>
+                    </div>
+
+                    <div class="torneos-list">
+                        <div class="hover-zoom-item rounded-4-custom p-2 mb-2 d-flex align-items-center justify-content-between border bg-white shadow-sm">
+                            <div class="d-flex align-items-center gap-2 overflow-hidden">
+                                <i class="fa-solid fa-trophy text-success fs-5 me-1"></i>
+                                <span class="fw-bold text-dark small text-truncate">Intramuros 2026</span>
+                            </div>
+                            <div class="d-flex align-items-center gap-2">
+                                <span class="badge bg-success bg-opacity-10 text-success small" style="font-size:0.65rem;">Fútbol</span>
+                                <i class="bi bi-heart-fill like-heart" title="Me gusta"></i>
+                            </div>
+                        </div>
+
+                        <div class="hover-zoom-item rounded-4-custom p-2 mb-2 d-flex align-items-center justify-content-between border bg-white shadow-sm">
+                            <div class="d-flex align-items-center gap-2 overflow-hidden">
+                                <i class="fa-solid fa-medal text-info fs-5 me-1"></i>
+                                <span class="fw-bold text-dark small text-truncate">Copa Neo 2026</span>
+                            </div>
+                            <div class="d-flex align-items-center gap-2">
+                                <span class="badge bg-info bg-opacity-10 text-info small" style="font-size:0.65rem;">Natación</span>
+                                <i class="bi bi-heart-fill like-heart" title="Me gusta"></i>
+                            </div>
+                        </div>
+
+                        <div class="hover-zoom-item rounded-4-custom p-2 d-flex align-items-center justify-content-between border bg-white shadow-sm">
+                            <div class="d-flex align-items-center gap-2 overflow-hidden">
+                                <i class="fa-solid fa-trophy text-warning fs-5 me-1"></i>
+                                <span class="fw-bold text-dark small text-truncate">Intercolegial</span>
+                            </div>
+                            <div class="d-flex align-items-center gap-2">
+                                <span class="badge bg-warning bg-opacity-10 text-dark small" style="font-size:0.65rem;">Baloncesto</span>
+                                <i class="bi bi-heart-fill like-heart" title="Me gusta"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
-        </div>
 
-        <div class="col-lg-6">
-            <div class="card rounded-5-custom border-1 shadow-sm h-100">
-                <div class="card-header bg-white border-0 pt-4 pb-2 px-4 d-flex justify-content-between align-items-center rounded-top-5">
-                    <h5 class="mb-0 fw-bold d-flex align-items-center">
-                        <i class="bi bi-trophy text-custom-green me-2 fs-4"></i>
-                        Resultado reciente
-                    </h5>
-                    <a href="#" class="text-custom-green text-decoration-none small">Ver todos <i class="bi bi-arrow-right"></i></a>
-                </div>
+            <!-- 2. COLUMNA CENTRAL: FILTROS (ARRIBA) Y PARTIDOS EN 2 SECCIONES (ABAJO) -->
+            <div class="col-lg-6">
                 
-                <div class="card-body px-4">
+                <!-- Barra de Filtros Superior estilo FotMob -->
+                <div class="filter-bar-custom mb-4 d-flex flex-wrap align-items-center justify-content-between gap-3 hover-zoom-card">
+                    <div class="d-flex flex-wrap align-items-center gap-2">
+                        <!-- Filtro Deporte -->
+                        <div class="input-group input-group-sm" style="width: auto;">
+                            <span class="input-group-text bg-custom-gray border-0 rounded-start-pill text-custom-green fw-bold"><i class="bi bi-dribbble me-1"></i></span>
+                            <select id="filtroDeporteInicio" class="form-select form-select-sm border-0 bg-custom-gray rounded-end-pill fw-semibold px-3 hover-zoom-item">
+                                <option value="todos">Todos los deportes</option>
+                                <option value="futbol_masculino">⚽ Fútbol Masculino</option>
+                                <option value="natacion">🏊‍♂️ Natación</option>
+                                <option value="baloncesto">🏀 Baloncesto</option>
+                                <option value="voleibol">🏐 Voleibol</option>
+                            </select>
+                        </div>
+
+                        <!-- Filtro Torneo -->
+                        <div class="input-group input-group-sm" style="width: auto;">
+                            <span class="input-group-text bg-custom-gray border-0 rounded-start-pill text-custom-green fw-bold"><i class="bi bi-trophy me-1"></i></span>
+                            <select id="filtroTorneoInicio" class="form-select form-select-sm border-0 bg-custom-gray rounded-end-pill fw-semibold px-3 hover-zoom-item">
+                                <option value="todos">Todos los torneos</option>
+                                <option value="intramuros2026">🏆 Intramuros 2026</option>
+                                <option value="copa_neo">🏆 Copa Neo 2026</option>
+                                <option value="intercolegial">🏆 Intercolegial</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Botón para buscar por Fecha (Al final) -->
+                    <div class="d-flex align-items-center gap-2 bg-custom-gray rounded-pill px-3 py-1 hover-zoom-item ms-auto shadow-sm">
+                        <i class="bi bi-calendar3 text-custom-green fs-6"></i>
+                        <span class="small fw-bold text-dark d-none d-sm-inline">Fecha:</span>
+                        <input type="date" id="filtroFechaInicio" class="form-control form-control-sm border-0 bg-transparent fw-bold text-dark p-0" value="2026-07-25" style="width: 125px; cursor: pointer;">
+                    </div>
+                </div>
+
+                <!-- Sección 1: Próximo partidos -->
+                <div class="card rounded-5-custom border-1 shadow-sm mb-4 bg-white hover-zoom-card">
+                    <div class="card-header bg-white border-0 pt-4 pb-2 px-4 d-flex justify-content-between align-items-center rounded-top-5">
+                        <h5 class="mb-0 fw-bold d-flex align-items-center">
+                            <i class="bi bi-calendar-event text-custom-green me-2 fs-4"></i>
+                            Próximo partidos
+                        </h5>
+                        <a href="gestion_partidos.html" class="text-custom-green text-decoration-none small fw-semibold">Ver todos <i class="bi bi-arrow-right"></i></a>
+                    </div>
                     
-                    <div class="card inner-card rounded-4-custom mb-3">
-                        <div class="card-body p-3">
-                            <div class="d-flex justify-content-between align-items-center position-relative">
-                                <div class="d-flex align-items-center" style="width: 40%;">
-                                    <img src="../img/itr.jpg" class="team-logo me-3" alt="Ricaldone">
-                                    <div>
-                                        <div class="fw-bold">Ricaldone</div>
-                                        <div class="text-muted" style="font-size: 0.75rem;">Futbol Masculino</div>
-                                    </div>
+                    <div class="card-body px-4">
+                        
+                        <div class="card inner-card rounded-4-custom mb-3 hover-zoom-card" onclick="window.location.href='detalles_partido.html'" style="cursor: pointer;">
+                            <div class="card-body p-2 d-flex align-items-center">
+                                <div class="bg-custom-gray rounded-3 date-box me-3">
+                                    <span class="small text-muted" style="font-size: 0.7rem;">may</span>
+                                    <span class="fw-bold fs-5">21</span>
                                 </div>
-                                
-                                <div class="fw-bold text-center" style="font-size: 1.2rem; width: 20%;">2-0</div>
-                                
-                                <div class="d-flex align-items-center justify-content-end text-end" style="width: 40%;">
-                                    <div class="me-3">
-                                        <div class="fw-bold">Don bosco</div>
+                                <div class="flex-grow-1">
+                                    <div class="d-flex justify-content-between px-3">
+                                        <span class="fw-bold text-dark">Ricaldone</span>
+                                        <span class="text-muted small">VS</span>
+                                        <span class="fw-bold text-dark">Don bosco</span>
                                     </div>
-                                    <img src="../img/donBosco.jpg" class="team-logo" alt="Don Bosco">
+                                    <div class="d-flex justify-content-between align-items-center px-4 mt-1">
+                                        <img src="../img/itr.jpg" class="team-logo-small" alt="Logo Ricaldone">
+                                        <span class="fw-bold text-dark small"><i class="bi bi-dribbble text-success me-1"></i>Futbol masculino</span>
+                                        <img src="../img/donBosco.jpg" class="team-logo-small" alt="Logo Don Bosco">
+                                    </div>
+                                    <div class="text-center text-muted mt-1" style="font-size: 0.75rem;"><i class="bi bi-clock me-1"></i>10:00 AM - Cancha 1</div>
                                 </div>
-                            </div>
-                            <div class="text-end text-muted mt-1" style="font-size: 0.7rem;">
-                                10 mayo 2026
                             </div>
                         </div>
-                    </div>
 
-                    <div class="card inner-card rounded-4-custom mb-3">
-                        <div class="card-body p-3">
-                            <div class="d-flex justify-content-between align-items-center position-relative">
-                                <div class="d-flex align-items-center" style="width: 40%;">
-                                    <img src="../img/itr.jpg" class="team-logo me-3" alt="Ricaldone">
-                                    <div>
-                                        <div class="fw-bold">Ricaldone</div>
-                                        <div class="text-muted" style="font-size: 0.75rem;">Futbol Masculino</div>
-                                    </div>
+                        <div class="card inner-card rounded-4-custom mb-3 hover-zoom-card" onclick="window.location.href='detalles_partido.html'" style="cursor: pointer;">
+                            <div class="card-body p-2 d-flex align-items-center">
+                                <div class="bg-custom-gray rounded-3 date-box me-3">
+                                    <span class="small text-muted" style="font-size: 0.7rem;">may</span>
+                                    <span class="fw-bold fs-5">24</span>
                                 </div>
-                                <div class="fw-bold text-center" style="font-size: 1.2rem; width: 20%;">2-0</div>
-                                <div class="d-flex align-items-center justify-content-end text-end" style="width: 40%;">
-                                    <div class="me-3">
-                                        <div class="fw-bold">Don bosco</div>
+                                <div class="flex-grow-1">
+                                    <div class="d-flex justify-content-between px-3">
+                                        <span class="fw-bold text-dark">Ricaldone</span>
+                                        <span class="text-muted small">VS</span>
+                                        <span class="fw-bold text-dark">Don bosco</span>
                                     </div>
-                                    <img src="../img/donBosco.jpg" class="team-logo" alt="Don Bosco">
+                                    <div class="d-flex justify-content-between align-items-center px-4 mt-1">
+                                        <img src="../img/itr.jpg" class="team-logo-small" alt="Logo Ricaldone">
+                                        <span class="fw-bold text-dark small"><i class="bi bi-dribbble text-success me-1"></i>Futbol masculino</span>
+                                        <img src="../img/donBosco.jpg" class="team-logo-small" alt="Logo Don Bosco">
+                                    </div>
+                                    <div class="text-center text-muted mt-1" style="font-size: 0.75rem;"><i class="bi bi-clock me-1"></i>10:00 AM - Cancha 1</div>
                                 </div>
-                            </div>
-                            <div class="text-end text-muted mt-1" style="font-size: 0.7rem;">
-                                10 mayo 2026
                             </div>
                         </div>
-                    </div>
 
-                    <div class="card inner-card rounded-4-custom mb-3">
-                        <div class="card-body p-3">
-                            <div class="d-flex justify-content-between align-items-center position-relative">
-                                <div class="d-flex align-items-center" style="width: 40%;">
-                                    <img src="../img/itr.jpg" class="team-logo me-3" alt="Ricaldone">
-                                    <div>
-                                        <div class="fw-bold">Ricaldone</div>
-                                        <div class="text-muted" style="font-size: 0.75rem;">Futbol Masculino</div>
-                                    </div>
+                        <div class="card inner-card rounded-4-custom mb-2 hover-zoom-card" onclick="window.location.href='detalles_partido_natacion.html'" style="cursor: pointer;">
+                            <div class="card-body p-2 d-flex align-items-center">
+                                <div class="bg-custom-gray rounded-3 date-box me-3" style="background-color: #e0f2fe;">
+                                    <span class="small text-info fw-bold" style="font-size: 0.7rem;">jul</span>
+                                    <span class="fw-bold fs-5 text-dark">25</span>
                                 </div>
-                                <div class="fw-bold text-center" style="font-size: 1.2rem; width: 20%;">2-0</div>
-                                <div class="d-flex align-items-center justify-content-end text-end" style="width: 40%;">
-                                    <div class="me-3">
-                                        <div class="fw-bold">Don bosco</div>
+                                <div class="flex-grow-1">
+                                    <div class="d-flex justify-content-between px-3">
+                                        <span class="fw-bold text-dark">Ricaldone</span>
+                                        <span class="badge bg-success bg-opacity-10 text-success small px-2 py-1">FINAL A</span>
+                                        <span class="fw-bold text-dark">Don Bosco</span>
                                     </div>
-                                    <img src="../img/donBosco.jpg" class="team-logo" alt="Don Bosco">
+                                    <div class="d-flex justify-content-between align-items-center px-4 mt-1">
+                                        <img src="../img/itr.jpg" class="team-logo-small" alt="Logo Ricaldone">
+                                        <span class="fw-bold text-dark small"><i class="bi bi-water text-info me-1"></i>Natación - 100m Mariposa</span>
+                                        <img src="../img/donBosco.jpg" class="team-logo-small" alt="Logo Don Bosco">
+                                    </div>
+                                    <div class="text-center text-muted mt-1" style="font-size: 0.75rem;"><i class="bi bi-geo-alt me-1"></i>9:00 AM - Piscina Olímpica</div>
                                 </div>
-                            </div>
-                            <div class="text-end text-muted mt-1" style="font-size: 0.7rem;">
-                                10 mayo 2026
                             </div>
                         </div>
+
+                    </div>
+                </div>
+
+                <!-- Sección 2: Resultado reciente -->
+                <div class="card rounded-5-custom border-1 shadow-sm bg-white hover-zoom-card">
+                    <div class="card-header bg-white border-0 pt-4 pb-2 px-4 d-flex justify-content-between align-items-center rounded-top-5">
+                        <h5 class="mb-0 fw-bold d-flex align-items-center">
+                            <i class="bi bi-trophy text-custom-green me-2 fs-4"></i>
+                            Resultado reciente
+                        </h5>
+                        <a href="gestion_partidos.html" class="text-custom-green text-decoration-none small fw-semibold">Ver todos <i class="bi bi-arrow-right"></i></a>
+                    </div>
+                    
+                    <div class="card-body px-4">
+                        
+                        <div class="card inner-card rounded-4-custom mb-3 hover-zoom-card" onclick="window.location.href='detalles_partido.html'" style="cursor: pointer;">
+                            <div class="card-body p-3">
+                                <div class="d-flex justify-content-between align-items-center position-relative">
+                                    <div class="d-flex align-items-center" style="width: 40%;">
+                                        <img src="../img/itr.jpg" class="team-logo me-3" alt="Ricaldone">
+                                        <div>
+                                            <div class="fw-bold text-dark">Ricaldone</div>
+                                            <div class="text-muted" style="font-size: 0.75rem;"><i class="bi bi-dribbble text-success me-1"></i>Futbol Masculino</div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="text-center" style="width: 20%;">
+                                        <div class="fw-bold text-dark" style="font-size: 1.25rem;">2-0</div>
+                                        <span class="badge mt-1" style="background-color: #dc3545; font-size: 0.65rem;">Finalizado</span>
+                                    </div>
+                                    
+                                    <div class="d-flex align-items-center justify-content-end text-end" style="width: 40%;">
+                                        <div class="me-3">
+                                            <div class="fw-bold text-dark">Don bosco</div>
+                                        </div>
+                                        <img src="../img/donBosco.jpg" class="team-logo" alt="Don Bosco">
+                                    </div>
+                                </div>
+                                <div class="text-end text-muted mt-1" style="font-size: 0.7rem;">
+                                    <i class="bi bi-calendar2-check me-1"></i>10 mayo 2026
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card inner-card rounded-4-custom mb-3 hover-zoom-card" onclick="window.location.href='detalles_partido_natacion.html'" style="cursor: pointer;">
+                            <div class="card-body p-3">
+                                <div class="d-flex justify-content-between align-items-center position-relative">
+                                    <div class="d-flex align-items-center" style="width: 40%;">
+                                        <img src="../img/itr.jpg" class="team-logo me-3" alt="Ricaldone">
+                                        <div>
+                                            <div class="fw-bold text-dark">Ricaldone</div>
+                                            <div class="text-muted" style="font-size: 0.75rem;"><i class="bi bi-water text-info me-1"></i>Natación 200m Libre</div>
+                                        </div>
+                                    </div>
+                                    <div class="text-center" style="width: 20%;">
+                                        <div class="fw-bold text-success" style="font-size: 1.15rem;">🥇 Oro</div>
+                                        <span class="badge mt-1 text-dark" style="background-color: #ffc107; font-size: 0.65rem;">En competición</span>
+                                    </div>
+                                    <div class="d-flex align-items-center justify-content-end text-end" style="width: 40%;">
+                                        <div class="me-3">
+                                            <div class="fw-bold text-dark">St. Cecilia</div>
+                                        </div>
+                                        <img src="../img/cecilia.png" class="team-logo" alt="Santa Cecilia">
+                                    </div>
+                                </div>
+                                <div class="text-end text-muted mt-1" style="font-size: 0.7rem;">
+                                    <i class="bi bi-calendar2-check me-1"></i>25 julio 2026
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card inner-card rounded-4-custom mb-2 hover-zoom-card" onclick="window.location.href='detalles_partido.html'" style="cursor: pointer;">
+                            <div class="card-body p-3">
+                                <div class="d-flex justify-content-between align-items-center position-relative">
+                                    <div class="d-flex align-items-center" style="width: 40%;">
+                                        <img src="../img/itr.jpg" class="team-logo me-3" alt="Ricaldone">
+                                        <div>
+                                            <div class="fw-bold text-dark">Ricaldone</div>
+                                            <div class="text-muted" style="font-size: 0.75rem;"><i class="bi bi-dribbble text-success me-1"></i>Futbol Masculino</div>
+                                        </div>
+                                    </div>
+                                    <div class="text-center" style="width: 20%;">
+                                        <div class="fw-bold text-dark" style="font-size: 1.25rem;">2-0</div>
+                                        <span class="badge mt-1 text-dark" style="background-color: #ffc107; font-size: 0.65rem;">En proceso</span>
+                                    </div>
+                                    <div class="d-flex align-items-center justify-content-end text-end" style="width: 40%;">
+                                        <div class="me-3">
+                                            <div class="fw-bold text-dark">Don bosco</div>
+                                        </div>
+                                        <img src="../img/donBosco.jpg" class="team-logo" alt="Don Bosco">
+                                    </div>
+                                </div>
+                                <div class="text-end text-muted mt-1" style="font-size: 0.7rem;">
+                                    <i class="bi bi-calendar2-check me-1"></i>10 mayo 2026
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- 3. COLUMNA DERECHA: NOTICIAS DEL SISTEMA -->
+            <div class="col-lg-3">
+                <div class="card rounded-5-custom border-1 shadow-sm p-3 bg-white hover-zoom-card h-100">
+                    <div class="d-flex justify-content-between align-items-center mb-3 pb-2 border-bottom">
+                        <h6 class="fw-bold mb-0 text-dark d-flex align-items-center">
+                            <i class="bi bi-newspaper text-custom-green me-2 fs-5"></i>
+                            Noticias
+                        </h6>
+                        <a href="noticias.html" class="text-custom-green text-decoration-none small fw-semibold">Ver todas <i class="bi bi-arrow-right"></i></a>
                     </div>
 
+                    <div class="noticias-list">
+                        
+                        <!-- Noticia 1 -->
+                        <div class="news-mini-card p-2 mb-3 d-flex align-items-center gap-3 cursor-pointer hover-zoom-item" onclick="window.location.href='gestion_noticias.html'">
+                            <img src="../img/news_placeholder.jpg" class="news-img-thumb shadow-sm" alt="Noticia 1">
+                            <div class="overflow-hidden">
+                                <span class="badge bg-success bg-opacity-10 text-success small mb-1" style="font-size: 0.65rem;">Intramuros 2026</span>
+                                <h6 class="mb-1 small fw-bold text-dark lh-sm">¡Inician los Intramuros 2026 con gran ceremonia oficial!</h6>
+                                <small class="text-muted d-block" style="font-size: 0.7rem;"><i class="bi bi-clock me-1"></i>Hace 2 horas</small>
+                            </div>
+                        </div>
+
+                        <!-- Noticia 2 -->
+                        <div class="news-mini-card p-2 mb-3 d-flex align-items-center gap-3 cursor-pointer hover-zoom-item" onclick="window.location.href='gestion_noticias.html'">
+                            <img src="../img/news_placeholder2.jpg" class="news-img-thumb shadow-sm" alt="Noticia 2">
+                            <div class="overflow-hidden">
+                                <span class="badge bg-info bg-opacity-10 text-info small mb-1" style="font-size: 0.65rem;">Natación - Copa Neo</span>
+                                <h6 class="mb-1 small fw-bold text-dark lh-sm">Ricaldone rompe récord en 100m mariposa en Piscina Olímpica</h6>
+                                <small class="text-muted d-block" style="font-size: 0.7rem;"><i class="bi bi-clock me-1"></i>Ayer</small>
+                            </div>
+                        </div>
+
+                        <!-- Noticia 3 -->
+                        <div class="news-mini-card p-2 mb-3 d-flex align-items-center gap-3 cursor-pointer hover-zoom-item" onclick="window.location.href='gestion_noticias.html'">
+                            <img src="../img/news_placeholder3.jpg" class="news-img-thumb shadow-sm" alt="Noticia 3">
+                            <div class="overflow-hidden">
+                                <span class="badge bg-warning bg-opacity-10 text-dark small mb-1" style="font-size: 0.65rem;">Baloncesto</span>
+                                <h6 class="mb-1 small fw-bold text-dark lh-sm">Don Bosco afianza su liderato con victoria histórica en el clásico</h6>
+                                <small class="text-muted d-block" style="font-size: 0.7rem;"><i class="bi bi-clock me-1"></i>24 de julio</small>
+                            </div>
+                        </div>
+
+                        <!-- Noticia 4 -->
+                        <div class="news-mini-card p-2 d-flex align-items-center gap-3 cursor-pointer hover-zoom-item" onclick="window.location.href='gestion_noticias.html'">
+                            <img src="../img/domingo.png" class="news-img-thumb shadow-sm" alt="Noticia 4">
+                            <div class="overflow-hidden">
+                                <span class="badge bg-danger bg-opacity-10 text-danger small mb-1" style="font-size: 0.65rem;">Voleibol</span>
+                                <h6 class="mb-1 small fw-bold text-dark lh-sm">Santa Cecilia y San José preparan clásico decisivo de fin de semana</h6>
+                                <small class="text-muted d-block" style="font-size: 0.7rem;"><i class="bi bi-clock me-1"></i>22 de julio</small>
+                            </div>
+                        </div>
+
+                    </div>
                 </div>
             </div>
+
         </div>
+        <!-- ─── FIN ESTRUCTURA 3 COLUMNAS ─── -->
 
     </div>
-</div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
-
     <!-- Link de SweetAlert -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="../js/global.js"></script>
+    <script src="../js/inicio.js"></script>
 </body>
 </html>

@@ -1,0 +1,367 @@
+/* ==========================================================================
+   ESTILOS DE CALENDARIZACIÓN – NeoLeague
+   Línea de Tiempo Dinámica (Cronograma)
+   ========================================================================== */
+
+/* Botones de Filtro */
+.btn-filter-crono {
+    border-radius: 50rem;
+    padding: 0.5rem 1.25rem;
+    font-weight: 600;
+    transition: all 0.2s ease;
+    border: 1px solid #ced4da;
+    background: #ffffff;
+    color: #495057;
+}
+
+.btn-filter-crono:hover {
+    background: #f8f9fa;
+    border-color: #adb5bd;
+}
+
+.btn-filter-crono.active {
+    background-color: var(--primary-color, #226137);
+    color: #ffffff;
+    border-color: var(--primary-color, #226137);
+    box-shadow: 0 4px 10px rgba(34, 97, 55, 0.2);
+}
+
+/* Encabezados de Fecha (Día) */
+.date-header {
+    position: relative;
+    padding-left: 20px;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+.date-header::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: var(--primary-color, #226137);
+    box-shadow: 0 0 0 4px rgba(34, 97, 55, 0.2);
+}
+
+.date-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #2c3e50;
+    margin: 0;
+    letter-spacing: -0.3px;
+}
+
+/* Contenedor del Timeline */
+.timeline-container {
+    position: relative;
+    padding-left: 25px;
+    margin-left: 4px;
+    border-left: 2px dashed #e9ecef;
+}
+
+/* Tarjeta de Evento (Cronograma) */
+.crono-item {
+    background: #ffffff;
+    border: 1px solid #f1f3f5;
+    border-radius: 12px;
+    padding: 1.25rem;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+    position: relative;
+}
+
+.crono-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.06);
+    border-color: #dee2e6;
+}
+
+/* Conector al timeline */
+.crono-item::before {
+    content: '';
+    position: absolute;
+    left: -27px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 25px;
+    height: 2px;
+    background-color: #e9ecef;
+    z-index: 0;
+}
+
+.crono-item:hover::before {
+    background-color: var(--primary-color, #226137);
+}
+
+/* Bloque de Hora */
+.crono-time-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-width: 70px;
+    border-right: 1px solid #e9ecef;
+    padding-right: 1.25rem;
+}
+
+.crono-time {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #343a40;
+    line-height: 1;
+}
+
+.crono-type {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    margin-top: 6px;
+    padding: 2px 8px;
+    border-radius: 4px;
+}
+
+.type-partido {
+    background-color: rgba(34, 97, 55, 0.1);
+    color: var(--primary-color, #226137);
+}
+
+.type-torneo {
+    background-color: rgba(255, 193, 7, 0.15);
+    color: #b08102; /* Gold text */
+}
+
+/* Detalles del evento */
+.crono-details {
+    flex-grow: 1;
+}
+
+.crono-title {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #212529;
+    margin: 0 0 4px 0;
+}
+
+.crono-meta {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 0.85rem;
+    color: #6c757d;
+}
+
+.crono-meta i {
+    color: #adb5bd;
+}
+
+/* Estado del Evento */
+.crono-status {
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 5px 12px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.status-programado { background-color: #d1e7dd; color: #0f5132; }
+.status-encurso { background-color: #cfe2ff; color: #084298; }
+.status-finalizado { background-color: #e2e3e5; color: #41464b; }
+
+/* Empty state */
+.empty-cronograma {
+    text-align: center;
+    padding: 4rem 2rem;
+    background: #f8f9fa;
+    border-radius: 16px;
+    border: 2px dashed #dee2e6;
+    margin-top: 2rem;
+}
+
+/* ==========================================================================
+   VISTA TARJETAS (Cuadrícula)
+   ========================================================================== */
+.crono-card {
+    display: flex;
+    flex-direction: column;
+    background-color: transparent;
+    border-radius: 1.25rem;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: none;
+    height: 100%;
+    overflow: hidden; /* Ensure rounded corners clip inner content */
+}
+
+.crono-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1) !important;
+}
+
+.crono-card-header {
+    text-align: center;
+    padding: 1rem 0.75rem;
+    color: #ffffff !important; /* Force white text */
+}
+
+.crono-card-header h6 {
+    color: #ffffff !important;
+}
+
+.crono-card-body {
+    background: white;
+    padding: 1.25rem;
+    text-align: center;
+    position: relative;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* ==========================================================================
+   VISTA MENSUAL (Cuadrícula Google Calendar)
+   ========================================================================== */
+
+.month-nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #ffffff;
+    padding: 1rem 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.02);
+    margin-bottom: 1.5rem;
+}
+
+.month-title {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #2c3e50;
+    margin: 0;
+    text-transform: capitalize;
+}
+
+.btn-month-nav {
+    background: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    width: 40px;
+    height: 40px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #495057;
+    transition: all 0.2s ease;
+}
+
+.btn-month-nav:hover {
+    background: #e9ecef;
+    color: #212529;
+}
+
+/* Grid del Calendario */
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    background: #dee2e6;
+    border: 1px solid #dee2e6;
+    border-radius: 12px;
+    overflow: hidden;
+    gap: 1px; /* Borders between cells */
+}
+
+/* Encabezado de los días (L, M, M, J...) */
+.calendar-day-header {
+    background: #ffffff;
+    text-align: center;
+    padding: 1rem 0;
+    font-weight: 700;
+    font-size: 0.9rem;
+    color: #6c757d;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Celdas del Calendario */
+.calendar-cell {
+    background: #ffffff;
+    min-height: 120px;
+    padding: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    transition: background 0.2s;
+}
+
+.calendar-cell:hover {
+    background: #f8f9fa;
+}
+
+.calendar-cell.empty-cell {
+    background: #f8f9fa;
+    opacity: 0.6;
+}
+
+.calendar-cell.today {
+    background: rgba(34, 97, 55, 0.05);
+}
+
+.day-number {
+    font-weight: 700;
+    font-size: 1rem;
+    color: #495057;
+    align-self: flex-end;
+    margin-bottom: 0.25rem;
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+.calendar-cell.today .day-number {
+    background-color: var(--primary-color, #226137);
+    color: white;
+}
+
+/* Etiquetas de Eventos (Pills) */
+.event-pill {
+    font-size: 0.75rem;
+    padding: 0.2rem 0.4rem;
+    border-radius: 4px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-weight: 600;
+    cursor: pointer;
+    transition: opacity 0.2s;
+    border-left: 3px solid transparent;
+}
+
+.event-pill:hover {
+    opacity: 0.8;
+}
+
+.event-pill.torneo-pill {
+    background-color: rgba(255, 193, 7, 0.15);
+    color: #997404;
+    border-left-color: #ffc107;
+}
+
+.event-pill.partido-pill {
+    background-color: rgba(34, 97, 55, 0.1);
+    color: #153e23;
+    border-left-color: var(--primary-color, #226137);
+}

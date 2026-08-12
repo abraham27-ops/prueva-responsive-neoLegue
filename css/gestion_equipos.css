@@ -1,0 +1,158 @@
+/* ---------- Estilos Gestión de Equipos ---------- */
+
+/* Ajustes de tarjetas para el Grid */
+.equipo-card {
+    background-color: var(--card-background);
+    border-radius: 1rem;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    border: 1px solid var(--border-color);
+}
+
+.equipo-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.08) !important;
+}
+
+.team-logo-lg {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid #fff;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.btn-inscribir {
+    background-color: rgba(34, 97, 55, 0.1);
+    color: var(--primary-color);
+    font-weight: 600;
+    border: none;
+    transition: all 0.2s ease;
+}
+
+.btn-inscribir:hover {
+    background-color: var(--primary-color);
+    color: #fff;
+}
+
+/* Modales Custom */
+.modal-content-custom {
+    border-radius: 1.5rem;
+    border: none;
+}
+
+.sport-selector-card {
+    cursor: pointer;
+    border: 2px solid transparent;
+    border-radius: 1rem;
+    transition: all 0.2s ease;
+    background-color: #f8f9fa;
+}
+
+.sport-selector-card:hover, .sport-selector-card.active {
+    border-color: var(--primary-color);
+    background-color: rgba(34, 97, 55, 0.05);
+}
+
+.sport-icon {
+    font-size: 3rem;
+    color: var(--primary-color);
+}
+
+/* Estilos de Lista de Estudiantes en Modal */
+.student-list-item {
+    border-bottom: 1px solid #eee;
+    padding: 12px 0;
+}
+
+.student-list-item:last-child {
+    border-bottom: none;
+}
+
+.btn-add-student {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--primary-color);
+    color: var(--primary-color);
+    background: transparent;
+    transition: all 0.2s ease;
+}
+
+.btn-add-student.added {
+    background-color: var(--primary-color);
+    color: #fff;
+}
+
+.btn-add-student:hover {
+    background-color: var(--primary-color);
+    color: #fff;
+}
+
+/* Carrusel Personalizado (Ocultar barras por defecto en PC, deslizable) */
+.carousel-equipos-container {
+    overflow-x: auto;
+    white-space: nowrap;
+    padding: 2rem calc(50% - 130px) 3rem; /* Permitir centrar la primera y última */
+    scroll-behavior: smooth;
+    /* Ocultar scrollbar */
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+    /* Snapping para efecto character select */
+    scroll-snap-type: x mandatory;
+}
+
+.carousel-equipos-container::-webkit-scrollbar {
+    display: none;
+}
+
+.carousel-item-card {
+    display: inline-block;
+    width: 260px;
+    margin: 0 1rem;
+    white-space: normal;
+    vertical-align: top;
+    background-color: var(--card-background);
+    border-radius: 1.25rem;
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    /* Snapping */
+    scroll-snap-align: center;
+    /* Efecto por defecto (no seleccionado) */
+    transform: scale(0.85);
+    opacity: 0.5;
+}
+
+.carousel-item-card:hover {
+    transform: scale(0.9) translateY(-5px);
+    opacity: 0.8;
+}
+
+/* Efecto para la tarjeta que está en el centro del carrusel */
+.carousel-item-card.center-focus {
+    transform: scale(1.1);
+    opacity: 1;
+    z-index: 2;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15) !important;
+    border: 1px solid rgba(34, 97, 55, 0.3);
+}
+
+.carousel-item-card.center-focus:hover {
+    transform: scale(1.12) translateY(-5px);
+}
+
+.card-cover {
+    border-radius: 1.25rem 1.25rem 0 0;
+    background: linear-gradient(135deg, var(--primary-color) 0%, #1a4a2a 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.card-cover::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: url('data:image/svg+xml;utf8,<svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><circle cx="2" cy="2" r="2" fill="rgba(255,255,255,0.05)"/></svg>') repeat;
+}

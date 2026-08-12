@@ -1,0 +1,155 @@
+/* ==========================================================
+   NeoLeague — Gestión de Partidos (Misión 10)
+   ========================================================== */
+
+/* Buscador Integrado */
+.search-group {
+    display: flex;
+    align-items: center;
+    background: #f8f9fa;
+    border-radius: 12px;
+    padding: 0.25rem;
+    border: 1.5px solid #e9ecef;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+.search-group:hover, .search-group:focus-within {
+    border-color: #226137;
+    background: #fff;
+    box-shadow: 0 0 0 4px rgba(34, 97, 55, 0.1);
+}
+.search-icon {
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #226137;
+    font-size: 1.1rem;
+    border-radius: 10px;
+    flex-shrink: 0;
+}
+.form-control-custom {
+    border: none;
+    background-color: transparent;
+    padding-left: 0.5rem;
+}
+.form-control-custom:focus {
+    box-shadow: none;
+    background-color: transparent;
+}
+
+/* Animaciones y Hover Globales */
+.transition-all {
+    transition: all 0.3s ease !important;
+}
+.cursor-pointer {
+    cursor: pointer;
+}
+.hover-lift:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1) !important;
+}
+
+/* --- CARRUSEL INFINITO DE PARTIDOS --- */
+.carousel-partidos-container {
+    display: flex;
+    overflow-x: auto;
+    white-space: nowrap;
+    padding: 2rem calc(50% - 155px) 3rem; /* Permitir centrar la primera y última tarjeta */
+    scroll-behavior: smooth;
+    
+    /* Ocultar scrollbar */
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    
+    /* Snapping */
+    scroll-snap-type: x mandatory;
+    
+    /* Fade en los bordes para que no se vea cortado bruscamente */
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 15%, black 85%, transparent 100%);
+    mask-image: linear-gradient(to right, transparent 0%, black 15%, black 85%, transparent 100%);
+}
+
+.carousel-partidos-container::-webkit-scrollbar {
+    display: none;
+}
+
+.carousel-partido-card {
+    display: inline-flex;
+    flex-direction: column;
+    width: 310px;
+    margin: 0 1rem;
+    white-space: normal;
+    vertical-align: top;
+    background-color: transparent;
+    border-radius: 1.25rem;
+    
+    /* Snapping */
+    scroll-snap-align: center;
+    
+    /* Efecto unselected por defecto */
+    transform: scale(0.85);
+    opacity: 0.5;
+    cursor: pointer;
+}
+
+/* Efecto Hover si no está centrado */
+.carousel-partido-card:hover {
+    transform: scale(0.9) translateY(-5px);
+    opacity: 0.8;
+}
+
+/* La tarjeta central activa (Character Select effect) */
+.carousel-partido-card.center-focus {
+    transform: scale(1.1);
+    opacity: 1;
+    z-index: 2;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15) !important;
+}
+.carousel-partido-card.center-focus:hover {
+    transform: scale(1.12) translateY(-5px);
+}
+
+/* Detalles internos de la tarjeta */
+.card-partido-header {
+    border-bottom: 2px solid rgba(0,0,0,0.05);
+}
+.card-partido-body {
+    border: 1px solid rgba(0,0,0,0.05);
+    border-top: none;
+    min-height: 150px;
+}
+.equipo-col {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0 0.25rem;
+}
+.vs-col {
+    min-width: 90px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.grayscale-50 {
+    filter: grayscale(70%);
+}
+.tracking-wide {
+    letter-spacing: 0.05em;
+}
+.fw-black {
+    font-weight: 900;
+}
+
+/* Botones de navegación del carrusel */
+.btn-nav-carousel {
+    border: 1px solid #eaeaea;
+    transition: all 0.2s;
+}
+.btn-nav-carousel:hover {
+    background: #e9ecef;
+    transform: scale(1.1);
+}

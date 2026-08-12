@@ -1,0 +1,137 @@
+/* Estilos específicos para la página Detalles de Natación - NeoLeague */
+
+.swimming-header {
+    background: linear-gradient(135deg, #226137 0%, #174225 60%, #0d2615 100%);
+    color: white;
+    border-radius: 1.25rem;
+    padding: 2.5rem 2rem;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(34, 97, 55, 0.25);
+    overflow: hidden;
+}
+
+.swimming-header::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -10%;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 70%);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.lane-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    font-weight: 800;
+    font-size: 1.1rem;
+    background-color: #f8f9fa;
+    color: #226137;
+    border: 2px solid #dee2e6;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.lane-badge-gold {
+    background: linear-gradient(135deg, #ffd700, #ffae00);
+    color: #000;
+    border-color: #ffae00;
+    box-shadow: 0 4px 10px rgba(255, 215, 0, 0.4);
+}
+
+.lane-badge-silver {
+    background: linear-gradient(135deg, #e0e0e0, #9e9e9e);
+    color: #000;
+    border-color: #9e9e9e;
+}
+
+.lane-badge-bronze {
+    background: linear-gradient(135deg, #cd7f32, #8c531b);
+    color: #fff;
+    border-color: #8c531b;
+}
+
+.table-swimming {
+    border-collapse: separate;
+    border-spacing: 0 0.5rem;
+}
+
+.table-swimming tbody tr {
+    background-color: #ffffff;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+    border-radius: 0.75rem;
+    transition: all 0.2s ease;
+}
+
+.table-swimming tbody tr:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(34, 97, 55, 0.08);
+    background-color: #fcfcfc;
+}
+
+.table-swimming td, .table-swimming th {
+    vertical-align: middle;
+    padding: 1rem 1.25rem;
+    border: none;
+}
+
+.table-swimming tbody tr td:first-child {
+    border-top-left-radius: 0.75rem;
+    border-bottom-left-radius: 0.75rem;
+}
+
+.table-swimming tbody tr td:last-child {
+    border-top-right-radius: 0.75rem;
+    border-bottom-right-radius: 0.75rem;
+}
+
+.swimmer-avatar {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #226137;
+}
+
+.team-icon-small {
+    width: 28px;
+    height: 28px;
+    object-fit: contain;
+    border-radius: 50%;
+    background: #fff;
+    padding: 2px;
+    border: 1px solid #eee;
+}
+
+.time-display {
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 800;
+    font-size: 1.15rem;
+    color: #226137;
+    background: rgba(34, 97, 55, 0.08);
+    padding: 0.35rem 0.75rem;
+    border-radius: 0.5rem;
+    display: inline-block;
+}
+
+.time-display-gold {
+    color: #b78103;
+    background: rgba(255, 215, 0, 0.15);
+    border: 1px solid rgba(255, 215, 0, 0.4);
+}
+
+.stat-pill {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50rem;
+    padding: 0.5rem 1rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #fff;
+}
