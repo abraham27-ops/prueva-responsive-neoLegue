@@ -153,6 +153,7 @@
 
 .crono-meta {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     gap: 1rem;
     font-size: 0.85rem;
@@ -161,6 +162,10 @@
 
 .crono-meta i {
     color: #adb5bd;
+}
+
+.crono-meta span {
+    white-space: nowrap;
 }
 
 /* Estado del Evento */
