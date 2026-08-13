@@ -291,6 +291,7 @@
     color: #6c757d;
     text-transform: uppercase;
     letter-spacing: 0.5px;
+    min-width: 0;
 }
 
 /* Celdas del Calendario */
@@ -302,6 +303,7 @@
     flex-direction: column;
     gap: 0.25rem;
     transition: background 0.2s;
+    min-width: 0;
 }
 
 .calendar-cell:hover {

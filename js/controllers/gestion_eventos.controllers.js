@@ -111,7 +111,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 <td>
                     <span class="badge-impacto">${ev.valor}</span>
                 </td>
-                <td>
+                <td class="text-nowrap">
                     <!-- Botones de Acción (Consistentes con todo el sistema) -->
                     <button type="button" class="btn btn-sm btn-outline-secondary btn-action-ev me-1 btn-editar-ev" title="Editar Evento" data-id="${ev.id}">
                         <i class="bi bi-pencil"></i>

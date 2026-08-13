@@ -515,7 +515,7 @@ body.loading-body {
 /* ---- RESPONSIVE ---- */
 @media (max-width: 480px) {
     .logo-pedestal { width: 180px; height: 180px; margin-bottom: 20px; }
-    .loading-logo  { width: 110px; height: 110px; }
+    .loading-logo  { width: 110px; height: 110px; margin-left: -48px; margin-top: -52px; }
     .sport-orbit-badge { width: 35px; height: 35px; font-size: 0.9rem; }
     .brand-title   { font-size: 2rem; }
     .brand-tagline { font-size: 0.72rem; letter-spacing: 1.5px; }

@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -15,24 +15,24 @@
 <body>
     <div id="nav-placeholder"></div>
     <!-- Contenido Principal -->
-    <div class="container-fluid px-4 py-4 max-w-1200" style="max-width: 1400px; margin: 0 auto;">
+    <div class="container-fluid px-2 px-md-4 py-4 max-w-1200" style="max-width: 1400px; margin: 0 auto;">
         
-        <header class="d-flex flex-wrap justify-content-between align-items-center mb-5">
+        <header class="d-flex flex-wrap justify-content-between align-items-center mb-5 gap-3">
             <div>
                 <h1 class="fw-bold mb-1">Directorio de Estudiantes</h1>
-                <p class="text-muted">Administra a los alumnos y su información deportiva</p>
+                <p class="text-muted mb-0">Administra a los alumnos y su información deportiva</p>
             </div>
-            <div class="d-flex gap-3">
-                <select class="form-select rounded-pill shadow-sm" style="width: auto;">
+            <div class="d-flex flex-wrap gap-2 gap-md-3 w-100 w-md-auto">
+                <select class="form-select rounded-pill shadow-sm flex-grow-1" style="min-width: 130px; width: auto;">
                     <option value="">Estado: Activos</option>
                     <option value="retirados">Estado: Retirados</option>
                 </select>
-                <select class="form-select rounded-pill shadow-sm" style="width: auto;">
+                <select class="form-select rounded-pill shadow-sm flex-grow-1" style="min-width: 150px; width: auto;">
                     <option value="">Todos los torneos</option>
                     <option value="intramuros">Intramuros</option>
                     <option value="copa">Copa Salesiana</option>
                 </select>
-                <button class="btn btn-success rounded-pill px-4 shadow-sm" data-bs-toggle="modal" data-bs-target="#modalCrearEstudiante">
+                <button class="btn btn-success rounded-pill px-4 shadow-sm flex-grow-1" data-bs-toggle="modal" data-bs-target="#modalCrearEstudiante" style="white-space: nowrap;">
                     <i class="bi bi-person-plus-fill me-2"></i> Registrar Estudiante
                 </button>
             </div>

@@ -94,8 +94,8 @@ document.addEventListener("DOMContentLoaded", () => {
                     </div>
                 </td>
                 <td class="text-start fw-bold text-dark fs-6">${dep.nombre}</td>
-                <td>
-                    <button type="button" class="btn btn-sm btn-outline-secondary btn-action-deporte me-2 btn-editar" title="Editar" data-id="${dep.id}">
+                <td class="text-nowrap">
+                    <button type="button" class="btn btn-sm btn-outline-secondary btn-action-deporte me-1 btn-editar" title="Editar" data-id="${dep.id}">
                         <i class="bi bi-pencil"></i>
                     </button>
                     <button type="button" class="btn btn-sm btn-outline-danger btn-action-deporte btn-eliminar" title="Eliminar" data-id="${dep.id}">

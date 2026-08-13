@@ -355,14 +355,15 @@ document.addEventListener('DOMContentLoaded', () => {
                 <button class="btn btn-month-nav shadow-sm" id="btnNextMonth"><i class="bi bi-chevron-right"></i></button>
             </div>
             
-            <div class="calendar-grid shadow-sm">
-                <div class="calendar-day-header">Lun</div>
-                <div class="calendar-day-header">Mar</div>
-                <div class="calendar-day-header">Mié</div>
-                <div class="calendar-day-header">Jue</div>
-                <div class="calendar-day-header">Vie</div>
-                <div class="calendar-day-header">Sáb</div>
-                <div class="calendar-day-header">Dom</div>
+            <div class="table-responsive pb-3">
+                <div class="calendar-grid shadow-sm" style="min-width: 650px;">
+                    <div class="calendar-day-header">Lun</div>
+                    <div class="calendar-day-header">Mar</div>
+                    <div class="calendar-day-header">Mié</div>
+                    <div class="calendar-day-header">Jue</div>
+                    <div class="calendar-day-header">Vie</div>
+                    <div class="calendar-day-header">Sáb</div>
+                    <div class="calendar-day-header">Dom</div>
         `;
 
         // Calcular días
@@ -414,7 +415,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
 
-        html += `</div>`;
+        html += `</div></div>`;
         return html;
     }
 

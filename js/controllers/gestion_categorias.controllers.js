@@ -102,7 +102,7 @@ document.addEventListener("DOMContentLoaded", async () => {
                         ${rango} año${rango !== 1 ? 's' : ''} de diferencia
                     </span>
                 </td>
-                <td>
+                <td class="text-nowrap">
                     <!-- Botones de Acción (Consistentes con Estudiantes y Torneos) -->
                     <button type="button" class="btn btn-sm btn-outline-secondary btn-action-cat me-1 btn-editar-cat" title="Editar Categoría" data-id="${cat.id}">
                         <i class="bi bi-pencil"></i>
