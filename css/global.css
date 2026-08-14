@@ -29,6 +29,10 @@ body {
     max-width: 1200px;
 }
 
+.min-width-0 {
+    min-width: 0 !important;
+}
+
 /* Fix para el Navbar dinámico */
 #nav-placeholder {
     position: sticky;
